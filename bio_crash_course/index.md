@@ -7,8 +7,8 @@ Here are notes from Biology Crash Course held in [RBP Bioinformatics lab](https:
 
 ## Topics
 
-[What is life]({{ site.baseurl }}/bio_crash_course/what-is-life/)
-[Evolution]({{ site.baseurl }}/bio_crash_course/evolution/)
-[Development]({{ site.baseurl }}/bio_crash_course/development/)
-[Central Dogma of Molecular Biology]({{ site.baseurl }}/bio_crash_course/central-dogma-of-molecular-biology/)
-[Cell]({{ site.baseurl }}/bio_crash_course/cell/)
+ - [What is life]({{ site.baseurl }}/bio_crash_course/what-is-life/)
+ - [Evolution]({{ site.baseurl }}/bio_crash_course/evolution/)
+ - [Development]({{ site.baseurl }}/bio_crash_course/development/)
+ - [Central Dogma of Molecular Biology]({{ site.baseurl }}/bio_crash_course/central-dogma-of-molecular-biology/)
+ - [Cell]({{ site.baseurl }}/bio_crash_course/cell/)
