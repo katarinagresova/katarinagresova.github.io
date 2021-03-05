@@ -3,7 +3,7 @@ layout: page
 title: Evolution
 ---
 
-Evolution is a central concept in biology. In a very basic level, it is long process of producing [[#Imperfect copy|imperfect copies]] of genetic material and natural selection of the ones that were lucky enough to survive in bigger numbers in next generations.
+Evolution is a central concept in biology. In a very basic level, it is long process of producing [imperfect copies]({{ site.baseurl }}/bio-crash-course/evolution/#imperfect-copy) of genetic material and natural selection of the ones that were lucky enough to survive in bigger numbers in next generations.
 
 ## Imperfect copies as driver of evolution
 
@@ -39,16 +39,16 @@ Single-cell organisms can create a copy of themselves to produce an offspring. B
 In broad terms, genetic information (DNA) of an organism doesn't change. Organism starts from one cell with some DNA and during development and whole life of organism, all cells have the same copy of DNA.
 
 In closer look, there are many mechanisms, how is DNA in cells changed during lifetime:
- - every cell goes trough different effects from the environment (for example [[#Speeding up evolution|radiation]]),
+ - every cell goes trough different effects from the environment (for example [radiation]({{ site.baseurl }}/bio-crash-course/evolution/#speeding-up-evolution),
  - every time DNA is copied, there is a chance of introducing a mistake in a copy,
  - every time DNA breaks (because of some physical tension, or some chemical that breaks it) there is a chance of mistake in repair,
  - there are viruses that can get into cell and put their DNA into DNA of cell,
  - there are parts of DNA that can be copied out and pasted to different part of DNA, by themselves (called transposable elements), ...
 
-Genetic information (DNA) of a single organism will not drastically change withing lifetime of one organism. Every cell can have some small changes, but in broad view we can say, that one part of an organism has the same DNA as any other part of this organism. Different function of cell is not because of different DNA in them, but it is due to [[Development|regulation]] on top of DNA.
+Genetic information (DNA) of a single organism will not drastically change within lifetime of one organism. Every cell can have some small changes, but in broad view we can say, that one part of an organism has the same DNA as any other part of this organism. Different function of cell is not because of different DNA in them, but it is due to [[Development|regulation]] on top of DNA.
 
 ### Harmful changes
 
 Process of introducing changes to DNA during lifespan is connected with cancer. There are some cells in our body that accumulate enough of these changes in wrong places and then program of extreme proliferation is triggered (they grow, make many copies and they don't die). They do not follow plan of organism as whole, but they proliferate on their own without following the rules of survival of organism.
 
-Normal cells (healthy cells without cancer) have processes of quality control. Once genetic material in a normal cell changes too much so that cell is in danger of not functioning properly, they have a way to commit a suicide. For example, our skin does this all the time. Skin is the first line of defense for many things (like radiation from sun, chemicals, etc.) so skin cells are programmed in a way that they die fast and are replaced by cells from below. 
+Normal cells (healthy cells without cancer) have processes of quality control. Once genetic material in a normal cell changes too much so that cell is in danger of not functioning properly, they have a way to commit a suicide. For example, our skin does this all the time. Skin is the first line of defence for many things (like radiation from sun, chemicals, etc.) so skin cells are programmed in a way that they die fast and are replaced by cells from below. 
