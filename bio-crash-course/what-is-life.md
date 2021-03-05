@@ -26,7 +26,7 @@ We can take a bunch of chemicals and put them in a jar to make a system, that is
 Homeostasis is ability of living organisms to maintain their ideal internal conditions, such as temperature, pH, ...
 
 ### 4. Cells
-At least life that we know on Earth (in a way biology understand life and define it) is organised in this units of structure called [cells]({{ site.baseurl }}/bio-crash-course/cells/).
+At least life that we know on Earth (in a way biology understand life and define it) is organised in this units of structure called [cells]({{ site.baseurl }}/bio-crash-course/cell/).
 
 It might not be necessary for all life that could potentially exist to be packed in cells. But if we are talking about life that came from Earth's conditions, we find it organises in cells.
 
@@ -34,7 +34,7 @@ It might not be necessary for all life that could potentially exist to be packed
 
 We can see that none of characteristics by itself is enough, but we can try to combine them and look at them as a whole.
 
-When we think about [cells]({{ site.baseurl }}/bio-crash-course/what-is-life/#4.-cells) supported by [homeostasis]({{ site.baseurl }}/bio-crash-course/what-is-life/#3.-homeostasis) paired with [metabolism]({{ site.baseurl }}/bio-crash-course/what-is-life/#2.-metabolism), then life is creation of local environment with special ordering of chemical that protects this environment and has a mechanism for producing [imperfect copies]({{ site.baseurl }}/bio-crash-course/what-is-life/#1.-reproduction) of this type of organisation.
+When we think about [cells]({{ site.baseurl }}/bio-crash-course/what-is-life/#4-cells) supported by [homeostasis]({{ site.baseurl }}/bio-crash-course/what-is-life/#3-homeostasis) paired with [metabolism]({{ site.baseurl }}/bio-crash-course/what-is-life/#2-metabolism), then life is creation of local environment with special ordering of chemical that protects this environment and has a mechanism for producing [imperfect copies]({{ site.baseurl }}/bio-crash-course/what-is-life/#1-reproduction) of this type of organisation.
 
 > #### Personal note:
 > I like to look at life as emergent behaviour. 
