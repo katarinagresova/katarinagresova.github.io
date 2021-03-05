@@ -15,7 +15,7 @@ Another layer is regulation after part of DNA is copied. Some part of DNA is hal
 
 ## Development of multicellular organisms
 
-Every multicellular organism starts from one single cell. Cells are programmed to copy themselves to as much as possible perfect copies. There is a whole [[#Regulation|program of regulation]] of this process - which part of genome will be more accessible and which part will be almost hidden. This program is called development. It will bring the single cell to copy into 2 - 4 - 8 - etc. Their DNA will not change, but accessibility of DNA will start changing. Eventually, some of these cells will become head, other cells will become skin etc. They will all have different developmental programs.
+Every multicellular organism starts from one single cell. Cells are programmed to copy themselves to as much as possible perfect copies. There is a whole [program of regulation]({{ site.baseurl }}/bio-crash-course/development/#regulation) of this process - which part of genome will be more accessible and which part will be almost hidden. This program is called development. It will bring the single cell to copy into 2 - 4 - 8 - etc. Their DNA will not change, but accessibility of DNA will start changing. Eventually, some of these cells will become head, other cells will become skin etc. They will all have different developmental programs.
 
 When we're talking about multicellular organisms, like plants or humans, we will have many developmental programs that need regulated in a very complex ways to function in a proper way and not [cause harm]({{ site.baseurl }}/bio-crash-course/evolution/#harmful-changes).
 
