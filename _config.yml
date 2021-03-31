@@ -1,0 +1,172 @@
+# Site
+repository: sproogen/resume-theme
+favicon: images/favicon.ico
+
+# Content configuration version
+version: 2
+
+# Personal info
+name: Katarína Grešová
+title: Genomics and Deep Learning PhD student & Software developer
+email: 51004@mail.muni.cz
+#website: https://katarinagresova.github.io
+
+# Dark Mode (true/false/never)
+darkmode: false
+
+# Social links
+#twitter_username: facespics
+github_username:  katarinagresova
+# stackoverflow_username: "00000001"
+# dribbble_username: jekyll
+# facebook_username: jekyll
+# flickr_username: jekyll
+#instagram_username: jameswgrant
+linkedin_username: katarinagresova
+# xing_username: jekyll
+# pinterest_username: jekyll
+#youtube_username: globalmtb
+# googleplus_username: +jekyll
+# orcid_username: 0000-0000-0000-0000
+
+# Additional icon links
+#additional_links:
+#- title: itsgoingto.be
+#  icon: fas fa-globe
+#  url: https://www.itsgoingto.be
+# - title: another link
+#   icon: font awesome brand icon name (eg. fab fa-twitter) (https://fontawesome.com/icons?d=gallery&m=free)
+#   url: Link url (eg. https://google.com)
+
+# Google Analytics and Tag Manager
+# Using more than one of these may cause issues with reporting
+# gtm: "GTM-0000000"
+# gtag: "UA-00000000-0"
+google_analytics: "267245035"
+
+# About Section
+# about_title: About Me
+about_profile_image: images/profile.jpg
+about_content: | # this will include new lines to allow paragraphs
+  Hello! My name is Katarína.
+
+  I like <mark>Computer Science</mark>, <mark>Biology</mark> and everything in between. Always excited and looking for new challenges, but for now focusing on <mark>Machine learning</mark> and <mark>Genomics</mark>.
+
+  I have Bachelor's degree in Information technology, Master's degree in Bioinformatics and Biocomputing and currently I am pursuing Doctoral studies in Genomics and Proteomics.
+
+  I am also capable to combine my studies with work in a company. I am working as a Software Developer for a couple of years and I am having fun with <mark>Scrum</mark> and corporate processes.
+
+content:
+  - title: Experience # Title for the section
+    layout: list # Type of content section (list/text)
+    content:
+      - layout: left
+        title: Oracle NetSuite
+        link: https://www.netsuite.com/
+        # link_text: boringcompany.com
+        sub_title: Software Developer
+        caption: July 2020 - Present
+        quote: >
+          NetSuite is the world’s leading provider of cloud-based business management software. NetSuite helps companies manage core business processes with a single, fully integrated system covering ERP/financials, CRM, ecommerce, inventory and more. NetSuite transforms how businesses operate so they can achieve their business vision.
+        description: | # this will include new lines to allow paragraphs
+          Working as a Software Developer in SuiteAnalytics Connect team.
+
+          NetSuite SuiteAnalytics Connect Service provides the ability to archive, analyze and report on NetSuite data using a third-party tool or any custom-built application on any type of device.
+
+          Java, SQL, ODBC, Perforce
+      - layout: left
+        title: Tieto
+        link: https://www.tietoevry.com/
+        # link_text: boringcompany.com
+        sub_title: Software Developer
+        caption: February 2018 - June 2020
+        quote: >
+          Tieto creates digital advantage for businesses and society. They are a leading digital services and software company with local presence and global capabilities.
+        description: | # this will include new lines to allow paragraphs
+          Working as a Software Developer in supporting team for developers and testers. Inproving testing environment, developing testing framework and taking care of continous integration.
+
+          Java, bash, python, Jenkins, TestNG, CI
+      - layout: left
+        title: Brno University of Technology
+        link: https://www.fit.vut.cz/.en
+        # link_text: boringcompany.com
+        sub_title: Research Scholar
+        caption: February 2016 - Septembre 2018
+        quote: >
+          Faculty of Information Technology is in the position of one of the leading workplaces in the Czech Republic, which provides education and research in the field of information technology.
+        description: | # this will include new lines to allow paragraphs
+          Working on Corpora Processing Software project as part of [Knowledge Technology Research Group](https://www.fit.vut.cz/research/group/knot/.en).
+
+          Java, Vaadin Framework, bash, python, HTML
+  - title: Education # Title for the section
+    layout: list # Type of content section (list/text)
+    content:
+      - layout: left
+        title: Masaryk University
+        caption: 2020 - Present
+        sub_title: PhD Genomics and Proteomics
+        quote: >
+          The aim of the Genomics and Proteomics program is to train top class specialist in these subjects. Students will acquire extensive and in-depth knowledge about the structure and function of the genome at all basic levels of living systems. They will deepen their knowledge and skills in basic biological disciplines, in biochemistry and proteomics and in biophysics. In addition to the theoretical principles of the discipline, students are also closely acquainted with performing basic and advanced methods used in various disciplines.
+        description: |
+          Research topic: Modeling Small RNA binding rules using Machine Learning
+
+      - layout: left
+        title: Brno University of Technology
+        caption: 2018 - 2020
+        sub_title: MSc Bioinformatics and Biocomputing
+        quote: >
+          Students of the branch acquire deeper knowledge in the bioinformatics and natural computing. This give them knowledge and skills base to analyse, design and verification of problems of biological databases as well as use, design, implement and accelerate algorithms for analysis of the biological data. They are able to apply natural computing algorithms (evolutionary algorithms, artificial neural networks, fuzzy systems etc.) in the complex design and optimization problems.
+        description: |
+          Master's Thesis: [Bacteria Classification into Taxonomic Categories Based on Properties of 16s rRNA](https://www.fit.vut.cz/study/thesis/22671/.en)
+
+      - layout: left
+        title: Brno University of Technology
+        caption: 2015 - 2018
+        sub_title: BSc Information Technology
+        quote: >
+          The aim of the Information Technology Bachelor Degree Programme is to prepare alumni who are able to act as designers, programmers, and servicemen of computer systems, digital systems, computer networks, computer-based systems and programmers and administrators of database systems and information systems.
+        description: |
+          Bachelor's Thesis: [Searching Semantically Annotated Texts](https://www.vutbr.cz/en/students/final-thesis/detail/114837?zp_id=114837)
+  - title: Projects # Title for the section
+    layout: list # Type of content section (list/text)
+    content:
+      - layout: top-middle
+        title: Biology Crash Course
+        link: https://katarinagresova.github.io/biology-crash-course/
+        # link_text: Project Website
+        #additional_links:
+        #  - title:  sproogen/modern-resume-theme
+        #    icon: fab fa-github
+        #    url: github.com/sproogen/modern-resume-theme
+          # - title:  Github page for project (eg. sproogen/modern-resume-theme)
+          #   icon: fab fa-github
+          #   url: Link to project (eg. sproogen.github.io/modern-resume-theme)
+        quote: >
+          Informal notes from semi-formal biology discussions.
+        description: | # this will include new lines to allow paragraphs
+          You can find here notes from Biology Crash Course held in RBP Bioinformatics lab. It is far from comprehensive explanation, but it might be a good starting point.
+#  - title: A Little More About Me
+#    layout: text
+#    content: | # this will include new lines to allow paragraphs
+#      Alongside my interests in networks and software engineering some of my other interests and hobbies are:
+#      - Rock climbing
+#      - Gaming
+#      - Knitting
+#      - [Becoming a ninja](https://www.youtube.com/watch?v=vtg4o__aRMg)
+#
+#      Look at this cool image
+#      ![Trees](/katarinagresova.github.io/images/landscape-trees.jpg "Trees")
+
+# Footer
+footer_show_references: false
+# references_title: References on request (Override references text)
+
+# Build settings
+remote_theme: sproogen/resume-theme
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+plugins:
+ - jekyll-seo-tag
