@@ -57,6 +57,53 @@ about_content: | # this will include new lines to allow paragraphs
   I am also capable to combine my studies with work in a company. I am working as a Software Developer for a couple of years and I am having fun with <mark>Scrum</mark> and corporate processes.
 
 content:
+  - title: Projects # Title for the section
+    layout: list # Type of content section (list/text)
+    content:
+      - layout: top-middle
+        title: Biology Crash Course
+        link: https://katarinagresova.github.io/biology-crash-course/
+        # link_text: Project Website
+        #additional_links:
+        #  - title:  sproogen/modern-resume-theme
+        #    icon: fab fa-github
+        #    url: github.com/sproogen/modern-resume-theme
+          # - title:  Github page for project (eg. sproogen/modern-resume-theme)
+          #   icon: fab fa-github
+          #   url: Link to project (eg. sproogen.github.io/modern-resume-theme)
+        quote: >
+          Informal notes from semi-formal biology discussions.
+        description: | # this will include new lines to allow paragraphs
+          You can find here notes from Biology Crash Course held in RBP Bioinformatics lab. It is far from comprehensive explanation, but it might be a good starting point.
+  - title: Education # Title for the section
+    layout: list # Type of content section (list/text)
+    content:
+      - layout: left
+        title: Masaryk University
+        caption: 2020 - Present
+        sub_title: PhD Genomics and Proteomics
+        quote: >
+          The aim of the Genomics and Proteomics program is to train top class specialist in these subjects. Students will acquire extensive and in-depth knowledge about the structure and function of the genome at all basic levels of living systems. They will deepen their knowledge and skills in basic biological disciplines, in biochemistry and proteomics and in biophysics. In addition to the theoretical principles of the discipline, students are also closely acquainted with performing basic and advanced methods used in various disciplines.
+        description: |
+          Research topic: Modeling Small RNA binding rules using Machine Learning
+
+      - layout: left
+        title: Brno University of Technology
+        caption: 2018 - 2020
+        sub_title: MSc Bioinformatics and Biocomputing
+        quote: >
+          Students of the branch acquire deeper knowledge in the bioinformatics and natural computing. This give them knowledge and skills base to analyse, design and verification of problems of biological databases as well as use, design, implement and accelerate algorithms for analysis of the biological data. They are able to apply natural computing algorithms (evolutionary algorithms, artificial neural networks, fuzzy systems etc.) in the complex design and optimization problems.
+        description: |
+          Master's Thesis: [Bacteria Classification into Taxonomic Categories Based on Properties of 16s rRNA](https://www.fit.vut.cz/study/thesis/22671/.en)
+
+      - layout: left
+        title: Brno University of Technology
+        caption: 2015 - 2018
+        sub_title: BSc Information Technology
+        quote: >
+          The aim of the Information Technology Bachelor Degree Programme is to prepare alumni who are able to act as designers, programmers, and servicemen of computer systems, digital systems, computer networks, computer-based systems and programmers and administrators of database systems and information systems.
+        description: |
+          Bachelor's Thesis: [Searching Semantically Annotated Texts](https://www.vutbr.cz/en/students/final-thesis/detail/114837?zp_id=114837)
   - title: Experience # Title for the section
     layout: list # Type of content section (list/text)
     content:
@@ -98,53 +145,6 @@ content:
           Working on Corpora Processing Software project as part of [Knowledge Technology Research Group](https://www.fit.vut.cz/research/group/knot/.en).
 
           Java, Vaadin Framework, bash, python, HTML
-  - title: Education # Title for the section
-    layout: list # Type of content section (list/text)
-    content:
-      - layout: left
-        title: Masaryk University
-        caption: 2020 - Present
-        sub_title: PhD Genomics and Proteomics
-        quote: >
-          The aim of the Genomics and Proteomics program is to train top class specialist in these subjects. Students will acquire extensive and in-depth knowledge about the structure and function of the genome at all basic levels of living systems. They will deepen their knowledge and skills in basic biological disciplines, in biochemistry and proteomics and in biophysics. In addition to the theoretical principles of the discipline, students are also closely acquainted with performing basic and advanced methods used in various disciplines.
-        description: |
-          Research topic: Modeling Small RNA binding rules using Machine Learning
-
-      - layout: left
-        title: Brno University of Technology
-        caption: 2018 - 2020
-        sub_title: MSc Bioinformatics and Biocomputing
-        quote: >
-          Students of the branch acquire deeper knowledge in the bioinformatics and natural computing. This give them knowledge and skills base to analyse, design and verification of problems of biological databases as well as use, design, implement and accelerate algorithms for analysis of the biological data. They are able to apply natural computing algorithms (evolutionary algorithms, artificial neural networks, fuzzy systems etc.) in the complex design and optimization problems.
-        description: |
-          Master's Thesis: [Bacteria Classification into Taxonomic Categories Based on Properties of 16s rRNA](https://www.fit.vut.cz/study/thesis/22671/.en)
-
-      - layout: left
-        title: Brno University of Technology
-        caption: 2015 - 2018
-        sub_title: BSc Information Technology
-        quote: >
-          The aim of the Information Technology Bachelor Degree Programme is to prepare alumni who are able to act as designers, programmers, and servicemen of computer systems, digital systems, computer networks, computer-based systems and programmers and administrators of database systems and information systems.
-        description: |
-          Bachelor's Thesis: [Searching Semantically Annotated Texts](https://www.vutbr.cz/en/students/final-thesis/detail/114837?zp_id=114837)
-  - title: Projects # Title for the section
-    layout: list # Type of content section (list/text)
-    content:
-      - layout: top-middle
-        title: Biology Crash Course
-        link: https://katarinagresova.github.io/biology-crash-course/
-        # link_text: Project Website
-        #additional_links:
-        #  - title:  sproogen/modern-resume-theme
-        #    icon: fab fa-github
-        #    url: github.com/sproogen/modern-resume-theme
-          # - title:  Github page for project (eg. sproogen/modern-resume-theme)
-          #   icon: fab fa-github
-          #   url: Link to project (eg. sproogen.github.io/modern-resume-theme)
-        quote: >
-          Informal notes from semi-formal biology discussions.
-        description: | # this will include new lines to allow paragraphs
-          You can find here notes from Biology Crash Course held in RBP Bioinformatics lab. It is far from comprehensive explanation, but it might be a good starting point.
 #  - title: A Little More About Me
 #    layout: text
 #    content: | # this will include new lines to allow paragraphs
