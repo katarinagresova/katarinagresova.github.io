@@ -25,7 +25,7 @@ github_username:  katarinagresova
 linkedin_username: katarinagresova
 # xing_username: jekyll
 # pinterest_username: jekyll
-#youtube_username: globalmtb
+# youtube_username: globalmtb
 # googleplus_username: +jekyll
 # orcid_username: 0000-0000-0000-0000
 
@@ -54,7 +54,7 @@ about_content: | # this will include new lines to allow paragraphs
 
   I have Bachelor's degree in Information technology, Master's degree in Bioinformatics and Biocomputing and currently I am pursuing Doctoral studies in Genomics and Proteomics.
 
-  I am also capable to combine my studies with work in a company. I am working as a Software Developer for a couple of years and I am having fun with <mark>Scrum</mark> and corporate processes.
+  I am also capable to combine my studies with work in a company. I am working as a Software Developer for a couple of years and I am having fun with <mark>Java</mark> and <mark>SQL</mark>.
 
 content:
   - title: Projects # Title for the section
