@@ -75,13 +75,12 @@ content:
           Informal notes from semi-formal biology discussions.
         description: | # this will include new lines to allow paragraphs
           You can find here notes from Biology Crash Course held in [RBP Bioinformatics lab](https://www.ceitec.eu/rbp-bioinformatics-panagiotis-alexiou/rg281). It is far from comprehensive explanation, but it might be a good starting point.
-      
-      - layour: top-middle
+      - layout: top-middle
         title: Ensembl scraper
         link: https://github.com/katarinagresova/ensembl_scraper
         quote: >
           Get all functional elements data you ever wanted.
-        description: |
+        description: | # this will include new lines to allow paragraphs
           Command line tool for preparing datasets of function elements sequences downloaded from Ensembl. It able to download selected data from Ensembl, do quality check, split to train-validate-test datasets and generate random negative example for each positive one.
           
   - title: Education # Title for the section
