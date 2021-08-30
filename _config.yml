@@ -74,7 +74,7 @@ content:
         quote: >
           Informal notes from semi-formal biology discussions.
         description: | # this will include new lines to allow paragraphs
-          You can find here notes from Biology Crash Course held in RBP Bioinformatics lab. It is far from comprehensive explanation, but it might be a good starting point.
+          You can find here notes from Biology Crash Course held in [RBP Bioinformatics lab](https://www.ceitec.eu/rbp-bioinformatics-panagiotis-alexiou/rg281). It is far from comprehensive explanation, but it might be a good starting point.
   - title: Education # Title for the section
     layout: list # Type of content section (list/text)
     content:
