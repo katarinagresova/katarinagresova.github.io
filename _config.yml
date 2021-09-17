@@ -80,7 +80,7 @@ content:
         title: Ensembl scraper
         link: https://github.com/katarinagresova/ensembl_scraper
         quote: >
-          Get all functional elements datasets you ever wanted.
+          Create all functional elements datasets you ever wanted.
         description: | # this will include new lines to allow paragraphs
           Command line tool for preparing datasets of function elements sequences downloaded from Ensembl. It able to download selected data from Ensembl, do quality check, split to train-validate-test datasets and generate random negative example for each positive one.
           
