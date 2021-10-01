@@ -129,7 +129,7 @@ content:
 
           The focus of the research performed in the lab is on ways that new technological breakthroughs in machine learning can be harnessed to produce novel biological meaning from sequencing data. Our expertise lies mainly in RNA/DNA Binding Protein regulation and function, and we utilize datasets based on the CLIP/ChIP-Seq family of methods.
 
-          Java, SQL, ODBC, Perforce
+          python, tersorflow, pytorch, fastai, deep learning, NLP, genomics
       - layout: left
         title: Oracle NetSuite
         link: https://www.netsuite.com/
@@ -143,7 +143,7 @@ content:
 
           NetSuite SuiteAnalytics Connect Service provides the ability to archive, analyze and report on NetSuite data using a third-party tool or any custom-built application on any type of device.
 
-          python, tersorflow, pytorch, fastai, deep learning, NLP, genomics
+          Java, SQL, ODBC, Perforce
       - layout: left
         title: Tieto
         link: https://www.tietoevry.com/
