@@ -56,6 +56,7 @@ about_content: | # this will include new lines to allow paragraphs
 
   I am also capable to combine my studies with work in a company and I have 3+ years experience as a Software Developer, having fun with <mark>Java</mark> and <mark>SQL</mark>.
 
+
 content:
   - title: Projects # Title for the section
     layout: list # Type of content section (list/text)
@@ -83,7 +84,17 @@ content:
           Create all functional elements datasets you ever wanted.
         description: | # this will include new lines to allow paragraphs
           Command line tool for preparing datasets of function elements sequences downloaded from Ensembl. It able to download selected data from Ensembl, do quality check, split to train-validate-test datasets and generate random negative example for each positive one.
-          
+        
+  - title: Teaching # Title for the section
+    layout: list # Type of content section (list/text)
+    content:
+      - layout: top-middle
+        title: LF:DSIB01 Introduction to Bioinformatics (Autumn 2021) 
+        link: https://is.muni.cz/course/med/autumn2021/DSIB01
+        description: |
+          Teaching several practical lessons focused on git, command line and NGS data preprocessing. Materials: [https://katarinagresova.github.io/DSIB01_2021/](https://katarinagresova.github.io/DSIB01_2021/).
+        
+        
   - title: Education # Title for the section
     layout: list # Type of content section (list/text)
     content:
@@ -113,6 +124,11 @@ content:
           The aim of the Information Technology Bachelor Degree Programme is to prepare alumni who are able to act as designers, programmers, and servicemen of computer systems, digital systems, computer networks, computer-based systems and programmers and administrators of database systems and information systems.
         description: |
           Bachelor's Thesis: [Searching Semantically Annotated Texts](https://www.vutbr.cz/en/students/final-thesis/detail/114837?zp_id=114837)
+          
+          
+          
+          
+          
   - title: Experience # Title for the section
     layout: list # Type of content section (list/text)
     content:
