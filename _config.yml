@@ -54,7 +54,7 @@ about_content: | # this will include new lines to allow paragraphs
 
   I have Bachelor's degree in Information technology, Master's degree in Bioinformatics and Biocomputing and currently I am pursuing Doctoral studies in Genomics and Proteomics.
 
-  I am also capable to combine my studies with work in a company. I am working as a Software Developer for a couple of years and I am having fun with <mark>Java</mark> and <mark>SQL</mark>.
+  I am also capable to combine my studies with work in a company and I have 3+ years experience as a Software Developer, having fun with <mark>Java</mark> and <mark>SQL</mark>.
 
 content:
   - title: Projects # Title for the section
@@ -117,11 +117,25 @@ content:
     layout: list # Type of content section (list/text)
     content:
       - layout: left
+        title: CEITEC MU - Central European Institute of Technology
+        link: https://www.ceitec.eu/rbp-bioinformatics/rg281
+        # link_text: boringcompany.com
+        sub_title: Research Specialist
+        caption: October 2021 - present
+        quote: >
+          Central European Institute of Technology is a young and dynamic center of scientific excellence, which strives to fulfill its mission in advancing knowledge in the field of life and materials sciences, based on the interconnection of the scientific capacities of its six partners.
+        description: | # this will include new lines to allow paragraphs
+          Working as a Research Specialist in Panagiotis Alexiou Research Group.
+
+          The focus of the research performed in the lab is on ways that new technological breakthroughs in machine learning can be harnessed to produce novel biological meaning from sequencing data. Our expertise lies mainly in RNA/DNA Binding Protein regulation and function, and we utilize datasets based on the CLIP/ChIP-Seq family of methods.
+
+          Java, SQL, ODBC, Perforce
+      - layout: left
         title: Oracle NetSuite
         link: https://www.netsuite.com/
         # link_text: boringcompany.com
         sub_title: Software Developer
-        caption: July 2020 - Present
+        caption: July 2020 - September 2021
         quote: >
           NetSuite is the world’s leading provider of cloud-based business management software. NetSuite helps companies manage core business processes with a single, fully integrated system covering ERP/financials, CRM, ecommerce, inventory and more. NetSuite transforms how businesses operate so they can achieve their business vision.
         description: | # this will include new lines to allow paragraphs
@@ -129,7 +143,7 @@ content:
 
           NetSuite SuiteAnalytics Connect Service provides the ability to archive, analyze and report on NetSuite data using a third-party tool or any custom-built application on any type of device.
 
-          Java, SQL, ODBC, Perforce
+          python, tersorflow, pytorch, fastai, deep learning, NLP, genomics
       - layout: left
         title: Tieto
         link: https://www.tietoevry.com/
@@ -147,7 +161,7 @@ content:
         link: https://www.fit.vut.cz/.en
         # link_text: boringcompany.com
         sub_title: Research Scholar
-        caption: February 2016 - Septembre 2018
+        caption: February 2016 - September 2018
         quote: >
           Faculty of Information Technology is in the position of one of the leading workplaces in the Czech Republic, which provides education and research in the field of information technology.
         description: | # this will include new lines to allow paragraphs
