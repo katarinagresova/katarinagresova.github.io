@@ -85,7 +85,7 @@ content:
         description: | # this will include new lines to allow paragraphs
           Command line tool for preparing datasets of function elements sequences downloaded from Ensembl. It able to download selected data from Ensembl, do quality check, split to train-validate-test datasets and generate random negative example for each positive one.
         
-       - layout: top-middle
+      - layout: top-middle
         title: Genomic benchmarks
         link: https://github.com/ML-Bioinfo-CEITEC/genomic_benchmarks
         quote: >
