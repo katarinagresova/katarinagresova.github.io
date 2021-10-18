@@ -85,6 +85,14 @@ content:
         description: | # this will include new lines to allow paragraphs
           Command line tool for preparing datasets of function elements sequences downloaded from Ensembl. It able to download selected data from Ensembl, do quality check, split to train-validate-test datasets and generate random negative example for each positive one.
         
+       - layout: top-middle
+        title: Genomic benchmarks
+        link: https://github.com/ML-Bioinfo-CEITEC/genomic_benchmarks
+        quote: >
+          Collection of easily accessible, well curated and diverse genomics classification datasets together with current state of the art metrics.
+        description: | # this will include new lines to allow paragraphs
+          Finaly introducing benchmark datasets into field of genomics. Benchmarks were shown to be important in other fields as well (as imagenet or protein folding problem) since they created competition and pushed field forward. If you don't have a benchmark, then everybody is creating one for them to prove that their model is better than the others. And benchmarks also reduce the overhead of researches that want to come into this field and try different algorithms without necessary having very deep understanding of biology behind the problem.
+ 
   - title: Teaching # Title for the section
     layout: list # Type of content section (list/text)
     content:
