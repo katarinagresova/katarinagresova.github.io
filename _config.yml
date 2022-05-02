@@ -141,6 +141,18 @@ content:
     layout: list # Type of content section (list/text)
     content:
       - layout: left
+        title: Proficio Marketing
+        link: https://proficiodigital.com/
+        # link_text: boringcompany.com
+        sub_title: Machine Learning Specialist
+        caption: December 2020 - Present
+        quote: >
+          Proficio Marketing is a digital full service agency that helps clients with performance campaigns, data and business analytics, brand building and social network management and more.
+        description: | # this will include new lines to allow paragraphs
+          Working as a Machine Learning Specialist for the Analytics team. My goal is to bring additional value for customers through their data. I start with understanding the business problem, exploring the data, cleaning it, choosing the optimal machine learning algorithm, implementing it and I finish with presenting my results and suggesting future work to get this into production. 
+          
+          python, pandas, numpy, matplotlib, scikit-learn, jupyter
+      - layout: left
         title: CEITEC MU - Central European Institute of Technology
         link: https://www.ceitec.eu/rbp-bioinformatics/rg281
         # link_text: boringcompany.com
