@@ -35,7 +35,7 @@ additional_links:
 #  icon: fas fa-globe
 #  url: https://www.itsgoingto.be
 - title: Blog
-  icon: fa-solid fa-blog #/> font awesome brand icon name (eg. fab fa-twitter) (https://fontawesome.com/icons?d=gallery&m=free)
+  icon: fa-brands fa-blogger #/> font awesome brand icon name (eg. fab fa-twitter) (https://fontawesome.com/icons?d=gallery&m=free)
   url: https://katarinagresova.github.io/blog/  #Link url (eg. https://google.com)
 
 # Google Analytics and Tag Manager
