@@ -147,11 +147,13 @@ content:
         link: https://proficiodigital.com/
         # link_text: boringcompany.com
         sub_title: Machine Learning Specialist
-        caption: December 2020 - Present
+        caption: December 2021 - Present
         quote: >
           Proficio Marketing is a digital full service agency that helps clients with performance campaigns, data and business analytics, brand building and social network management and more.
         description: | # this will include new lines to allow paragraphs
-          Working as a Machine Learning Specialist for the Analytics team. My goal is to bring additional value for customers through their data. I start with understanding the business problem, exploring the data, cleaning it, choosing the optimal machine learning algorithm, implementing it and I finish with presenting my results and suggesting future work to get this into production. 
+          Working as a Machine Learning Specialist for the Analytics team. 
+          
+          My goal is to bring additional value for customers through their data. I start with understanding the business problem, exploring the data, cleaning it, choosing the optimal machine learning algorithm, implementing it and I finish with presenting my results and suggesting future work to get this into production. 
           
           python, pandas, numpy, matplotlib, scikit-learn, jupyter
       - layout: left
@@ -178,7 +180,7 @@ content:
           NetSuite is the world’s leading provider of cloud-based business management software. NetSuite helps companies manage core business processes with a single, fully integrated system covering ERP/financials, CRM, ecommerce, inventory and more. NetSuite transforms how businesses operate so they can achieve their business vision.
         description: | # this will include new lines to allow paragraphs
           Working as a Software Developer in SuiteAnalytics Connect team.
-
+          
           NetSuite SuiteAnalytics Connect Service provides the ability to archive, analyze and report on NetSuite data using a third-party tool or any custom-built application on any type of device.
 
           Java, SQL, ODBC, Perforce
@@ -191,7 +193,7 @@ content:
         quote: >
           Tieto creates digital advantage for businesses and society. They are a leading digital services and software company with local presence and global capabilities.
         description: | # this will include new lines to allow paragraphs
-          Working as a Software Developer in supporting team for developers and testers. Inproving testing environment, developing testing framework and taking care of continous integration.
+          Working as a Software Developer in supporting team for developers and testers. Improving testing environment, developing testing framework and taking care of continous integration.
 
           Java, bash, python, Jenkins, TestNG, CI
       - layout: left
