@@ -30,13 +30,13 @@ linkedin_username: katarinagresova
 # orcid_username: 0000-0000-0000-0000
 
 # Additional icon links
-#additional_links:
+additional_links:
 #- title: itsgoingto.be
 #  icon: fas fa-globe
 #  url: https://www.itsgoingto.be
-#- title: Blog
-#  icon: fa-brands fa-blogger #/> font awesome brand icon name (eg. fab fa-twitter) (https://fontawesome.com/icons?d=gallery&m=free)
-#  url: https://katarinagresova.github.io/blog/  #Link url (eg. https://google.com)
+- title: Blog
+  icon: fa-brands fa-blogger #/> font awesome brand icon name (eg. fab fa-twitter) (https://fontawesome.com/icons?d=gallery&m=free)
+  url: https://katarinagresova.github.io/blog/  #Link url (eg. https://google.com)
 
 # Google Analytics and Tag Manager
 # Using more than one of these may cause issues with reporting
@@ -56,7 +56,7 @@ about_content: | # this will include new lines to allow paragraphs
 
   I am also capable to combine my studies with work in a company and I have 3+ years experience as a Software Developer, working with <mark>Java</mark> and <mark>SQL</mark> and 5+ months experience as Machine Learning Specialist, having fun with <mark>Python</mark> and <mark>NLP</mark>.
   
-  I sometimes write about thinks I do on my <a href="https://katarinagresova.github.io/blog/">blog</a>.
+#  I sometimes write about thinks I do on my <a href="https://katarinagresova.github.io/blog/">blog</a>.
 
 
 content:
