@@ -115,7 +115,7 @@ content:
         title: AgoBind
         link: https://github.com/katarinagresova/AgoBind
         quote: >
-          Finetining DNABert to miRNA target prediction data.
+          Finetuning DNABert to miRNA target prediction data.
 
       - layout: top-middle
         title: Poetry Generator
