@@ -54,13 +54,13 @@ about_content: | # this will include new lines to allow paragraphs
 
   I have Bachelor's degree in Information technology, Master's degree in Bioinformatics and Biocomputing and currently I am pursuing Doctoral studies in Genomics and Proteomics.
 
-  I am also capable to combine my studies with work in a company and I have 3+ years experience as a Software Developer, working with <mark>Java</mark> and <mark>SQL</mark> and 6+ months experience as Machine Learning Specialist, having fun with <mark>Python</mark>, and <mark>NLP</mark>.
+  I am also capable to combine my studies with work in a company and I have 3+ years experience as a Software Developer, working with <mark>Java</mark> and <mark>SQL</mark> and 6+ months experience as Machine Learning Specialist, having fun with <mark>Python</mark> and <mark>NLP</mark>.
   
 #  I sometimes write about thinks I do on my <a href="https://katarinagresova.github.io/blog/">blog</a>.
 
 
 content:
-  - title: Projects # Title for the section
+  - title: Selected Projects # Title for the section
     layout: list # Type of content section (list/text)
     content:
       - layout: top-middle
@@ -85,15 +85,46 @@ content:
         quote: >
           Create all functional elements datasets you ever wanted.
         description: | # this will include new lines to allow paragraphs
-          Command line tool for preparing datasets of function elements sequences downloaded from Ensembl. It able to download selected data from Ensembl, do quality check, split to train-validate-test datasets and generate random negative example for each positive one.
+          Command line tool for preparing datasets of function elements sequences downloaded from Ensembl. It is able to download selected data from Ensembl, do quality check, split to train-validate-test datasets and generate random negative example for each positive one.
         
       - layout: top-middle
-        title: Genomic benchmarks
+        title: Genomic Benchmarks
         link: https://github.com/ML-Bioinfo-CEITEC/genomic_benchmarks
         quote: >
           Collection of easily accessible, well curated and diverse genomics classification datasets together with current state of the art metrics.
         description: | # this will include new lines to allow paragraphs
-          Finaly introducing benchmark datasets into field of genomics. Benchmarks were shown to be important in other fields as well (as imagenet or protein folding problem) since they created competition and pushed field forward. If you don't have a benchmark, then everybody is creating one for them to prove that their model is better than the others. And benchmarks also reduce the overhead of researches that want to come into this field and try different algorithms without necessary having very deep understanding of biology behind the problem.
+          Recently, deep neural networks have been successfully applied in many biological fields. 
+          In 2020, a deep learning model AlphaFold won the protein folding competition with predicted structures within the error tolerance of experimental methods. 
+          However, this solution of the most prominent bioinformatic challenge of the past 50 year has been possible only thanks to a carefully curated benchmark of experimentally predicted protein structures. 
+          In Genomics, we have similar challenges (annotation of genomes and identification of functional elements) but currently we lack benchmarks similar to protein folding competition. 
+          Therefore, we propose a collection of benchmark datasets for the classification of genomic sequences with the emphasis on transparency, reproducibility, comparativeness and ease of use. 
+          The datasets are open source and the process of their creation is fully documented. 
+          We provide an interface for most commonly used deep learning libraries, implementation of the simple neural network and a training framework that can be used as a starting point for future research. 
+          We believe that this work will reduce the overhead of researchers that want to apply their machine learning knowledge to the field of Genomics and it will create a healthy competition leading to new discoveries.
+       
+      - layout: top-middle
+        title: Product Matching
+        link: https://github.com/katarinagresova/product-matching
+        quote: >
+          Package for finding products across multiple sellers.
+        description: |
+          Package for finding products across multiple sellers. 
+          Primarily developed for pneu market but can be used for any product matching where data can be provided in specified format.
+          
+      - layout: top-middle
+        title: AgoBind
+        link: https://github.com/katarinagresova/AgoBind
+        quote: >
+          Finetining DNABert to miRNA target prediction data.
+
+      - layout: top-middle
+        title: Poetry Generator
+        link: https://github.com/katarinagresova/poetry_generator
+        quote: >
+          Neural poetry inspited by Emily Dickinson.
+        description: |
+          Reccurent neural network trained on poetry by Emily Dickinson.
+          Result is available as a web application: https://generator-poezie.herokuapp.com/
  
   - title: Teaching # Title for the section
     layout: list # Type of content section (list/text)
