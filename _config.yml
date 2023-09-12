@@ -50,11 +50,11 @@ about_profile_image: images/profile.jpg
 about_content: | # this will include new lines to allow paragraphs
   Hello! My name is Katarína.
 
-  I like <mark>Computer Science</mark>, <mark>Biology</mark> and everything in between. Always excited and looking for new challenges, but for now focusing on <mark>Machine learning</mark> and <mark>Genomics</mark>.
+  I like <mark>Computer Science</mark>, <mark>Biology</mark> and everything in between. Always excited and looking for new challenges, but for now focusing on <mark>Deep learning</mark> and <mark>Genomics</mark>.
 
-  I have Bachelor's degree in Information technology, Master's degree in Bioinformatics and Biocomputing and currently I am pursuing Doctoral studies in Genomics and Proteomics.
+  I have Bachelor's degree in Information technology, Master's degree in Bioinformatics and Biocomputing and currently I am pursuing Doctoral studies in Deep Learning and Genomics.
 
-  I am also capable to combine my studies with work in a company and I have 3+ years experience as a Software Developer, working with <mark>Java</mark> and <mark>SQL</mark> and 6+ months experience as Machine Learning Specialist, having fun with <mark>Python</mark> and <mark>NLP</mark>.
+  I am also capable to combine my studies with work in a company and I have 3+ years experience as a Software Developer, working with <mark>Java</mark> and <mark>SQL</mark> and 2 years experience as Machine Learning Specialist, having fun with <mark>Python</mark>, <mark>NLP</mark> and <mark>computer vision</mark>.
   
 #  I sometimes write about thinks I do on my <a href="https://katarinagresova.github.io/blog/">blog</a>.
 
@@ -174,17 +174,19 @@ content:
     layout: list # Type of content section (list/text)
     content:
       - layout: left
-        title: Databy
-        link: https://www.databy.io/
+        title: Melown Technologies
+        link: https://www.melowntech.com/
         # link_text: boringcompany.com
-        sub_title: Machine Learning Specialist
-        caption: May 2022 - Present
+        sub_title: Machine Learning Engineer
+        caption: January 2023 - Present
         quote: >
           The future of the society and your company is in the data. Start using them to your advantage and know their value. We will teach you to work with them and make the right decisions.
         description: | # this will include new lines to allow paragraphs
-
-          python, pandas, numpy, matplotlib, scikit-learn, jupyter
-    
+          Working as a Machine Learning Engineer in a Machine Learning team.
+          As a member of a dedicated team, I actively contribute to the exploration and mastery of a 3D reality-capture system, aimed at discovering the underlying meaning of pixel values. Notable projects within this context include developing robust techniques for extracting text from images and seamlessly merging results obtained from multiple viewpoints. Additionally, I have played a key role in enhancing the realism of LOD2 buildings by employing advanced adjustment techniques. Furthermore, I have been actively involved in preprocessing training data to optimize instance semantic segmentation algorithms, ultimately improving  efficiency of the models.
+          
+          python, jupyter, C++, openCV, bash, computer vision, 3D
+          
       - layout: left
         title: CEITEC MU - Central European Institute of Technology
         link: https://www.ceitec.eu/rbp-bioinformatics/rg281
@@ -196,8 +198,7 @@ content:
         description: | # this will include new lines to allow paragraphs
           Working as a Research Specialist in Panagiotis Alexiou Research Group.
 
-          The focus of the research performed in the lab is on ways that new technological breakthroughs in machine learning can be harnessed to produce novel biological meaning from sequencing data. Our expertise lies mainly in RNA/DNA Binding Protein regulation and function, and we utilize datasets based on the CLIP/ChIP-Seq family of methods.
-
+          As a PhD student, my research journey has been driven by a passion for staying at the forefront of genomics and machine learning advancements, particularly in the domain of miRNA targeting and deep learning. A notable accomplishment during my doctoral studies was the development of a robust deep learning model for precise classification of miRNA targets, leveraging CLASH data. This achievement required extensive effort in both model development and interpretation, leading to novel biological insights learned by the model. Furthermore, I have actively contributed to the field by curating and collecting diverse genomic datasets, facilitating the development and benchmarking of machine and deep learning models. These datasets serve as invaluable resources for researchers in their pursuit of advancing the field of genomics through the power of artificial intelligence.
           python, tersorflow, pytorch, fastai, deep learning, NLP, genomics
     
       - layout: left
@@ -205,15 +206,14 @@ content:
         link: https://proficiodigital.com/
         # link_text: boringcompany.com
         sub_title: Machine Learning Specialist
-        caption: December 2021 - April 2022
+        caption: December 2021 - September 2022
         quote: >
           Proficio Marketing is a digital full service agency that helps clients with performance campaigns, data and business analytics, brand building and social network management and more.
         description: | # this will include new lines to allow paragraphs
-          Worked as a Machine Learning Specialist for the Analytics team. 
+          Working as a Machine Learning Specialist in Databy (formerly the Analytics team in Proficio).
           
-          My goal was to bring additional value for customers through their data. I started with understanding the business problem, exploring the data, cleaning it, choosing the optimal machine learning algorithm, implementing it and I finished with presenting my results and suggesting future work to get this into production. 
-          
-          python, pandas, numpy, matplotlib, scikit-learn, jupyter
+          In my position at Proficio Marketing, my primary responsibility was to identify opportunities for applying machine/deep learning techniques and develop proof of concept solutions. I focused on leveraging customer data to deliver enhanced value. This involved a systematic approach, beginning with a comprehensive understanding of the business problem at hand. I would then explore and cleanse the relevant data, carefully selecting the most suitable machine learning algorithms. Implementing these algorithms, I successfully generated insightful results and delivered compelling presentations to stakeholders.           
+          python, pandas, numpy, matplotlib, scikit-learn, jupyter, tensorflow, NLP, time-series
 
       - layout: left
         title: Oracle NetSuite
@@ -226,8 +226,7 @@ content:
         description: | # this will include new lines to allow paragraphs
           Working as a Software Developer in SuiteAnalytics Connect team.
           
-          NetSuite SuiteAnalytics Connect Service provides the ability to archive, analyze and report on NetSuite data using a third-party tool or any custom-built application on any type of device.
-
+          In my role I actively contributed to the development of features, wrote comprehensive unit tests, and deployed tools for the NetSuite SuiteAnalytics Connect Service. This critical service enables users to efficiently archive, analyze, and report on NetSuite data using third-party tools or custom-built applications across various devices.
           Java, SQL, ODBC, Perforce
       - layout: left
         title: Tieto
@@ -238,8 +237,9 @@ content:
         quote: >
           Tieto creates digital advantage for businesses and society. They are a leading digital services and software company with local presence and global capabilities.
         description: | # this will include new lines to allow paragraphs
-          Working as a Software Developer in supporting team for developers and testers. Improving testing environment, developing testing framework and taking care of continous integration.
-
+          Working as a Software Developer in the Nemesis team.
+          
+          Starting as an intern, I swiftly progressed to a permanent role within a data center project. In this capacity, I provided crucial support to developers and testers, effectively enhancing the testing environment. I took on the responsibility of developing a comprehensive testing framework, ensuring streamlined and efficient testing processes. Additionally, I played a pivotal role in establishing and maintaining continuous integration practices, contributing to the overall quality and efficiency of the project.
           Java, bash, python, Jenkins, TestNG, CI
       - layout: left
         title: Brno University of Technology
@@ -250,8 +250,9 @@ content:
         quote: >
           Faculty of Information Technology is in the position of one of the leading workplaces in the Czech Republic, which provides education and research in the field of information technology.
         description: | # this will include new lines to allow paragraphs
-          Working on Corpora Processing Software project as part of [Knowledge Technology Research Group](https://www.fit.vut.cz/research/group/knot/.en).
-
+          Working as a Research Scholar in the Knowledge Technology Research Group.
+          
+          Starting from my second semester of studies and continuing until the completion of my awarded Bachelor thesis, I dedicated my efforts to the Corpora Processing Software project, emphasizing semantic search. Throughout this project, I focused on enhancing the user experience of the search engine and implementing advanced result filtering capabilities based on semantic annotations. By leveraging my skills, I successfully improved the overall functionality and usability of the software, contributing to its effectiveness in delivering precise and contextually relevant search results.
           Java, Vaadin Framework, bash, python, HTML
 #  - title: A Little More About Me
 #    layout: text
