@@ -60,81 +60,6 @@ about_content: | # this will include new lines to allow paragraphs
 
 
 content:
-  - title: Selected Projects # Title for the section
-    layout: list # Type of content section (list/text)
-    content:
-      - layout: top-middle
-        title: Biology Crash Course
-        link: https://katarinagresova.github.io/biology-crash-course/
-        # link_text: Project Website
-        #additional_links:
-        #  - title:  sproogen/modern-resume-theme
-        #    icon: fab fa-github
-        #    url: github.com/sproogen/modern-resume-theme
-          # - title:  Github page for project (eg. sproogen/modern-resume-theme)
-          #   icon: fab fa-github
-          #   url: Link to project (eg. sproogen.github.io/modern-resume-theme)
-        quote: >
-          Informal notes from semi-formal biology discussions.
-        description: | # this will include new lines to allow paragraphs
-          You can find here notes from Biology Crash Course held in [RBP Bioinformatics lab](https://www.ceitec.eu/rbp-bioinformatics-panagiotis-alexiou/rg281). It is far from comprehensive explanation, but it might be a good starting point.
-      
-      - layout: top-middle
-        title: Ensembl scraper
-        link: https://github.com/katarinagresova/ensembl_scraper
-        quote: >
-          Create all functional elements datasets you ever wanted.
-        description: | # this will include new lines to allow paragraphs
-          Command line tool for preparing datasets of function elements sequences downloaded from Ensembl. It is able to download selected data from Ensembl, do quality check, split to train-validate-test datasets and generate random negative example for each positive one.
-        
-      - layout: top-middle
-        title: Genomic Benchmarks
-        link: https://github.com/ML-Bioinfo-CEITEC/genomic_benchmarks
-        quote: >
-          Collection of easily accessible, well curated and diverse genomics classification datasets together with current state of the art metrics.
-        description: | # this will include new lines to allow paragraphs
-          Recently, deep neural networks have been successfully applied in many biological fields. 
-          In 2020, a deep learning model AlphaFold won the protein folding competition with predicted structures within the error tolerance of experimental methods. 
-          However, this solution of the most prominent bioinformatic challenge of the past 50 year has been possible only thanks to a carefully curated benchmark of experimentally predicted protein structures. 
-          In Genomics, we have similar challenges (annotation of genomes and identification of functional elements) but currently we lack benchmarks similar to protein folding competition. 
-          Therefore, we propose a collection of benchmark datasets for the classification of genomic sequences with the emphasis on transparency, reproducibility, comparativeness and ease of use. 
-          The datasets are open source and the process of their creation is fully documented. 
-          We provide an interface for most commonly used deep learning libraries, implementation of the simple neural network and a training framework that can be used as a starting point for future research. 
-          We believe that this work will reduce the overhead of researchers that want to apply their machine learning knowledge to the field of Genomics and it will create a healthy competition leading to new discoveries.
-       
-      - layout: top-middle
-        title: Product Matching
-        link: https://github.com/katarinagresova/product-matching
-        quote: >
-          Package for finding products across multiple sellers.
-        description: |
-          Package for finding products across multiple sellers. 
-          Primarily developed for pneu market but can be used for any product matching where data can be provided in specified format.
-          
-      - layout: top-middle
-        title: AgoBind
-        link: https://github.com/katarinagresova/AgoBind
-        quote: >
-          Finetuning DNABert to miRNA target prediction data.
-
-      - layout: top-middle
-        title: Poetry Generator
-        link: https://github.com/katarinagresova/poetry_generator
-        quote: >
-          Neural poetry inspited by Emily Dickinson.
-        description: |
-          Reccurent neural network trained on poetry by Emily Dickinson.
-          Result is available as a web application: https://generator-poezie.herokuapp.com/
- 
-  - title: Teaching # Title for the section
-    layout: list # Type of content section (list/text)
-    content:
-      - layout: top-middle
-        title: LF:DSIB01 Introduction to Bioinformatics (Autumn 2021) 
-        link: https://is.muni.cz/course/med/autumn2021/DSIB01
-        description: |
-          Teaching several practical lessons focused on git, command line and NGS data preprocessing. Materials: [https://katarinagresova.github.io/DSIB01_2021/](https://katarinagresova.github.io/DSIB01_2021/).
-        
         
   - title: Education # Title for the section
     layout: list # Type of content section (list/text)
@@ -167,7 +92,15 @@ content:
           Bachelor's Thesis: [Searching Semantically Annotated Texts](https://www.vutbr.cz/en/students/final-thesis/detail/114837?zp_id=114837)
           
           
-          
+  - title: Teaching # Title for the section
+    layout: list # Type of content section (list/text)
+    content:
+      - layout: top-middle
+        title: LF:DSIB01 Introduction to Bioinformatics (Autumn 2021) 
+        link: https://is.muni.cz/course/med/autumn2021/DSIB01
+        description: |
+          Teaching several practical lessons focused on git, command line and NGS data preprocessing. Materials: [https://katarinagresova.github.io/DSIB01_2021/](https://katarinagresova.github.io/DSIB01_2021/).
+           
           
           
   - title: Experience # Title for the section
@@ -254,6 +187,73 @@ content:
           
           Starting from my second semester of studies and continuing until the completion of my awarded Bachelor thesis, I dedicated my efforts to the Corpora Processing Software project, emphasizing semantic search. Throughout this project, I focused on enhancing the user experience of the search engine and implementing advanced result filtering capabilities based on semantic annotations. By leveraging my skills, I successfully improved the overall functionality and usability of the software, contributing to its effectiveness in delivering precise and contextually relevant search results.
           Java, Vaadin Framework, bash, python, HTML
+
+  - title: Selected Projects # Title for the section
+    layout: list # Type of content section (list/text)
+    content:
+      - layout: top-middle
+        title: Biology Crash Course
+        link: https://katarinagresova.github.io/biology-crash-course/
+        # link_text: Project Website
+        #additional_links:
+        #  - title:  sproogen/modern-resume-theme
+        #    icon: fab fa-github
+        #    url: github.com/sproogen/modern-resume-theme
+          # - title:  Github page for project (eg. sproogen/modern-resume-theme)
+          #   icon: fab fa-github
+          #   url: Link to project (eg. sproogen.github.io/modern-resume-theme)
+        quote: >
+          Informal notes from semi-formal biology discussions.
+        description: | # this will include new lines to allow paragraphs
+          You can find here notes from Biology Crash Course held in [RBP Bioinformatics lab](https://www.ceitec.eu/rbp-bioinformatics-panagiotis-alexiou/rg281). It is far from comprehensive explanation, but it might be a good starting point.
+      
+      - layout: top-middle
+        title: Ensembl scraper
+        link: https://github.com/katarinagresova/ensembl_scraper
+        quote: >
+          Create all functional elements datasets you ever wanted.
+        description: | # this will include new lines to allow paragraphs
+          Command line tool for preparing datasets of function elements sequences downloaded from Ensembl. It is able to download selected data from Ensembl, do quality check, split to train-validate-test datasets and generate random negative example for each positive one.
+        
+      - layout: top-middle
+        title: Genomic Benchmarks
+        link: https://github.com/ML-Bioinfo-CEITEC/genomic_benchmarks
+        quote: >
+          Collection of easily accessible, well curated and diverse genomics classification datasets together with current state of the art metrics.
+        description: | # this will include new lines to allow paragraphs
+          Recently, deep neural networks have been successfully applied in many biological fields. 
+          In 2020, a deep learning model AlphaFold won the protein folding competition with predicted structures within the error tolerance of experimental methods. 
+          However, this solution of the most prominent bioinformatic challenge of the past 50 year has been possible only thanks to a carefully curated benchmark of experimentally predicted protein structures. 
+          In Genomics, we have similar challenges (annotation of genomes and identification of functional elements) but currently we lack benchmarks similar to protein folding competition. 
+          Therefore, we propose a collection of benchmark datasets for the classification of genomic sequences with the emphasis on transparency, reproducibility, comparativeness and ease of use. 
+          The datasets are open source and the process of their creation is fully documented. 
+          We provide an interface for most commonly used deep learning libraries, implementation of the simple neural network and a training framework that can be used as a starting point for future research. 
+          We believe that this work will reduce the overhead of researchers that want to apply their machine learning knowledge to the field of Genomics and it will create a healthy competition leading to new discoveries.
+       
+      - layout: top-middle
+        title: Product Matching
+        link: https://github.com/katarinagresova/product-matching
+        quote: >
+          Package for finding products across multiple sellers.
+        description: |
+          Package for finding products across multiple sellers. 
+          Primarily developed for pneu market but can be used for any product matching where data can be provided in specified format.
+          
+      - layout: top-middle
+        title: AgoBind
+        link: https://github.com/katarinagresova/AgoBind
+        quote: >
+          Finetuning DNABert to miRNA target prediction data.
+
+      - layout: top-middle
+        title: Poetry Generator
+        link: https://github.com/katarinagresova/poetry_generator
+        quote: >
+          Neural poetry inspited by Emily Dickinson.
+        description: |
+          Reccurent neural network trained on poetry by Emily Dickinson.
+          Result is available as a web application: https://generator-poezie.herokuapp.com/
+ 
 #  - title: A Little More About Me
 #    layout: text
 #    content: | # this will include new lines to allow paragraphs
