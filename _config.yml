@@ -107,11 +107,36 @@ content:
     layout: list # Type of content section (list/text)
     content:
       - layout: left
+        title: University of Malta
+        link: https://www.um.edu.mt/projects/biogemt/
+        # link_text: boringcompany.com
+        sub_title: Visiting Researcher
+        caption: September 2023 - Present
+        quote: >
+          The ERA Chair in Bioinformatics for Genomics in Malta (BioGeMT) is a project that aims to bring structural change to the University of Malta in the field of Bioinformatics. 
+        description: | # this will include new lines to allow paragraphs
+        
+          python, jupyter, tersorflow, pytorch, bioinformatics, machine learning, deep learning, genomics 
+          
+      - layout: left
+        title: Masaryk University
+        # link: https://www.melowntech.com/
+        # link_text: boringcompany.com
+        sub_title: Researcher
+        caption: July 2023 - Present
+        #quote: >
+          #The future of the society and your company is in the data. Start using them to your advantage and know their value. We will teach you to work with them and make the right decisions.
+        description: | # this will include new lines to allow paragraphs
+          Rowking as a Researcher at Intelligent Systems for Complex Data Research Group, Faculty of Informatics, Masaryk University.
+          
+          python, jupyter, bioinformatics, Deep Learning, protein structures, single-cell sequencing analysis
+          
+      - layout: left
         title: Melown Technologies
         link: https://www.melowntech.com/
         # link_text: boringcompany.com
         sub_title: Machine Learning Engineer
-        caption: January 2023 - Present
+        caption: January 2023 - August 2023
         quote: >
           The future of the society and your company is in the data. Start using them to your advantage and know their value. We will teach you to work with them and make the right decisions.
         description: | # this will include new lines to allow paragraphs
@@ -125,7 +150,7 @@ content:
         link: https://www.ceitec.eu/rbp-bioinformatics/rg281
         # link_text: boringcompany.com
         sub_title: Research Specialist
-        caption: September 2020 - Present
+        caption: September 2020 - August
         quote: >
           Central European Institute of Technology is a young and dynamic center of scientific excellence, which strives to fulfill its mission in advancing knowledge in the field of life and materials sciences, based on the interconnection of the scientific capacities of its six partners.
         description: | # this will include new lines to allow paragraphs
