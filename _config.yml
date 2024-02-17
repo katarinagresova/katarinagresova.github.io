@@ -1,306 +1,476 @@
-# Site
-repository: sproogen/resume-theme
-favicon: images/favicon.ico
+# -----------------------------------------------------------------------------
+# Site settings
+# -----------------------------------------------------------------------------
 
-# Content configuration version
-version: 2
+title: blank # the website title (if blank, full name will be used instead)
+first_name: You
+middle_name: R.
+last_name: Name
+email: you@example.com
+description: > # the ">" symbol means to ignore newlines until "footer_text:"
+  A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+footer_text: >
+  Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
+  Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
+  Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
+keywords: jekyll, jekyll-theme, academic-website, portfolio-website # add your own keywords or leave empty
+lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
+icon: ⚛️ # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
-# Personal info
-name: Katarína Grešová
-title: Genomics and Deep Learning PhD student
-email: 514001@mail.muni.cz
-#website: https://katarinagresova.github.io
+url: https://alshedivat.github.io # the base hostname & protocol for your site
+baseurl: /al-folio # the subpath of your site, e.g. /blog/. Leave blank for root
+last_updated: false # set to true if you want to display last updated in the footer
+impressum_path: # set to path to include impressum link in the footer, use the same path as permalink in a page, helps to conform with EU GDPR
 
-# Dark Mode (true/false/never)
-darkmode: false
+# -----------------------------------------------------------------------------
+# Theme
+# -----------------------------------------------------------------------------
 
-# Social links
-twitter_username: katarinagresova
-github_username:  katarinagresova
-# stackoverflow_username: "00000001"
-# dribbble_username: jekyll
-# facebook_username: jekyll
-# flickr_username: jekyll
-#instagram_username: jameswgrant
-linkedin_username: katarinagresova
-# xing_username: jekyll
-# pinterest_username: jekyll
-# youtube_username: globalmtb
-# googleplus_username: +jekyll
-# orcid_username: 0000-0000-0000-0000
+# repo color theme
+repo_theme_light: default # https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
+repo_theme_dark: dark # https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
+repo_trophies:
+  enabled: true
+  theme_light: flat # https://github.com/ryo-ma/github-profile-trophy
+  theme_dark: gitdimmed # https://github.com/ryo-ma/github-profile-trophy
 
-# Additional icon links
-additional_links:
-#- title: itsgoingto.be
-#  icon: fas fa-globe
-#  url: https://www.itsgoingto.be
-- title: Blog
-  icon: fa-brands fa-blogger #/> font awesome brand icon name (eg. fab fa-twitter) (https://fontawesome.com/icons?d=gallery&m=free)
-  url: https://katarinagresova.github.io/blog/  #Link url (eg. https://google.com)
+# -----------------------------------------------------------------------------
+# RSS Feed
+# -----------------------------------------------------------------------------
+# will use title and url fields
+# Take a look to https://github.com/jekyll/jekyll-feed for more customization
 
-# Google Analytics and Tag Manager
-# Using more than one of these may cause issues with reporting
-# gtm: "GTM-0000000"
-# gtag: "UA-00000000-0"
-google_analytics: G-3REVZET9R8
+rss_icon: true
 
-# About Section
-# about_title: About Me
-about_profile_image: images/profile.jpg
-about_content: | # this will include new lines to allow paragraphs
-  Hello! My name is Katarína.
+# -----------------------------------------------------------------------------
+# Layout
+# -----------------------------------------------------------------------------
 
-  I like <mark>Computer Science</mark>, <mark>Biology</mark> and everything in between. Always excited and looking for new challenges, but for now focusing on <mark>Deep learning</mark> and <mark>Genomics</mark>.
+navbar_fixed: true
+footer_fixed: true
 
-  I have Bachelor's degree in Information technology, Master's degree in Bioinformatics and Biocomputing and currently I am pursuing Doctoral studies in Deep Learning and Genomics.
+# Dimensions
+max_width: 800px
 
-  I am also capable to combine my studies with work in a company and I have 3+ years experience as a Software Developer, working with <mark>Java</mark> and <mark>SQL</mark> and 2 years experience as Machine Learning Specialist, having fun with <mark>Python</mark>, <mark>NLP</mark> and <mark>computer vision</mark>.
-  
-#  I sometimes write about thinks I do on my <a href="https://katarinagresova.github.io/blog/">blog</a>.
+# TODO: add layout settings (single page vs. multi-page)
 
+# -----------------------------------------------------------------------------
+# Open Graph & Schema.org
+# -----------------------------------------------------------------------------
+# Display links to the page with a preview object on social media.
+# see https://schema.org/docs/faq.html for more information
+serve_og_meta: false # Include Open Graph meta tags in the HTML head
+serve_schema_org: false # Include Schema.org in the HTML head
+og_image: # The site-wide (default for all links) Open Graph preview image
 
-content:
-        
-  - title: Education # Title for the section
-    layout: list # Type of content section (list/text)
-    content:
-      - layout: left
-        title: Masaryk University
-        caption: 2020 - Present
-        sub_title: PhD Genomics and Proteomics
-        quote: >
-          The aim of the Genomics and Proteomics program is to train top class specialist in these subjects. Students will acquire extensive and in-depth knowledge about the structure and function of the genome at all basic levels of living systems. They will deepen their knowledge and skills in basic biological disciplines, in biochemistry and proteomics and in biophysics. In addition to the theoretical principles of the discipline, students are also closely acquainted with performing basic and advanced methods used in various disciplines.
-        description: |
-          Research topic: Modeling Small RNA binding rules using Machine Learning
+# -----------------------------------------------------------------------------
+# Social integration
+# -----------------------------------------------------------------------------
 
-      - layout: left
-        title: Brno University of Technology
-        caption: 2018 - 2020
-        sub_title: MSc Bioinformatics and Biocomputing
-        quote: >
-          Students of the branch acquire deeper knowledge in the bioinformatics and natural computing. This give them knowledge and skills base to analyse, design and verification of problems of biological databases as well as use, design, implement and accelerate algorithms for analysis of the biological data. They are able to apply natural computing algorithms (evolutionary algorithms, artificial neural networks, fuzzy systems etc.) in the complex design and optimization problems.
-        description: |
-          Master's Thesis: [Bacteria Classification into Taxonomic Categories Based on Properties of 16s rRNA](https://www.fit.vut.cz/study/thesis/22671/.en)
+github_username: # your GitHub user name
+gitlab_username: # your GitLab user name
+x_username: # your X handle
+mastodon_username: # your mastodon instance+username in the format instance.tld/@username
+linkedin_username: # your LinkedIn user name
+telegram_username: # your Telegram user name
+scholar_userid: qc6CJjYAAAAJ # your Google Scholar ID
+semanticscholar_id: # your Semantic Scholar ID
+whatsapp_number: # your WhatsApp number (full phone number in international format. Omit any zeroes, brackets, or dashes when adding the phone number in international format.)
+orcid_id: # your ORCID ID
+medium_username: # your Medium username
+quora_username: # your Quora username
+publons_id: # your ID on Publons
+lattes_id: # your ID on Lattes (Brazilian Lattes CV)
+osf_id: # your OSF ID
+research_gate_profile: # your profile on ResearchGate
+scopus_id: # your profile on Scopus
+blogger_url: # your blogger URL
+work_url: # work page URL
+keybase_username: # your keybase user name
+wikidata_id: # your wikidata id
+wikipedia_id: # your wikipedia id (Case sensitive)
+dblp_url: # your DBLP profile url
+stackoverflow_id: # your stackoverflow id
+kaggle_id: # your kaggle id
+lastfm_id: # your lastfm id
+spotify_id: # your spotify id
+pinterest_id: # your pinterest id
+unsplash_id: # your unsplash id
+instagram_id: # your instagram id
+facebook_id: # your facebook id
+youtube_id: # your youtube channel id (youtube.com/@<youtube_id>)
+discord_id: # your discord id (18-digit unique numerical identifier)
+zotero_username: # your zotero username
+wechat_qr: # filename of your wechat qr-code saved as an image (e.g., wechat-qr.png if saved to assets/img/wechat-qr.png)
 
-      - layout: left
-        title: Brno University of Technology
-        caption: 2015 - 2018
-        sub_title: BSc Information Technology
-        quote: >
-          The aim of the Information Technology Bachelor Degree Programme is to prepare alumni who are able to act as designers, programmers, and servicemen of computer systems, digital systems, computer networks, computer-based systems and programmers and administrators of database systems and information systems.
-        description: |
-          Bachelor's Thesis: [Searching Semantically Annotated Texts](https://www.vutbr.cz/en/students/final-thesis/detail/114837?zp_id=114837)
-          
-          
-  - title: Teaching # Title for the section
-    layout: list # Type of content section (list/text)
-    content:
-      - layout: top-middle
-        title: LF:DSIB01 Introduction to Bioinformatics (Autumn 2021) 
-        link: https://is.muni.cz/course/med/autumn2021/DSIB01
-        description: |
-          Teaching several practical lessons focused on git, command line and NGS data preprocessing. Materials: [https://katarinagresova.github.io/DSIB01_2021/](https://katarinagresova.github.io/DSIB01_2021/).
-           
-          
-          
-  - title: Experience # Title for the section
-    layout: list # Type of content section (list/text)
-    content:
-      - layout: left
-        title: University of Malta
-        link: https://www.um.edu.mt/projects/biogemt/
-        # link_text: boringcompany.com
-        sub_title: Visiting Researcher
-        caption: September 2023 - Present
-        quote: >
-          The ERA Chair in Bioinformatics for Genomics in Malta (BioGeMT) is a project that aims to bring structural change to the University of Malta in the field of Bioinformatics. 
-        description: | # this will include new lines to allow paragraphs
-        
-          python, jupyter, tersorflow, pytorch, bioinformatics, machine learning, deep learning, genomics 
-          
-      - layout: left
-        title: Masaryk University
-        # link: https://www.melowntech.com/
-        # link_text: boringcompany.com
-        sub_title: Researcher
-        caption: July 2023 - Present
-        #quote: >
-          #The future of the society and your company is in the data. Start using them to your advantage and know their value. We will teach you to work with them and make the right decisions.
-        description: | # this will include new lines to allow paragraphs
-          Working as a Researcher at Intelligent Systems for Complex Data Research Group, Faculty of Informatics, Masaryk University.
-          
-          python, jupyter, bioinformatics, Deep Learning, protein structures, single-cell sequencing analysis
-          
-      - layout: left
-        title: Melown Technologies
-        link: https://www.melowntech.com/
-        # link_text: boringcompany.com
-        sub_title: Machine Learning Engineer
-        caption: January 2023 - August 2023
-        quote: >
-          The future of the society and your company is in the data. Start using them to your advantage and know their value. We will teach you to work with them and make the right decisions.
-        description: | # this will include new lines to allow paragraphs
-          Working as a Machine Learning Engineer in a Machine Learning team.
-          As a member of a dedicated team, I actively contribute to the exploration and mastery of a 3D reality-capture system, aimed at discovering the underlying meaning of pixel values. Notable projects within this context include developing robust techniques for extracting text from images and seamlessly merging results obtained from multiple viewpoints. Additionally, I have played a key role in enhancing the realism of LOD2 buildings by employing advanced adjustment techniques. Furthermore, I have been actively involved in preprocessing training data to optimize instance semantic segmentation algorithms, ultimately improving  efficiency of the models.
-          
-          python, jupyter, C++, openCV, bash, computer vision, 3D
-          
-      - layout: left
-        title: CEITEC MU - Central European Institute of Technology
-        link: https://www.ceitec.eu/rbp-bioinformatics/rg281
-        # link_text: boringcompany.com
-        sub_title: Research Specialist
-        caption: September 2020 - August
-        quote: >
-          Central European Institute of Technology is a young and dynamic center of scientific excellence, which strives to fulfill its mission in advancing knowledge in the field of life and materials sciences, based on the interconnection of the scientific capacities of its six partners.
-        description: | # this will include new lines to allow paragraphs
-          Working as a Research Specialist in Panagiotis Alexiou Research Group.
+contact_note: >
+  You can even add a little note about which of these is the best way to reach you.
 
-          As a PhD student, my research journey has been driven by a passion for staying at the forefront of genomics and machine learning advancements, particularly in the domain of miRNA targeting and deep learning. A notable accomplishment during my doctoral studies was the development of a robust deep learning model for precise classification of miRNA targets, leveraging CLASH data. This achievement required extensive effort in both model development and interpretation, leading to novel biological insights learned by the model. Furthermore, I have actively contributed to the field by curating and collecting diverse genomic datasets, facilitating the development and benchmarking of machine and deep learning models. These datasets serve as invaluable resources for researchers in their pursuit of advancing the field of genomics through the power of artificial intelligence.
-          python, tersorflow, pytorch, fastai, deep learning, NLP, genomics
-    
-      - layout: left
-        title: Proficio Marketing
-        link: https://proficiodigital.com/
-        # link_text: boringcompany.com
-        sub_title: Machine Learning Specialist
-        caption: December 2021 - September 2022
-        quote: >
-          Proficio Marketing is a digital full service agency that helps clients with performance campaigns, data and business analytics, brand building and social network management and more.
-        description: | # this will include new lines to allow paragraphs
-          Working as a Machine Learning Specialist in Databy (formerly the Analytics team in Proficio).
-          
-          In my position at Proficio Marketing, my primary responsibility was to identify opportunities for applying machine/deep learning techniques and develop proof of concept solutions. I focused on leveraging customer data to deliver enhanced value. This involved a systematic approach, beginning with a comprehensive understanding of the business problem at hand. I would then explore and cleanse the relevant data, carefully selecting the most suitable machine learning algorithms. Implementing these algorithms, I successfully generated insightful results and delivered compelling presentations to stakeholders.           
-          python, pandas, numpy, matplotlib, scikit-learn, jupyter, tensorflow, NLP, time-series
+# -----------------------------------------------------------------------------
+# Analytics and search engine verification
+# -----------------------------------------------------------------------------
 
-      - layout: left
-        title: Oracle NetSuite
-        link: https://www.netsuite.com/
-        # link_text: boringcompany.com
-        sub_title: Software Developer
-        caption: July 2020 - September 2021
-        quote: >
-          NetSuite is the world’s leading provider of cloud-based business management software. NetSuite helps companies manage core business processes with a single, fully integrated system covering ERP/financials, CRM, ecommerce, inventory and more. NetSuite transforms how businesses operate so they can achieve their business vision.
-        description: | # this will include new lines to allow paragraphs
-          Working as a Software Developer in SuiteAnalytics Connect team.
-          
-          In my role I actively contributed to the development of features, wrote comprehensive unit tests, and deployed tools for the NetSuite SuiteAnalytics Connect Service. This critical service enables users to efficiently archive, analyze, and report on NetSuite data using third-party tools or custom-built applications across various devices.
-          Java, SQL, ODBC, Perforce
-      - layout: left
-        title: Tieto
-        link: https://www.tietoevry.com/
-        # link_text: boringcompany.com
-        sub_title: Software Developer
-        caption: February 2018 - June 2020
-        quote: >
-          Tieto creates digital advantage for businesses and society. They are a leading digital services and software company with local presence and global capabilities.
-        description: | # this will include new lines to allow paragraphs
-          Working as a Software Developer in the Nemesis team.
-          
-          Starting as an intern, I swiftly progressed to a permanent role within a data center project. In this capacity, I provided crucial support to developers and testers, effectively enhancing the testing environment. I took on the responsibility of developing a comprehensive testing framework, ensuring streamlined and efficient testing processes. Additionally, I played a pivotal role in establishing and maintaining continuous integration practices, contributing to the overall quality and efficiency of the project.
-          Java, bash, python, Jenkins, TestNG, CI
-      - layout: left
-        title: Brno University of Technology
-        link: https://www.fit.vut.cz/.en
-        # link_text: boringcompany.com
-        sub_title: Research Scholar
-        caption: February 2016 - September 2018
-        quote: >
-          Faculty of Information Technology is in the position of one of the leading workplaces in the Czech Republic, which provides education and research in the field of information technology.
-        description: | # this will include new lines to allow paragraphs
-          Working as a Research Scholar in the Knowledge Technology Research Group.
-          
-          Starting from my second semester of studies and continuing until the completion of my awarded Bachelor thesis, I dedicated my efforts to the Corpora Processing Software project, emphasizing semantic search. Throughout this project, I focused on enhancing the user experience of the search engine and implementing advanced result filtering capabilities based on semantic annotations. By leveraging my skills, I successfully improved the overall functionality and usability of the software, contributing to its effectiveness in delivering precise and contextually relevant search results.
-          Java, Vaadin Framework, bash, python, HTML
+# For Google Analytics, see https://support.google.com/analytics/answer/10447272?hl=en&ref_topic=14088998&sjid=5129943941510317771-SA#zippy=%2Cgoogle-sites
+# and follow the instructions for Google Sites. You will need to create a Google Analytics property and copy the Google tag ID.
+google_analytics: # your Google Analytics measurement ID (format: G-XXXXXXXXXX)
+cronitor_analytics: # cronitor RUM analytics site ID (format: XXXXXXXXX)
 
-  - title: Selected Projects # Title for the section
-    layout: list # Type of content section (list/text)
-    content:
-      - layout: top-middle
-        title: Biology Crash Course
-        link: https://katarinagresova.github.io/biology-crash-course/
-        # link_text: Project Website
-        #additional_links:
-        #  - title:  sproogen/modern-resume-theme
-        #    icon: fab fa-github
-        #    url: github.com/sproogen/modern-resume-theme
-          # - title:  Github page for project (eg. sproogen/modern-resume-theme)
-          #   icon: fab fa-github
-          #   url: Link to project (eg. sproogen.github.io/modern-resume-theme)
-        quote: >
-          Informal notes from semi-formal biology discussions.
-        description: | # this will include new lines to allow paragraphs
-          You can find here notes from Biology Crash Course held in [RBP Bioinformatics lab](https://www.ceitec.eu/rbp-bioinformatics-panagiotis-alexiou/rg281). It is far from comprehensive explanation, but it might be a good starting point.
-      
-      - layout: top-middle
-        title: Ensembl scraper
-        link: https://github.com/katarinagresova/ensembl_scraper
-        quote: >
-          Create all functional elements datasets you ever wanted.
-        description: | # this will include new lines to allow paragraphs
-          Command line tool for preparing datasets of function elements sequences downloaded from Ensembl. It is able to download selected data from Ensembl, do quality check, split to train-validate-test datasets and generate random negative example for each positive one.
-        
-      - layout: top-middle
-        title: Genomic Benchmarks
-        link: https://github.com/ML-Bioinfo-CEITEC/genomic_benchmarks
-        quote: >
-          Collection of easily accessible, well curated and diverse genomics classification datasets together with current state of the art metrics.
-        description: | # this will include new lines to allow paragraphs
-          Recently, deep neural networks have been successfully applied in many biological fields. 
-          In 2020, a deep learning model AlphaFold won the protein folding competition with predicted structures within the error tolerance of experimental methods. 
-          However, this solution of the most prominent bioinformatic challenge of the past 50 year has been possible only thanks to a carefully curated benchmark of experimentally predicted protein structures. 
-          In Genomics, we have similar challenges (annotation of genomes and identification of functional elements) but currently we lack benchmarks similar to protein folding competition. 
-          Therefore, we propose a collection of benchmark datasets for the classification of genomic sequences with the emphasis on transparency, reproducibility, comparativeness and ease of use. 
-          The datasets are open source and the process of their creation is fully documented. 
-          We provide an interface for most commonly used deep learning libraries, implementation of the simple neural network and a training framework that can be used as a starting point for future research. 
-          We believe that this work will reduce the overhead of researchers that want to apply their machine learning knowledge to the field of Genomics and it will create a healthy competition leading to new discoveries.
-       
-      - layout: top-middle
-        title: Product Matching
-        link: https://github.com/katarinagresova/product-matching
-        quote: >
-          Package for finding products across multiple sellers.
-        description: |
-          Package for finding products across multiple sellers. 
-          Primarily developed for pneu market but can be used for any product matching where data can be provided in specified format.
-          
-      - layout: top-middle
-        title: AgoBind
-        link: https://github.com/katarinagresova/AgoBind
-        quote: >
-          Finetuning DNABert to miRNA target prediction data.
+# For Google Search Console, see https://support.google.com/webmasters/answer/9008080?hl=en#meta_tag_verification&zippy=%2Chtml-tag
+google_site_verification: # your google-site-verification ID (Google Search Console)
+bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 
-      - layout: top-middle
-        title: Poetry Generator
-        link: https://github.com/katarinagresova/poetry_generator
-        quote: >
-          Neural poetry inspited by Emily Dickinson.
-        description: |
-          Reccurent neural network trained on poetry by Emily Dickinson.
-          Result is available as a web application: https://generator-poezie.herokuapp.com/
- 
-#  - title: A Little More About Me
-#    layout: text
-#    content: | # this will include new lines to allow paragraphs
-#      Alongside my interests in networks and software engineering some of my other interests and hobbies are:
-#      - Rock climbing
-#      - Gaming
-#      - Knitting
-#      - [Becoming a ninja](https://www.youtube.com/watch?v=vtg4o__aRMg)
-#
-#      Look at this cool image
-#      ![Trees](/katarinagresova.github.io/images/landscape-trees.jpg "Trees")
+# -----------------------------------------------------------------------------
+# Blog
+# -----------------------------------------------------------------------------
 
-# Footer
-footer_show_references: false
-# references_title: References on request (Override references text)
+blog_name: al-folio # blog_name will be displayed in your blog page
+blog_description: a simple whitespace theme for academics
+permalink: /blog/:year/:title/
 
-# Build settings
-remote_theme: sproogen/resume-theme
+# Pagination
+pagination:
+  enabled: true
+
+related_blog_posts:
+  enabled: true
+  max_related: 5
+
+# Giscus comments (RECOMMENDED)
+# Follow instructions on https://giscus.app/ to setup for your repo to fill out the information below.
+giscus:
+  repo: # <your-github-user-name>/<your-github-repo-name>
+  repo_id: # leave empty or specify your repo_id (see https://giscus.app/)
+  category: Comments # name of the category under which discussions will be created
+  category_id: # leave empty or specify your category_id (see https://giscus.app/)
+  mapping: title # identify discussions by post title
+  strict: 1 # use strict identification mode
+  reactions_enabled: 1 # enable (1) or disable (0) emoji reactions
+  input_position: bottom # whether to display input form below (bottom) or above (top) the comments
+  theme: preferred_color_scheme # name of the color scheme (preferred works well with al-folio light/dark mode)
+  emit_metadata: 0
+  lang: en
+
+# Disqus comments (DEPRECATED)
+disqus_shortname: al-folio # put your disqus shortname
+# https://help.disqus.com/en/articles/1717111-what-s-a-shortname
+
+# External sources.
+# If you have blog posts published on medium.com or other external sources,
+# you can display them in your blog by adding a link to the RSS feed.
+external_sources:
+  - name: medium.com
+    rss_url: https://medium.com/@al-folio/feed
+
+# -----------------------------------------------------------------------------
+# Collections
+# -----------------------------------------------------------------------------
+
+collections:
+  news:
+    defaults:
+      layout: post
+    output: true
+    permalink: /news/:path/
+  projects:
+    output: true
+    permalink: /projects/:path/
+
+announcements:
+  enabled: true
+  scrollable: true # adds a vertical scroll bar if there are more than 3 news items
+  limit: 5 # leave blank to include all the news in the `_news` folder
+
+latest_posts:
+  enabled: true
+  scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
+  limit: 3 # leave blank to include all the blog posts
+
+# -----------------------------------------------------------------------------
+# Jekyll settings
+# -----------------------------------------------------------------------------
+
+# Markdown and syntax highlight
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter_opts:
+    css_class: "highlight"
+    span:
+      line_numbers: false
+    block:
+      line_numbers: false
+      start_line: 1
+
+# Includes & excludes
+include: ["_pages"]
+exclude:
+  - bin
+  - CONTRIBUTING.md
+  - CUSTOMIZE.md
+  - docker-compose.yml
+  - Dockerfile
+  - FAQ.md
+  - Gemfile
+  - Gemfile.lock
+  - INSTALL.md
+  - LICENSE
+  - package.json
+  - package-lock.json
+  - purgecss.config.js
+  - README.md
+  - vendor
+keep_files:
+  - CNAME
+  - .nojekyll
+
+# Plug-ins
+plugins:
+  - jekyll-archives
+  - jekyll-email-protect
+  - jekyll-feed
+  - jekyll-get-json
+  - jekyll-imagemagick
+  - jekyll-jupyter-notebook
+  - jekyll-link-attributes
+  - jekyll-minifier
+  - jekyll-paginate-v2
+  - jekyll/scholar
+  - jekyll-sitemap
+  - jekyll-toc
+  - jekyll-twitter-plugin
+  - jemoji
+
+# Sitemap settings
+defaults:
+  - scope:
+      path: "assets"
+    values:
+      sitemap: false
 
 sass:
-  sass_dir: _sass
   style: compressed
 
-plugins:
- - jekyll-seo-tag
+# -----------------------------------------------------------------------------
+# Jekyll Minifier
+# -----------------------------------------------------------------------------
+
+jekyll-minifier:
+  exclude: ["robots.txt"]
+  uglifier_args:
+    harmony: true
+
+# -----------------------------------------------------------------------------
+# Jekyll Archives
+# -----------------------------------------------------------------------------
+
+jekyll-archives:
+  enabled: [year, tags, categories] # enables year, tag and category archives (remove if you need to disable one of them).
+  layouts:
+    year: archive-year
+    tag: archive-tag
+    category: archive-category
+  permalinks:
+    year: "/blog/:year/"
+    tag: "/blog/tag/:name/"
+    category: "/blog/category/:name/"
+
+display_tags: ["formatting", "images", "links", "math", "code"] # these tags will be displayed on the front page of your blog
+display_categories: ["blockquotes"] # these categories will be displayed on the front page of your blog
+
+# -----------------------------------------------------------------------------
+# Jekyll Scholar
+# -----------------------------------------------------------------------------
+
+scholar:
+  last_name: [Einstein]
+  first_name: [Albert, A.]
+
+  style: apa
+  locale: en
+
+  source: /_bibliography/
+  bibliography: papers.bib
+  bibliography_template: bib
+  # Note: if you have latex math in your bibtex, the latex filter
+  # preprocessing may conflict with MathJAX if the latter is enabled.
+  # See https://github.com/alshedivat/al-folio/issues/357.
+  bibtex_filters: [latex, smallcaps, superscript]
+
+  replace_strings: true
+  join_strings: true
+
+  details_dir: bibliography
+  details_link: Details
+
+  query: "@*"
+  group_by: year
+  group_order: descending
+
+# Display different badges withs stats for your publications
+enable_publication_badges:
+  altmetric: true # Altmetric badge (https://www.altmetric.com/products/altmetric-badges/)
+  dimensions: true # Dimensions badge (https://badge.dimensions.ai/)
+  google_scholar: true # Google Scholar badge (https://scholar.google.com/intl/en/scholar/citations.html)
+
+# Filter out certain bibtex entry keywords used internally from the bib output
+filtered_bibtex_keywords:
+  [abbr, abstract, altmetric, arxiv, bibtex_show, blog, code, html, pdf, poster, preview, selected, slides, supp, video, website]
+
+# Maximum number of authors to be shown for each publication (more authors are visible on click)
+max_author_limit: 3 # leave blank to always show all authors
+more_authors_animation_delay: 10 # more authors are revealed on click using animation; smaller delay means faster animation
+
+# Enables publication thumbnails. If disabled, none of the publications will display thumbnails, even if specified in the bib entry.
+enable_publication_thumbnails: true
+
+# -----------------------------------------------------------------------------
+# Jekyll Link Attributes
+# -----------------------------------------------------------------------------
+
+# These are the defaults
+external_links:
+  enabled: true
+  rel: external nofollow noopener
+  target: _blank
+  exclude:
+
+# -----------------------------------------------------------------------------
+# Responsive WebP Images
+# -----------------------------------------------------------------------------
+
+# MAKE SURE imagemagick is installed and on your PATH before enabling imagemagick. In a terminal, run:
+#   convert -version
+imagemagick:
+  enabled: true # enables responsive images for your site (recommended, see https://github.com/alshedivat/al-folio/issues/537)
+  widths:
+    - 480
+    - 800
+    - 1400
+  input_directories:
+    - assets/img/
+  input_formats:
+    - ".jpg"
+    - ".jpeg"
+    - ".png"
+    - ".tiff"
+    - ".gif"
+  output_formats:
+    webp: "-quality 85"
+
+# Lazy loading images
+#   If you enable lazy loading, all images will add the loading="lazy" attribute.
+#   This will make your site load faster, but it may not be supported in all browsers.
+#   You can also set loading="" to other values for specific images to override the default behavior.
+#   Options: "auto", "eager", "lazy"
+#   See https://web.dev/browser-level-image-lazy-loading/ for more information.
+lazy_loading_images: true # enables lazy loading of images (recommended)
+
+# -----------------------------------------------------------------------------
+# Optional Features
+# -----------------------------------------------------------------------------
+
+enable_google_analytics: false # enables google analytics
+enable_cronitor_analytics: false # enables cronitor RUM analytics
+enable_google_verification: false # enables google site verification
+enable_bing_verification: false # enables bing site verification
+enable_masonry: true # enables automatic project cards arrangement
+enable_math: true # enables math typesetting (uses MathJax)
+enable_tooltips: false # enables automatic tooltip links generated for each section titles on pages and posts
+enable_darkmode: true # enables switching between light/dark modes
+enable_navbar_social: false # enables displaying social links in the navbar on the about page
+enable_project_categories: true # enables categorization of projects into multiple categories
+enable_medium_zoom: true # enables image zoom feature (as on medium.com)
+enable_progressbar: true # enables a horizontal progress bar linked to the vertical scroll position
+
+# -----------------------------------------------------------------------------
+# Library versions
+# -----------------------------------------------------------------------------
+
+bootstrap-table:
+  version: "1.22.1"
+chartjs:
+  version: "4.4.1"
+d3:
+  version: "7.8.5"
+  integrity: "sha256-1rA678n2xEx7x4cTZ5x4wpUCj6kUMZEZ5cxLSVSFWxw="
+diff2html:
+  version: "3.4.47"
+  integrity:
+    css: "sha256-IMBK4VNZp0ivwefSn51bswdsrhk0HoMTLc2GqFHFBXg="
+    js: "sha256-eU2TVHX633T1o/bTQp6iIJByYJEtZThhF9bKz/DcbbY="
+echarts:
+  version: "5.4.3"
+  integrity:
+    library: "sha256-EVZCmhajjLhgTcxlGMGUBtQiYULZCPjt0uNTFEPFTRk="
+    dark_theme: "sha256-UmFIP/4VvOqBDIl2QWl1HBuAJ1XWs/iFZxT5yJRZOKo="
+highlightjs:
+  version: "11.9.0"
+  integrity:
+    css:
+      light: "sha256-Oppd74ucMR5a5Dq96FxjEzGF7tTw2fZ/6ksAqDCM8GY="
+      dark: "sha256-nyCNAiECsdDHrr/s2OQsp5l9XeY2ZJ0rMepjCT2AkBk="
+imagesloaded:
+  version: "5.0.0"
+  integrity: "sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc="
+img-comparison-slider:
+  version: "8.0.6"
+jquery:
+  version: "3.6.0"
+  integrity: "sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+leaflet:
+  version: "1.9.4"
+  integrity:
+    css: "sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    js: "sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+mathjax:
+  version: "3.2.0"
+masonry:
+  version: "4.2.2"
+  integrity: "sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI="
+mdb:
+  version: "4.20.0"
+  integrity:
+    css: "sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw="
+    js: "sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA="
+medium_zoom:
+  version: "1.1.0"
+  integrity: "sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc="
+mermaid:
+  version: "10.7.0"
+  integrity: "sha256-TtLOdUA8mstPoO6sGvHIGx2ceXrrX4KgIItO06XOn8A="
+swiper:
+  version: "11.0.5"
+  integrity:
+    css: "sha256-yUoNxsvX+Vo8Trj3lZ/Y5ZBf8HlBFsB6Xwm7rH75/9E="
+    js: "sha256-BPrwikijIybg9OQC5SYFFqhBjERYOn97tCureFgYH1E="
+vega:
+  version: "5.27.0"
+  integrity: "sha256-Yot/cfgMMMpFwkp/5azR20Tfkt24PFqQ6IQS+80HIZs="
+vega-embed:
+  version: "6.24.0"
+  integrity: "sha256-FPCJ9JYCC9AZSpvC/t/wHBX7ybueZhIqOMjpWqfl3DU="
+vega-lite:
+  version: "5.16.3"
+  integrity: "sha256-TvBvIS5jUN4BSy009usRjNzjI1qRrHPYv7xVLJyjUyw="
+
+# -----------------------------------------------------------------------------
+# Get external JSON data
+# -----------------------------------------------------------------------------
+
+jekyll_get_json:
+  - data: resume
+    json: assets/json/resume.json # it can also be an url
+jsonresume:
+  - basics
+  - work
+  - education
+  - publications
+  - projects
+  - volunteer
+  - awards
+  - certificates
+  - skills
+  - languages
+  - interests
+  - references
