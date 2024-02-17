@@ -1,1 +1,1 @@
-Parsonal page.
+Personal page.
