@@ -1,0 +1,18 @@
+# Icon names must match the ones handled in _includes/icon.html
+# (email, github, scholar, linkedin, orcid).
+
+- label: Email
+  icon: email
+  url: "mailto:katarina.gresova@mdc-berlin.de"
+
+- label: GitHub
+  icon: github
+  url: "https://github.com/katarinagresova"
+
+- label: Google Scholar
+  icon: scholar
+  url: "https://scholar.google.com/citations?user=cFwEwxoAAAAJ&hl=en"
+
+- label: LinkedIn
+  icon: linkedin
+  url: "https://www.linkedin.com/in/katarinagresova/"

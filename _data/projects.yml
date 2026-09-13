@@ -1,0 +1,22 @@
+# Three or four is plenty for the landing page. Order matters.
+
+- name: "miRBench"
+  blurb: >-
+    Benchmark datasets and a Python package for miRNA target-site prediction,
+    built to remove the frequency-class bias that quietly inflates published scores.
+  tags: [python, benchmarks, miRNA]
+  url: "https://github.com/katarinagresova/miRBench"
+
+- name: "Genomic Benchmarks"
+  blurb: >-
+    Eight curated datasets for genomic sequence classification across human,
+    mouse and roundworm — with baselines, so new models have something to beat.
+  tags: [python, pytorch, datasets]
+  url: "https://github.com/ML-Bioinfo-CEITEC/genomic_benchmarks"
+
+- name: "Biology Crash Course"
+  blurb: >-
+    Informal notes from semi-formal biology discussions. Written for computer
+    scientists who need enough molecular biology to be dangerous.
+  tags: [teaching, notes]
+  url: "https://katarinagresova.github.io/biology-crash-course/"
