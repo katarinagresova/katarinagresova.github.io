@@ -1,0 +1,14 @@
+---
+layout: default
+---
+<article class="wrap page">
+  <header class="page__head">
+    {%- if page.eyebrow %}<p class="eyebrow">{{ page.eyebrow }}</p>{% endif -%}
+    <h1 class="page__title">{{ page.title }}</h1>
+    {%- if page.subtitle %}<p class="page__subtitle">{{ page.subtitle }}</p>{% endif -%}
+  </header>
+
+  <div class="prose">
+    {{ content }}
+  </div>
+</article>

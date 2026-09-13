@@ -1,0 +1,35 @@
+# Newest first. `selected: true` puts it on the landing page.
+# Author names are written plainly; the one matching `highlight_author`
+# in _config.yml is automatically bolded.
+
+- title: "miRBind2 enables sequence-only prediction of miRNA binding and transcript repression"
+  authors: "David Čechák, Dimosthenis Tzimotoudis, Stephanie Sammut, Katarína Grešová, Eva Maršálková, David Farrugia, Panagiotis Alexiou"
+  venue: "Bioinformatics"
+  volume: "42(Supplement_2)"
+  year: 2026
+  url: "https://doi.org/10.1093/bioinformatics/btag410"
+  selected: true
+
+- title: "miRBench: novel benchmark datasets for microRNA binding site prediction that mitigate against prevalent microRNA frequency class bias"
+  authors: "Stephanie Sammut, Katarína Grešová, Dimosthenis Tzimotoudis, Eva Maršálková, David Čechák, Panagiotis Alexiou"
+  venue: "Bioinformatics"
+  volume: "41(Supplement_1), i542–i551"
+  year: 2025
+  url: "https://doi.org/10.1093/bioinformatics/btaf222"
+  selected: true
+
+- title: "Genomic benchmarks: a collection of datasets for genomic sequence classification"
+  authors: "Katarína Grešová, Vlastimil Martinek, David Čechák, Petr Šimeček, Panagiotis Alexiou"
+  venue: "BMC Genomic Data"
+  volume: "24, 25"
+  year: 2023
+  url: "https://doi.org/10.1186/s12863-023-01123-8"
+  selected: true
+
+- title: "miRBind: A Deep Learning Method for miRNA Binding Classification"
+  authors: "Eva Klimentová, Václav Hejret, Ján Krčmář, Katarína Grešová, Ilektra-Chara Giassa, Panagiotis Alexiou"
+  venue: "Genes"
+  volume: "13(12), 2323"
+  year: 2022
+  url: "https://doi.org/10.3390/genes13122323"
+  selected: true

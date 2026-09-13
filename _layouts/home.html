@@ -1,0 +1,125 @@
+---
+layout: default
+---
+
+{%- comment -%}
+  Pre-build the bolded version of the site owner's name so the author lists
+  below can highlight it with a single `replace`.
+{%- endcomment -%}
+{%- assign bold_name = '<strong>' | append: site.highlight_author | append: '</strong>' -%}
+
+<!-- ===================================================================== -->
+<!--  Hero                                                                 -->
+<!-- ===================================================================== -->
+<section class="hero">
+  <div class="wrap hero__inner">
+
+    <div class="hero__text">
+      <p class="eyebrow reveal" style="--i:0">
+        {{ site.hero.location }}
+        <span class="eyebrow__dot" aria-hidden="true"></span>
+        <a href="{{ site.hero.affiliation_url }}">{{ site.hero.affiliation }}</a>
+      </p>
+
+      <h1 class="hero__name reveal" style="--i:1">
+        <span>Katarína</span>
+        <span>Grešová</span>
+      </h1>
+
+      <p class="hero__tagline reveal" style="--i:2">
+        <span class="mark">{{ site.tagline }}</span>
+      </p>
+
+      <div class="hero__bio prose reveal" style="--i:3">
+        {{ content }}
+      </div>
+
+      <div class="reveal" style="--i:4">
+        {% include links.html %}
+      </div>
+    </div>
+
+    <div class="hero__portrait reveal" style="--i:2">
+      <img src="{{ site.hero.photo | relative_url }}"
+           alt="{{ site.hero.photo_alt }}"
+           width="320" height="321" fetchpriority="high">
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================================================================== -->
+<!--  Research                                                             -->
+<!-- ===================================================================== -->
+<section class="section" id="research">
+  <div class="wrap">
+    <h2 class="section__title">
+      <span>Selected publications</span>
+      <a class="section__aside" href="https://scholar.google.com/citations?user=qc6CJjYAAAAJ"
+         target="_blank" rel="noopener">All on Scholar {% include icon.html name="arrow" %}</a>
+    </h2>
+
+    <ol class="pubs" role="list">
+      {%- for pub in site.data.publications -%}
+      {%- if pub.selected -%}
+      <li class="pub reveal" style="--i:{{ forloop.index }}">
+        <span class="pub__year">{{ pub.year }}</span>
+        <div class="pub__body">
+          <h3 class="pub__title">
+            <a href="{{ pub.url }}" target="_blank" rel="noopener">{{ pub.title }}</a>
+          </h3>
+          <p class="pub__authors">
+            {{- pub.authors | replace: site.highlight_author, bold_name -}}
+          </p>
+          <p class="pub__venue">
+            <em>{{ pub.venue }}</em>{% if pub.volume %}, {{ pub.volume }}{% endif %}
+          </p>
+        </div>
+      </li>
+      {%- endif -%}
+      {%- endfor -%}
+    </ol>
+  </div>
+</section>
+
+<!-- ===================================================================== -->
+<!--  Projects                                                             -->
+<!-- ===================================================================== -->
+<section class="section section--soft" id="projects">
+  <div class="wrap">
+    <h2 class="section__title">
+      <span>Things I build</span>
+      <a class="section__aside" href="https://github.com/katarinagresova"
+         target="_blank" rel="noopener">All on GitHub {% include icon.html name="arrow" %}</a>
+    </h2>
+
+    <ul class="cards" role="list">
+      {%- for project in site.data.projects -%}
+      <li class="card reveal" style="--i:{{ forloop.index }}">
+        <a class="card__link" href="{{ project.url }}" target="_blank" rel="noopener">
+          <h3 class="card__title">{{ project.name }}{% include icon.html name="arrow" %}</h3>
+          <p class="card__blurb">{{ project.blurb }}</p>
+          {%- if project.tags -%}
+          <p class="card__tags">
+            {%- for tag in project.tags %}<span>{{ tag }}</span>{% endfor -%}
+          </p>
+          {%- endif -%}
+        </a>
+      </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>
+
+<!-- ===================================================================== -->
+<!--  Contact                                                              -->
+<!-- ===================================================================== -->
+<section class="section contact" id="contact">
+  <div class="wrap contact__inner">
+    <h2 class="contact__title">{{ page.contact_title }}</h2>
+    <p class="contact__body">{{ page.contact_body }}</p>
+    <a class="button" href="mailto:{{ site.author.email }}">
+      {{ site.author.email }} {% include icon.html name="arrow" %}
+    </a>
+  </div>
+</section>

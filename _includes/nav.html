@@ -1,0 +1,19 @@
+<header class="nav">
+  <div class="nav__inner wrap">
+    <a class="nav__mark" href="{{ '/' | relative_url }}" aria-label="{{ site.author.name }} — home">
+      <span aria-hidden="true">KG</span>
+    </a>
+
+    <nav class="nav__links" aria-label="Primary">
+      <a href="{{ '/#research' | relative_url }}">Research</a>
+      <a href="{{ '/#projects' | relative_url }}">Projects</a>
+      <a href="{{ '/#contact' | relative_url }}">Contact</a>
+    </nav>
+
+    <button class="theme-toggle" type="button" data-theme-toggle
+            aria-label="Switch between light and dark theme">
+      <span class="theme-toggle__sun">{% include icon.html name="sun" %}</span>
+      <span class="theme-toggle__moon">{% include icon.html name="moon" %}</span>
+    </button>
+  </div>
+</header>
