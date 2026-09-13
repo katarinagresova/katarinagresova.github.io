@@ -1,0 +1,34 @@
+# Where to find her next. This is the one part of the site that goes stale on
+# its own, so it is built to clean up after itself:
+#
+#   * `until` is the last day of the event. Once the build date passes it, the
+#     entry stops rendering — and when the last entry expires the whole strip
+#     disappears rather than sitting there empty.
+#   * .github/workflows/pages.yml rebuilds the site once a day, so expiry
+#     happens without anyone pushing a commit.
+#
+# So the only maintenance is adding things. Nothing here needs deleting.
+#
+#   what:  what you're doing there. Keep it short — it sits on one line.
+#   where: event name and city.
+#   when:  the display string, written however reads best.
+#   until: ISO date, the last day it should show. Required.
+#   url:   optional; makes the entry clickable.
+
+- what: "Giving a talk, online"
+  where: "BioGeMT Symposium, Valletta"
+  when: "25 September 2026"
+  until: 2026-09-25
+  url: "https://www.um.edu.mt/events/biogemtsymposium/"
+
+- what: "Presenting a poster"
+  where: "Helmholtz Codes!, Dresden"
+  when: "4 – 6 November 2026"
+  until: 2026-11-06
+  url: "https://events.hifis.net/event/3727/"
+
+- what: "Leading a hackathon on benchmarking and interpreting RNA foundation models"
+  where: "5th BioHackathon Germany, Göttingen"
+  when: "7 – 11 December 2026"
+  until: 2026-12-11
+  url: "https://www.denbi.de/de-nbi-events/2051-5th-biohackathon-germany"

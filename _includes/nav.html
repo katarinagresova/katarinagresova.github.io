@@ -1,3 +1,8 @@
+{%- comment -%}
+  Links are either a page (marked current by comparing page.url) or an anchor
+  on the landing page (marked current by the scroll-spy in main.js, which
+  ignores any link without a `#`).
+{%- endcomment -%}
 <header class="nav">
   <div class="nav__inner wrap">
     <a class="nav__mark" href="{{ '/' | relative_url }}" aria-label="{{ site.author.name }} — home">
@@ -6,9 +11,13 @@
     </a>
 
     <nav class="nav__links" aria-label="Primary">
-      <a href="{{ '/#research' | relative_url }}">Research</a>
-      <a href="{{ '/#projects' | relative_url }}">Projects</a>
-      <a href="{{ '/#contact' | relative_url }}">Contact</a>
+      {%- assign nav_items = "/research/,Research|/building/,Building|/teaching/,Teaching|/publications/,Publications|/cv/,CV" | split: "|" -%}
+      {%- for item in nav_items -%}
+        {%- assign parts = item | split: "," -%}
+        {%- assign href = parts[0] -%}
+        <a href="{{ href | relative_url }}"
+           {%- if page.url == href %} aria-current="page"{% endif -%}>{{ parts[1] }}</a>
+      {%- endfor -%}
     </nav>
 
     <button class="theme-toggle" type="button" data-theme-toggle

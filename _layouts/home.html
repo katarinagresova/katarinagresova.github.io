@@ -14,53 +14,121 @@ layout: default
 <section class="hero">
   <div class="wrap hero__inner">
 
-    <div class="hero__text">
-      <p class="eyebrow reveal" style="--i:0">
-        <span class="eyebrow__dot" aria-hidden="true"></span>
-        {{ site.hero.location }}
-        <span class="eyebrow__sep" aria-hidden="true">/</span>
-        <a href="{{ site.hero.affiliation_url }}">{{ site.hero.affiliation }}</a>
-      </p>
+    {%- comment -%}
+      The portrait sits in the top row beside the name only, so everything
+      below it — tagline, bio, links — runs the full width of the page.
+    {%- endcomment -%}
+    <div class="hero__head">
+      <div class="hero__id">
+        <p class="eyebrow reveal" style="--i:0">
+          <span class="eyebrow__dot" aria-hidden="true"></span>
+          {{ site.hero.location }}
+          <span class="eyebrow__sep" aria-hidden="true">/</span>
+          <a href="{{ site.hero.affiliation_url }}">{{ site.hero.affiliation }}</a>
+        </p>
 
-      <h1 class="hero__name reveal" style="--i:1">
-        <span>Katarína</span>
-        <span>Grešová</span>
-      </h1>
-
-      <p class="hero__tagline reveal" style="--i:2">
-        <span class="mark">{{ site.tagline }}</span>
-      </p>
-
-      <div class="hero__bio prose reveal" style="--i:3">
-        {{ content }}
+        <h1 class="hero__name reveal" style="--i:1">
+          <span>Katarína</span>
+          <span>Grešová</span>
+        </h1>
       </div>
 
-      <div class="reveal" style="--i:4">
-        {% include links.html %}
+      <div class="hero__portrait reveal" style="--i:2">
+        <img src="{{ site.hero.photo | relative_url }}"
+             alt="{{ site.hero.photo_alt }}"
+             width="320" height="321" fetchpriority="high">
       </div>
     </div>
 
-    <div class="hero__portrait reveal" style="--i:2">
-      <img src="{{ site.hero.photo | relative_url }}"
-           alt="{{ site.hero.photo_alt }}"
-           width="320" height="321" fetchpriority="high">
+    <p class="hero__tagline reveal" style="--i:2">
+      <span class="mark">{{ site.tagline }}</span>
+    </p>
+
+    <div class="hero__bio prose reveal" style="--i:3">
+      {{ content }}
+    </div>
+
+    <div class="reveal" style="--i:4">
+      {% include links.html %}
+
+      {%- if page.open_to %}
+      <p class="hero__note">
+        <span class="hero__note-dot" aria-hidden="true"></span>
+        {{ page.open_to }}
+        <a href="#contact">Say hello {% include icon.html name="arrow" %}</a>
+      </p>
+      {%- endif %}
     </div>
 
   </div>
 </section>
 
 <!-- ===================================================================== -->
-<!--  Research                                                             -->
+<!--  By the numbers                                                       -->
 <!-- ===================================================================== -->
-<section class="section" id="research">
+{%- comment -%}
+  Every figure here is counted from the data files rather than typed in, so
+  adding a paper to _data/publications.yml or a project to _data/work.yml
+  updates the strip and it can never quietly go stale. The one exception is
+  the years-in-industry figure, which is a fixed span and marked as such.
+
+  `taught` is the same set of kinds the CV's teaching section pulls.
+{%- endcomment -%}
+{%- assign first_author = site.data.publications | where: "first_author", true -%}
+{%- assign taught = "" | split: "" -%}
+{%- assign taught_kinds = "course,material,organised,supervision" | split: "," -%}
+{%- for kind in taught_kinds -%}
+  {%- assign matched = site.data.teaching | where: "kind", kind -%}
+  {%- assign taught = taught | concat: matched -%}
+{%- endfor -%}
+
+<section class="stats" aria-label="By the numbers">
+  <dl class="wrap stats__inner">
+    <div class="stat reveal" style="--i:1">
+      <dt class="stat__num mark">{{ site.data.publications | size }}</dt>
+      <dd class="stat__label">
+        papers and preprints,
+        {{ first_author | size }} as first or co-first author
+      </dd>
+    </div>
+    <div class="stat reveal" style="--i:2">
+      <dt class="stat__num mark">{{ site.data.work | size }}</dt>
+      <dd class="stat__label">
+        tools, datasets and services built
+        for other people to use
+      </dd>
+    </div>
+    <div class="stat reveal" style="--i:3">
+      <dt class="stat__num mark">{{ taught | size }}</dt>
+      <dd class="stat__label">
+        courses and workshops taught,
+        students supervised
+      </dd>
+    </div>
+    <div class="stat reveal" style="--i:4">
+      <dt class="stat__num mark">7</dt>
+      <dd class="stat__label">
+        years shipping production software
+        in industry
+      </dd>
+    </div>
+  </dl>
+</section>
+
+{%- include upcoming.html -%}
+
+<!-- ===================================================================== -->
+<!--  Publications                                                         -->
+<!-- ===================================================================== -->
+<section class="section" id="publications">
   <div class="wrap">
     <h2 class="section__title">
       <span class="section__label">
         <span class="section__num" aria-hidden="true">01</span>
         Selected publications
       </span>
-      <a class="section__aside" href="{{ site.scholar_url | escape }}"
-         target="_blank" rel="noopener">All on Scholar {% include icon.html name="arrow" %}</a>
+      <a class="section__aside" href="{{ '/publications/' | relative_url }}">
+        All publications {% include icon.html name="arrow" %}</a>
     </h2>
 
     <ol class="pubs" role="list">
@@ -78,6 +146,11 @@ layout: default
           <p class="pub__venue">
             <span class="pub__journal">{{ pub.venue }}</span>
             {%- if pub.volume %}<span>{{ pub.volume }}</span>{% endif -%}
+            {%- if pub.first_author -%}
+            <span class="pub__first">{{ pub.author_note | default: "First author" }}</span>
+            {%- elsif pub.author_note -%}
+            <span class="pub__note">{{ pub.author_note }}</span>
+            {%- endif -%}
           </p>
         </div>
       </li>
@@ -97,21 +170,63 @@ layout: default
         <span class="section__num" aria-hidden="true">02</span>
         Things I build
       </span>
-      <a class="section__aside" href="https://github.com/katarinagresova"
-         target="_blank" rel="noopener">All on GitHub {% include icon.html name="arrow" %}</a>
+      <a class="section__aside" href="{{ '/building/' | relative_url }}">
+        Everything I've built {% include icon.html name="arrow" %}</a>
     </h2>
 
+    {%- assign featured_work = site.data.work | where: "featured", true -%}
     <ul class="cards" role="list">
-      {%- for project in site.data.projects -%}
+      {%- for project in featured_work -%}
       <li class="card reveal" style="--i:{{ forloop.index }}">
-        <a class="card__link" href="{{ project.url }}" target="_blank" rel="noopener">
+        {%- assign primary = project.links | first -%}
+        <a class="card__link"
+           {%- if primary %} href="{{ primary.url }}" target="_blank" rel="noopener"
+           {%- else %} href="{{ '/building/' | relative_url }}"{% endif %}>
           <h3 class="card__title">{{ project.name }}{% include icon.html name="arrow" %}</h3>
-          <p class="card__blurb">{{ project.blurb }}</p>
+          <p class="card__blurb">{{ project.blurb | strip_html | truncatewords: 34 }}</p>
           {%- if project.tags -%}
           <p class="card__tags">
             {%- for tag in project.tags %}<span>{{ tag }}</span>{% endfor -%}
           </p>
           {%- endif -%}
+        </a>
+      </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>
+
+<!-- ===================================================================== -->
+<!--  Teaching                                                             -->
+<!-- ===================================================================== -->
+<section class="section" id="teaching">
+  <div class="wrap">
+    <h2 class="section__title">
+      <span class="section__label">
+        <span class="section__num" aria-hidden="true">03</span>
+        Teaching
+      </span>
+      <a class="section__aside" href="{{ '/teaching/' | relative_url }}">
+        Everything I've taught {% include icon.html name="arrow" %}</a>
+    </h2>
+
+    <p class="section__intro reveal">
+      I teach in both directions — computation to biologists, biology to
+      computer scientists — in university practicals, conference tutorials, a
+      three-day deep learning course, and material anyone can work through on
+      their own.
+    </p>
+
+    {%- assign featured_teaching = site.data.teaching | where: "featured", true -%}
+    <ul class="cards" role="list">
+      {%- for item in featured_teaching -%}
+      <li class="card reveal" style="--i:{{ forloop.index }}">
+        {%- assign primary = item.links | first -%}
+        <a class="card__link"
+           {%- if primary %} href="{{ primary.url }}" target="_blank" rel="noopener"
+           {%- else %} href="{{ '/teaching/' | relative_url }}"{% endif %}>
+          <h3 class="card__title">{{ item.name }}{% include icon.html name="arrow" %}</h3>
+          <p class="card__blurb">{{ item.blurb | strip_html | truncatewords: 34 }}</p>
         </a>
       </li>
       {%- endfor -%}

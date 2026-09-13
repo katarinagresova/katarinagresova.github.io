@@ -17,8 +17,12 @@
      8. Project cards
      9. Contact & footer
     10. Prose (for /page layout)
-    11. Motion
-    12. Responsive
+    11. CV timeline (for /cv/)
+    12. Work list (for /building/ and /teaching/)
+    13. By the numbers
+    14. Upcoming strip
+    15. Motion
+    16. Responsive
    ========================================================================== */
 
 
@@ -71,8 +75,18 @@
   --mono:    "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
   /* Metrics */
-  --wrap:    70rem;   /* page gutter width */
-  --measure: 36rem;   /* comfortable reading width */
+  --wrap:    62rem;   /* page gutter width */
+
+  /* Reading width, defined as the page column itself: --wrap minus `.wrap`'s
+     two 2.5rem gutters. A paragraph therefore ends exactly where the rules and
+     the rows end, rather than stopping short and leaving half the page empty.
+
+     The three values below move as one. Text this wide runs longer than the
+     45–75 characters typographers like, so the page is kept narrower than it
+     otherwise would be, the body size is stepped up, and the leading is
+     generous — all three are what make a long line findable on the return
+     sweep. Change one and the other two need re-checking. */
+  --measure: calc(var(--wrap) - 5rem);
 
   --radius:    14px;
   --radius-lg: 22px;
@@ -99,8 +113,8 @@ body {
   background: var(--bg);
   color: var(--ink);
   font-family: var(--sans);
-  font-size: 1rem;
-  line-height: 1.65;
+  font-size: 1.15rem;
+  line-height: 1.75;
   font-synthesis-weight: none;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -261,8 +275,8 @@ a {
 }
 .nav__links a:hover { color: var(--ink); }
 .nav__links a:hover::after,
-.nav__links a[aria-current="true"]::after { transform: scaleX(1); transform-origin: left; }
-.nav__links a[aria-current="true"] { color: var(--ink); }
+.nav__links a[aria-current]::after { transform: scaleX(1); transform-origin: left; }
+.nav__links a[aria-current] { color: var(--ink); }
 
 .theme-toggle {
   display: grid;
@@ -310,7 +324,7 @@ a {
 
 .hero {
   position: relative;
-  padding-block: clamp(3.5rem, 10vw, 7rem) clamp(3rem, 6vw, 4.5rem);
+  padding-block: clamp(1.75rem, 3.5vw, 2rem) clamp(1.75rem, 3vw, 2rem);
   overflow: hidden;
 }
 
@@ -344,18 +358,27 @@ a {
 }
 
 .hero__inner {
+  /* Shared by the name and the portrait, which is sized from it. */
+  --name-size: clamp(2.5rem, 7.5vw, 4.5rem);
+
   position: relative;
   z-index: 1;
+}
+
+/* Top row: name on the left, portrait on the right, nothing else. Because the
+   portrait is exactly as tall as the two lines of the name, `align-items: end`
+   lines the two up at both edges with no magic offset to maintain. */
+.hero__head {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
-  align-items: start;
-  gap: clamp(2rem, 6vw, 4.5rem);
+  align-items: end;
+  gap: clamp(1.5rem, 5vw, 3.5rem);
 }
 
 .hero__name {
-  margin-top: 1.5rem;
+  margin-top: .85rem;
   font-family: var(--display);
-  font-size: clamp(3rem, 9.5vw, 6rem);
+  font-size: var(--name-size);
   font-weight: 600;
   line-height: .96;
   letter-spacing: -.045em;
@@ -363,7 +386,7 @@ a {
 .hero__name span { display: block; }
 
 .hero__tagline {
-  margin-top: 1.4rem;
+  margin-top: 1.25rem;
   font-family: var(--display);
   font-size: clamp(1.35rem, 3.2vw, 2.1rem);
   font-weight: 500;
@@ -381,15 +404,22 @@ a {
 }
 
 .hero__bio {
-  margin-top: 1.75rem;
+  margin-top: 1.4rem;
   max-width: var(--measure);
+  line-height: 1.6;
   color: var(--ink-soft);
 }
+.hero__bio > * + * { margin-top: .85em; }
 
+
+/* Square, and exactly as tall as the two lines of the name beside it: two
+   lines at line-height .96 is 1.92 times the font size. Deriving it from
+   --name-size rather than pinning a width keeps the two in step as the name
+   scales with the viewport. The margin lines its top edge up with the name's,
+   clearing the eyebrow above. */
 .hero__portrait {
   position: relative;
-  width: clamp(10rem, 25vw, 17rem);
-  margin-top: .75rem;
+  width: calc(var(--name-size) * 1.92);
 }
 .hero__portrait img {
   width: 100%;
@@ -413,12 +443,44 @@ a {
   pointer-events: none;
 }
 
+/* A quiet line at the foot of the hero saying she is open to being contacted.
+   Deliberately the smallest thing in the hero and the last one read: set in
+   body type rather than the mono eyebrow, because the eyebrow reads as a label
+   and a label here would look like a "FOR HIRE" badge. The dot is the same
+   one as the eyebrow's, minus the pulse — it carries the status idiom without
+   asking for attention. */
+/* Flows as normal text rather than as a flex row: as a flex row the dot is an
+   item of its own and wraps onto its own line on a phone. */
+.hero__note {
+  margin-top: 1.1rem;
+  font-size: .92rem;
+  color: var(--ink-soft);
+}
+.hero__note-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: .45rem;
+  border-radius: 50%;
+  background: var(--accent);
+  vertical-align: middle;
+}
+.hero__note a {
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  color: var(--ink);
+  border-bottom: 1px solid var(--ring);
+}
+.hero__note a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+.hero__note a:hover .icon--arrow { translate: 3px 0; }
+
 /* Icon link row, as chips. */
 .links {
   display: flex;
   flex-wrap: wrap;
   gap: .6rem;
-  margin-top: 2.25rem;
+  margin-top: 1.25rem;
 }
 .links__item {
   display: inline-flex;
@@ -490,6 +552,13 @@ a {
 .section__aside:hover { color: var(--accent); }
 .icon--arrow { transition: translate .25s var(--ease); }
 .section__aside:hover .icon--arrow { translate: 3px 0; }
+
+/* An optional line of prose between a section heading and its contents. */
+.section__intro {
+  max-width: var(--measure);
+  margin-bottom: 2rem;
+  color: var(--ink-soft);
+}
 
 
 /* 7. PUBLICATIONS ========================================================= */
@@ -591,6 +660,35 @@ a {
   letter-spacing: .1em;
   text-transform: uppercase;
   color: var(--ink);
+}
+
+
+/* Papers she led. Deliberately the loudest chip in the row: first authorship
+   is the first thing anyone scanning a publication list looks for, and it is
+   invisible otherwise unless you read every author list. */
+.pub__first {
+  padding: .18rem .5rem;
+  border-radius: 999px;
+  background: var(--gradient);
+  color: var(--on-accent);
+  font-family: var(--mono);
+  font-size: .64rem;
+  font-weight: 500;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+/* Small qualifier after the venue — "Preprint", "Review". */
+.pub__note {
+  padding: .18rem .5rem;
+  border-radius: 999px;
+  background: var(--wash);
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: .64rem;
+  font-weight: 500;
+  letter-spacing: .1em;
+  text-transform: uppercase;
 }
 
 
@@ -768,6 +866,8 @@ a {
 .foot__meta { font-family: var(--mono); font-size: .72rem; letter-spacing: .04em; }
 .foot a { border-bottom: 1px solid var(--rule); }
 .foot a:hover { color: var(--accent); border-color: var(--accent); }
+.foot__sep { margin-inline: .5rem; color: var(--rule); }
+
 .foot__year { margin-left: .5rem; }
 
 
@@ -828,7 +928,278 @@ a {
 }
 
 
-/* 11. MOTION ============================================================== */
+/* Prose-only pages (the `page` layout: /research/ and anything like it).
+   Without this the text column sits against the left edge of a 70rem wrap and
+   the page reads as broken rather than narrow. The 5rem is twice `.wrap`'s
+   maximum padding, so the text column ends up exactly one --measure wide. */
+.page--prose { max-width: calc(var(--measure) + 5rem); }
+.page--prose .prose { max-width: none; }
+
+
+/* 11. CV TIMELINE (for /cv/) ============================================= */
+
+/* Same left rail as the publication list, quieter: the CV is scanned, not
+   read, so nothing here lifts or glows on hover. */
+
+.cv__section + .cv__section { margin-top: 3.25rem; }
+
+.cv__heading {
+  font-family: var(--mono);
+  font-size: .72rem;
+  font-weight: 500;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  padding-bottom: .9rem;
+  margin-bottom: .4rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.cv { display: grid; }
+
+.cv__item {
+  display: grid;
+  grid-template-columns: 9rem minmax(0, 1fr);
+  gap: 0 1.75rem;
+  padding-block: 1.25rem;
+}
+.cv__item + .cv__item { border-top: 1px solid var(--rule); }
+
+.cv__when {
+  font-family: var(--mono);
+  font-size: .78rem;
+  letter-spacing: .04em;
+  color: var(--ink-soft);
+  padding-top: .2rem;
+}
+
+.cv__role {
+  font-family: var(--display);
+  font-size: 1.08rem;
+  font-weight: 600;
+  letter-spacing: -.02em;
+}
+.cv__role a { color: var(--accent); }
+.cv__role a:hover { color: var(--accent-lit); }
+
+.cv__where  { margin-top: .3rem; font-size: .9rem; color: var(--ink-soft); }
+.cv__detail { margin-top: .5rem; font-size: .9rem; max-width: var(--measure); }
+
+.cv__note {
+  margin-top: 1rem;
+  font-family: var(--mono);
+  font-size: .74rem;
+  letter-spacing: .04em;
+}
+
+.cv__list {
+  list-style: disc;
+  padding-left: 1.2em;
+  margin-top: 1.1rem;
+  max-width: var(--measure);
+}
+.cv__list li + li { margin-top: .4em; }
+
+
+/* 12. WORK LIST (for /building/ and /teaching/) =========================== */
+
+/* The same left rail as the CV, but each row carries a row of links, so it
+   gets more vertical room and the name is set a size larger. */
+
+.work__group + .work__group { margin-top: 3.5rem; }
+
+/* On /teaching/ an intro paragraph sits between the page header and the first
+   group, so the first heading gets no air from the rule above it. Same gap. */
+.prose + .work__group { margin-top: 3.5rem; }
+
+.work__intro {
+  margin-top: 1rem;
+  max-width: var(--measure);
+  font-size: .95rem;
+  color: var(--ink-soft);
+}
+
+.work { display: grid; margin-top: .5rem; }
+
+.work__item {
+  display: grid;
+  grid-template-columns: 9rem minmax(0, 1fr);
+  gap: 0 1.75rem;
+  padding-block: 1.6rem;
+}
+.work__item + .work__item { border-top: 1px solid var(--rule); }
+
+.work__when {
+  font-family: var(--mono);
+  font-size: .78rem;
+  letter-spacing: .04em;
+  color: var(--ink-soft);
+  padding-top: .3rem;
+}
+
+.work__name {
+  font-family: var(--display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -.025em;
+}
+
+.work__where {
+  margin-top: .25rem;
+  font-family: var(--mono);
+  font-size: .74rem;
+  letter-spacing: .04em;
+  color: var(--ink-soft);
+}
+
+.work__blurb {
+  margin-top: .6rem;
+  max-width: var(--measure);
+  color: var(--ink-soft);
+}
+
+/* Links read as a row of small chips. The arrow only appears on hover, the
+   same tell the project cards use. */
+.work__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-top: .9rem;
+}
+.work__links a {
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  padding: .22rem .65rem;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  font-family: var(--mono);
+  font-size: .7rem;
+  letter-spacing: .04em;
+  color: var(--ink-soft);
+  transition: border-color .25s var(--ease), color .25s var(--ease);
+}
+.work__links a:hover { border-color: var(--ring); color: var(--accent); }
+.work__links .icon--arrow {
+  opacity: 0;
+  translate: -3px 0;
+  transition: opacity .25s var(--ease), translate .25s var(--ease);
+}
+.work__links a:hover .icon--arrow { opacity: 1; translate: 0 0; }
+
+.work__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  margin-top: .8rem;
+}
+.work__tags span {
+  font-family: var(--mono);
+  font-size: .66rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  opacity: .75;
+}
+.work__tags span + span::before { content: "\00b7"; margin-right: .4rem; }
+
+
+/* 13. BY THE NUMBERS ===================================================== */
+
+/* A band of counts under the hero. The numbers borrow .mark from the hero for
+   the gradient fill, so they stay in step with the tagline. Set in a <dl>:
+   each figure is a term and its explanation the description. */
+
+.stats {
+  border-block: 1px solid var(--rule);
+  background: var(--bg-soft);
+}
+
+.stats__inner {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 2rem 1.5rem;
+  padding-block: clamp(2.25rem, 5vw, 3rem);
+}
+
+.stat__num {
+  font-family: var(--display);
+  font-size: clamp(2.4rem, 5.5vw, 3.4rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -.04em;
+}
+
+.stat__label {
+  margin: .7rem 0 0;
+  font-family: var(--mono);
+  font-size: .7rem;
+  font-weight: 500;
+  line-height: 1.65;
+  letter-spacing: .04em;
+  color: var(--ink-soft);
+}
+
+
+/* 14. UPCOMING STRIP ====================================================== */
+
+/* A slim band under the hero listing the next few places to find her. It
+   renders only while _data/upcoming.yml holds an event that has not happened
+   yet, so the band disappears on its own rather than going stale. */
+
+.upcoming {
+  border-block: 1px solid var(--rule);
+  background: var(--wash);
+}
+
+.upcoming__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: .75rem 2.25rem;
+  padding-block: 1.15rem;
+}
+
+.upcoming__label {
+  font-family: var(--mono);
+  font-size: .7rem;
+  font-weight: 500;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* One event per row, with the dates sharing a column so the titles line up.
+   The alignment needs `display: contents` on the <li> below: that makes each
+   event's two spans direct children of this grid, which is the only way one
+   row can size a track the next row also uses. */
+.upcoming__list {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: .55rem 1.25rem;
+  min-width: 0;
+}
+
+.upcoming__event { display: contents; }
+
+.upcoming__when {
+  font-family: var(--mono);
+  font-size: .74rem;
+  letter-spacing: .04em;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+
+.upcoming__what { font-size: .92rem; }
+.upcoming__where { color: var(--ink-soft); }
+
+/* Same hairline underline as the eyebrow links, so an event that has a page
+   behind it looks clickable without shouting. */
+.upcoming__what a { border-bottom: 1px solid var(--ring); }
+.upcoming__what a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+
+/* 15. MOTION ============================================================== */
 
 /* Hero: pure CSS, runs at first paint whether or not JS is alive. */
 .hero .reveal {
@@ -874,14 +1245,17 @@ a {
 }
 
 
-/* 12. RESPONSIVE ========================================================== */
+/* 16. RESPONSIVE ========================================================== */
 
 @media (max-width: 52rem) {
   .nav__mark-name { display: none; }
 }
 
 @media (max-width: 46rem) {
-  .hero__inner { grid-template-columns: minmax(0, 1fr); }
+  /* Four figures in a row stop reading as a row long before the text does. */
+  .stats__inner { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+  .hero__head { grid-template-columns: minmax(0, 1fr); }
   .hero__portrait {
     order: -1;
     width: clamp(7.5rem, 34vw, 10rem);
@@ -891,11 +1265,53 @@ a {
     gap: 0;
   }
   .pub__year { padding-top: 0; margin-bottom: .45rem; }
+  .cv__item {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+  .cv__when { padding-top: 0; margin-bottom: .4rem; }
+  .work__item {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+  .work__when { padding-top: 0; margin-bottom: .4rem; }
+  .upcoming__inner { flex-direction: column; gap: .7rem; }
+  /* The date column crowds the title on a phone, so each event goes back to
+     being one flex row that can wrap onto a second line. */
+  .upcoming__list { grid-template-columns: minmax(0, 1fr); gap: .9rem; }
+  .upcoming__event {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: .2rem .6rem;
+    min-width: 0;
+  }
   .nav__links { gap: 1rem; font-size: .7rem; letter-spacing: .08em; }
 }
 
+/* Five nav items stop fitting on one line somewhere around a phone's width,
+   so below this the bar becomes two rows: mark and theme toggle on top, the
+   links spread across the row beneath. */
+@media (max-width: 34rem) {
+  .nav__inner {
+    flex-wrap: wrap;
+    height: auto;
+    gap: 0 1rem;
+    padding-block: .7rem;
+  }
+  .nav__links {
+    order: 3;
+    width: 100%;
+    justify-content: space-between;
+    gap: .5rem;
+    padding-top: .6rem;
+    font-size: .66rem;
+    letter-spacing: .06em;
+  }
+}
+
 @media (max-width: 26rem) {
-  .nav__links { gap: .8rem; font-size: .67rem; }
+  .nav__links { font-size: .62rem; letter-spacing: .04em; }
   .links { gap: .45rem; }
   .links__item { padding: .4rem .75rem; font-size: .8rem; }
 }

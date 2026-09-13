@@ -13,6 +13,10 @@
   icon: scholar
   url: "https://scholar.google.com/citations?user=cFwEwxoAAAAJ&hl=en"
 
+- label: ORCID
+  icon: orcid
+  url: "https://orcid.org/0000-0002-1136-0832"
+
 - label: LinkedIn
   icon: linkedin
   url: "https://www.linkedin.com/in/katarinagresova/"

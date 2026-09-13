@@ -2,6 +2,8 @@
   <div class="wrap foot__inner">
     <p class="foot__name">{{ site.author.name }}</p>
     <p class="foot__meta">
+      <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
+      <span class="foot__sep" aria-hidden="true">&middot;</span>
       Built with <a href="https://jekyllrb.com/">Jekyll</a>, hosted on
       <a href="https://pages.github.com/">GitHub&nbsp;Pages</a>.
       <span class="foot__year">&copy; {{ 'now' | date: '%Y' }}</span>

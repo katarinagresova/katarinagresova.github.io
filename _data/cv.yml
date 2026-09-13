@@ -1,0 +1,148 @@
+# The CV page, section by section. Two kinds of section:
+#
+#   entries: -> timeline rows (when / what / where / detail)
+#   items:   -> a plain bulleted list
+#
+# `when` shows in a narrow left rail — keep it to about fourteen characters or
+# it wraps. `detail` is passed through as HTML, so <em> and <a> work.
+
+- section: Research positions
+  entries:
+    - when: "2025 – present"
+      what: "Postdoctoral researcher"
+      where: "Berlin Institute for Medical Systems Biology (BIMSB), Max Delbrück Center, Berlin"
+      detail: >-
+        Interpretable machine learning for RNA regulation: what in an mRNA's own
+        sequence sets how much protein a cell makes from it, and what that
+        explains about health and disease.
+
+    - when: "2023 – 2025"
+      what: "Researcher"
+      where: "Intelligent Systems for Complex Data group, Masaryk University, Brno"
+      detail: >-
+        Protein-structure similarity search at proteome scale — adapting
+        pretrained networks to produce structure embeddings, and the pipelines
+        to run them on HPC.
+
+    - when: "2024 – 2025"
+      what: "Pre-doctoral fellow"
+      where: "Laboratory of Genetics and Genomics, National Institute on Aging, NIH, Baltimore"
+      detail: >-
+        Senescent-cell classification from single-cell long-read sequencing in
+        the ageing mouse brain, and shared senescence markers across cell types
+        from transcriptomic and proteomic data.
+
+    - when: "2023 – 2024"
+      what: "Visiting researcher"
+      where: "Alexiou Lab, University of Malta, Msida"
+      detail: >-
+        Led the miRBench project. Taught deep learning and interpretability,
+        and supervised four junior researchers.
+
+    - when: "2020 – 2023"
+      what: "Research specialist"
+      where: "Alexiou group, CEITEC, Masaryk University, Brno"
+      detail: >-
+        Genomic Benchmarks, attribution-based interpretation of sequence models,
+        and deep learning for RNA. Ran the group's workshops and hackathons.
+
+- section: Education
+  entries:
+    - when: "2020 – 2025"
+      what: "Ph.D. in Genomics and Proteomics"
+      where: "Masaryk University, Brno"
+      detail: >-
+        Dissertation: <em>Modeling small RNA binding rules using machine
+        learning</em>, supervised by Panagiotis Alexiou. Awarded
+        <em>summa cum laude</em>.
+
+    - when: "2018 – 2020"
+      what: "M.Sc. in Bioinformatics and Biocomputing"
+      where: "Brno University of Technology"
+      detail: >-
+        Thesis: <em>Bacteria classification into taxonomic categories based on
+        properties of 16S rRNA</em>. Graduated with honours.
+
+    - when: "2015 – 2018"
+      what: "B.Sc. in Information Technology"
+      where: "Brno University of Technology"
+      detail: >-
+        Thesis: <em>Searching semantically annotated texts</em>. Graduated with
+        honours.
+
+    - when: "2022"
+      what: "Oxford Machine Learning Summer School"
+      where: "Health and finance tracks, online"
+
+- section: Recognition
+  items:
+    - "Ph.D. awarded <em>summa cum laude</em>, Masaryk University, 2025"
+    - "Pre-doctoral fellowship, National Institute on Aging, NIH, 2024 – 2025"
+    - "Oxford Machine Learning Summer School, health and finance tracks, 2022"
+    - "Top-five poster, ENBIK 2022"
+    - "M.Sc. and B.Sc. both graduated with honours, Brno University of Technology"
+
+- section: Software engineering
+  entries:
+    - when: "2023"
+      what: "Machine learning engineer"
+      where: "Melown Technologies, Brno"
+      detail: >-
+        Reading street signs out of many low-quality images at once, inside a
+        large-scale 3D city-model pipeline — research prototype through to
+        production.
+
+    - when: "2021 – 2022"
+      what: "Machine learning specialist"
+      where: "Proficio / Databy, Brno"
+      detail: >-
+        NLP for product matching across e-commerce catalogues, and the cleaning
+        pipelines that made the text usable.
+
+    - when: "2020 – 2021"
+      what: "Software developer"
+      where: "Oracle NetSuite, Brno"
+      detail: >-
+        SuiteAnalytics Connect — third-party analytics access to NetSuite data.
+        Java, SQL, ODBC.
+
+    - when: "2018 – 2020"
+      what: "Software developer"
+      where: "Tieto, Brno"
+      detail: >-
+        Test infrastructure and continuous integration for a large Java system.
+
+    - when: "2016 – 2018"
+      what: "Research scholar"
+      where: "Knowledge Technology group, Brno University of Technology"
+      detail: >-
+        Corpora Processing Software — tooling for large annotated text corpora.
+
+# The next three sections are not written out here — they are pulled from
+# _data/work.yml and _data/teaching.yml so that a project or a course is
+# described in exactly one place. `from` names the data file, `kinds` picks
+# which entries, and `link` is the page to send the reader to for the detail.
+
+- section: Software and data
+  from: work
+  kinds: [benchmark, model, service, pipeline]
+  link: /building/
+  link_text: what each of these actually is
+
+- section: Teaching and supervision
+  from: teaching
+  kinds: [course, material, supervision, organised]
+  link: /teaching/
+  link_text: the full teaching record
+
+- section: Talks and outreach
+  from: teaching
+  kinds: [talk]
+
+- section: Skills
+  items:
+    - "Python — PyTorch, TensorFlow, scikit-learn, Hugging Face, pandas, NumPy, Jupyter"
+    - "Also Java, C++, R, SQL and rather a lot of Bash"
+    - "Snakemake pipelines, Git, CI/CD, HPC"
+    - "Deep learning, explainable AI, model benchmarking, NLP, computer vision"
+    - "Genomics: sequence models, RNA-seq (bulk and single-cell), long-read sequencing, CLIP and chimeric-read protocols, protein structure"

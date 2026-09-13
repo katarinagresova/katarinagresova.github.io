@@ -1,0 +1,41 @@
+{%- comment -%}
+  A slim band under the hero listing the next few places to find her.
+
+  Entries expire on their own: anything whose `until` date has passed is
+  skipped, and if that leaves nothing the band is not printed at all — so the
+  page never shows an empty "Upcoming" or an event from last year. Dates are
+  compared as plain integers (20260913) because Liquid will not compare two
+  date strings reliably.
+{%- endcomment -%}
+
+{%- assign today = site.time | date: "%Y%m%d" | plus: 0 -%}
+{%- assign sorted = site.data.upcoming | sort: "until" -%}
+
+{%- capture events -%}
+  {%- for event in sorted -%}
+    {%- assign ends = event.until | date: "%Y%m%d" | plus: 0 -%}
+    {%- if ends >= today -%}
+    <li class="upcoming__event">
+      <span class="upcoming__when">{{ event.when }}</span>
+      <span class="upcoming__what">
+        {%- if event.url -%}
+        <a href="{{ event.url }}" target="_blank" rel="noopener">{{ event.what }}</a>
+        {%- else -%}
+        {{ event.what }}
+        {%- endif -%}
+        {%- if event.where %} <span class="upcoming__where">— {{ event.where }}</span>{% endif -%}
+      </span>
+    </li>
+    {%- endif -%}
+  {%- endfor -%}
+{%- endcapture -%}
+
+{%- assign events = events | strip -%}
+{%- if events != "" -%}
+<aside class="upcoming" aria-label="Upcoming appearances">
+  <div class="wrap upcoming__inner">
+    <p class="upcoming__label">Where to find me next</p>
+    <ul class="upcoming__list" role="list">{{ events }}</ul>
+  </div>
+</aside>
+{%- endif -%}

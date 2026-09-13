@@ -5,6 +5,10 @@ name: Deploy site
 on:
   push:
     branches: [main]
+  # A daily rebuild so that expired entries in _data/upcoming.yml drop off the
+  # landing page without anyone having to push a commit.
+  schedule:
+    - cron: "17 5 * * *"
   workflow_dispatch:
 
 permissions:

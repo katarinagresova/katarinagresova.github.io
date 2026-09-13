@@ -1,0 +1,99 @@
+---
+title: Curriculum vitae
+eyebrow: CV
+subtitle: >-
+  Positions, education, teaching and talks. The full publication list lives on
+  the publications page.
+permalink: /cv/
+layout: default
+---
+
+<article class="wrap page">
+  <header class="page__head">
+    <p class="eyebrow">{{ page.eyebrow }}</p>
+    <h1 class="page__title">{{ page.title }}</h1>
+    <p class="page__subtitle">
+      Positions, education, teaching and talks. Longer write-ups of the
+      software live on the <a href="{{ '/building/' | relative_url }}">building
+      page</a> and the courses on the
+      <a href="{{ '/teaching/' | relative_url }}">teaching page</a>; the full
+      publication list is on the
+      <a href="{{ '/publications/' | relative_url }}">publications page</a>.
+    </p>
+  </header>
+
+  {%- for block in site.data.cv %}
+  <section class="cv__section">
+    <h2 class="cv__heading">{{ block.section }}</h2>
+
+    {%- if block.entries %}
+    <ol class="cv" role="list">
+      {%- for entry in block.entries %}
+      <li class="cv__item">
+        <span class="cv__when">{{ entry.when }}</span>
+        <div class="cv__what">
+          <h3 class="cv__role">
+            {%- if entry.url -%}
+            <a href="{{ entry.url }}" target="_blank" rel="noopener">{{ entry.what }}</a>
+            {%- else -%}
+            {{ entry.what }}
+            {%- endif -%}
+          </h3>
+          {%- if entry.where %}<p class="cv__where">{{ entry.where }}</p>{% endif -%}
+          {%- if entry.detail %}<p class="cv__detail">{{ entry.detail }}</p>{% endif -%}
+        </div>
+      </li>
+      {%- endfor %}
+    </ol>
+    {%- endif -%}
+
+    {%- comment -%}
+      A section can also be pulled from another data file instead of being
+      written out in _data/cv.yml, so that a project or a course is described
+      in exactly one place. See the comment above those sections in cv.yml.
+    {%- endcomment -%}
+    {%- if block.from %}
+    {%- if block.from == "teaching" %}{% assign source = site.data.teaching %}
+    {%- else %}{% assign source = site.data.work %}{% endif %}
+    {%- assign rows = "" | split: "" %}
+    {%- for kind in block.kinds %}
+      {%- assign matched = source | where: "kind", kind %}
+      {%- assign rows = rows | concat: matched %}
+    {%- endfor %}
+    <ol class="cv" role="list">
+      {%- for entry in rows %}
+      <li class="cv__item">
+        <span class="cv__when">{{ entry.when }}</span>
+        <div class="cv__what">
+          <h3 class="cv__role">
+            {%- assign primary = entry.links | first -%}
+            {%- if primary -%}
+            <a href="{{ primary.url }}" target="_blank" rel="noopener">{{ entry.name }}</a>
+            {%- else -%}
+            {{ entry.name }}
+            {%- endif -%}
+          </h3>
+          {%- if entry.where %}
+          <p class="cv__where">{{ entry.where }}</p>
+          {%- elsif entry.blurb %}
+          <p class="cv__where">{{ entry.blurb | strip_html | truncatewords: 16 }}</p>
+          {%- endif %}
+        </div>
+      </li>
+      {%- endfor %}
+    </ol>
+    {%- if block.link %}
+    <p class="cv__note">
+      <a href="{{ block.link | relative_url }}">{{ block.link_text }} &rarr;</a>
+    </p>
+    {%- endif -%}
+    {%- endif -%}
+
+    {%- if block.items %}
+    <ul class="cv__list" role="list">
+      {%- for item in block.items %}<li>{{ item }}</li>{% endfor %}
+    </ul>
+    {%- endif -%}
+  </section>
+  {%- endfor %}
+</article>

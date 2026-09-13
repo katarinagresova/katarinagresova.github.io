@@ -1,0 +1,219 @@
+# Teaching, in the same shape as _data/work.yml — one entry per thing, with
+# whatever links exist. `kind` decides which group it lands in on /teaching/;
+# the groups themselves are declared in teaching.html.
+#
+# Anything with public material should carry a link. A course nobody can look
+# at is a line on a CV; a course with its notebooks online is a thing.
+
+# --- Written for anyone ----------------------------------------------------
+
+- name: "The Missing Skills"
+  kind: material
+  when: "ongoing"
+  featured: true
+  blurb: >-
+    Project-based tutorials on the computational skills a science degree leaves
+    out — version control, the shell, and making your work runnable by someone
+    who isn't you. Written because the bottleneck in computational biology is
+    rarely the idea; more often nobody ever showed anyone how to run the thing.
+  links:
+    - label: "Read it"
+      url: "https://katarinagresova.github.io/missing-skills/"
+    - label: "Code"
+      url: "https://github.com/katarinagresova/missing-skills"
+
+- name: "Biology Crash Course"
+  kind: material
+  when: "2021 – 2022"
+  featured: true
+  blurb: >-
+    Molecular biology from the ground up, written for computer scientists who
+    need enough of it to be dangerous. The mirror image of The Missing Skills,
+    and between them the two directions I spend most of my teaching in.
+  links:
+    - label: "Read it"
+      url: "https://katarinagresova.github.io/biology-crash-course/"
+    - label: "Code"
+      url: "https://github.com/katarinagresova/biology-crash-course"
+
+# --- Courses and workshops -------------------------------------------------
+
+- name: "Deep Learning for Genomics"
+  kind: course
+  when: "2024"
+  where: "Three-day course, University of Malta"
+  blurb: >-
+    Convolutional and recurrent models for biological sequence data, taught
+    from first principles to a room of biologists who had not written a
+    training loop before, and who had one working by the end of it. Seven
+    notebooks, from k-mers and a classical classifier through to transfer
+    learning and interpreting a trained network — all public, all still
+    runnable. It finished with a hackathon on real miRNA binding data, scored
+    on a held-out set nobody had seen.
+  links:
+    - label: "Materials"
+      url: "https://github.com/BioGeMT/DLforGenomics"
+
+- name: "Explainability for Deep Neural Networks"
+  kind: course
+  when: "2023"
+  featured: true
+  where: "MALTAomics Summer School, University of Malta"
+  blurb: >-
+    A hands-on session on getting a model to account for itself — saliency,
+    attribution, and the gap between an importance score and an explanation.
+    Notebooks are public and still run.
+  links:
+    - label: "Materials"
+      url: "https://github.com/katarinagresova/XAI_MALTAomics23"
+
+- name: "Inside the black box: explainable deep learning for biological data"
+  kind: course
+  when: "2021"
+  where: "Tutorial, ECCB 2021"
+  blurb: >-
+    A conference tutorial on interpreting sequence models, co-taught with the
+    rest of the group. The materials have outlived the conference.
+  links:
+    - label: "Materials"
+      url: "https://github.com/ML-Bioinfo-CEITEC/ECCB2021"
+
+- name: "Introduction to Bioinformatics"
+  kind: course
+  when: "2020 – 2021"
+  where: "Teaching assistant, Faculty of Medicine, Masaryk University"
+  blurb: >-
+    Practicals for a medical-faculty bioinformatics course: the command line,
+    data preprocessing, and the first programming most of the students had
+    ever done. I wrote and published the practical materials.
+  links:
+    - label: "Course materials"
+      url: "https://katarinagresova.github.io/DSIB01_2021/"
+    - label: "Code"
+      url: "https://github.com/katarinagresova/DSIB01_2021"
+
+# --- Supervision -----------------------------------------------------------
+
+- name: "Master's thesis supervision"
+  kind: supervision
+  when: "2025 – present"
+  where: "Max Delbrück Center, Berlin"
+  blurb: >-
+    Supervising a master's student on predicting translation efficiency from
+    an mRNA's own sequence — working up from handcrafted features to
+    pretrained foundation models, and asking at each step whether the extra
+    machinery actually earns the complexity.
+
+- name: "Master's thesis co-supervision"
+  kind: supervision
+  when: "2023 – 2025"
+  where: "University of Malta"
+  blurb: >-
+    Co-supervised a master's thesis on identifying miRNA targets with deep
+    learning, from problem statement through to a defended thesis.
+
+- name: "Bachelor internships"
+  kind: supervision
+  when: "2023 – 2024"
+  where: "University of Malta"
+  blurb: >-
+    Mentored three bachelor interns working on bias in genomic datasets —
+    which is to say, on the reason the miRBench project existed at all.
+
+# --- Organised -------------------------------------------------------------
+
+- name: "Hackathons on miRNA binding and Genomic Benchmarks"
+  kind: organised
+  when: "2022 – 2023"
+  where: "CEITEC and University of Malta"
+  blurb: >-
+    Co-organised hackathons where the point was that everybody left with
+    something running. Good practice for the thing I care about most: getting a
+    method out of one person's notebook.
+
+- name: "International workshop on similarity search"
+  kind: organised
+  when: "2023"
+  where: "Masaryk University"
+  blurb: >-
+    Co-organised a workshop on machine-learning-based similarity search,
+    bringing the structure-search and the sequence-model people into one room.
+
+# --- Talks and outreach ----------------------------------------------------
+
+- name: "GenBenchQC: automated quality control of genomic sequence benchmarks reveals widespread biases in deep learning datasets"
+  kind: talk
+  when: "2026"
+  where: "EMBO | EMBL Symposium: AI and biology, EMBL Heidelberg"
+  blurb: >-
+    A selected talk on auditing the datasets the field trains on, in a session
+    with Oded Regev and Peter Koo. The short version: a benchmark nobody has
+    checked is a benchmark a model can pass for the wrong reason.
+  links:
+    - label: "Symposium"
+      url: "https://www.embl.org/about/info/course-and-conference-office/events/ees26-02/"
+    - label: "The tool, now genomic-benchmarks-qc"
+      url: "https://genomic-benchmarks.github.io/genomic-benchmarks-qc/"
+
+- name: "GenBenchQC: automated quality control of genomic sequence benchmarks reveals widespread biases in deep learning datasets"
+  kind: talk
+  when: "2026"
+  where: "Short talk, RECOMB-Seq 2026, Thessaloniki"
+  blurb: >-
+    The same work at the RECOMB satellite on biological sequence analysis,
+    selected from the submitted abstracts for a slot in the main programme.
+  links:
+    - label: "Conference"
+      url: "https://recomb-seq.github.io/seq2026/"
+    - label: "The tool, now genomic-benchmarks-qc"
+      url: "https://genomic-benchmarks.github.io/genomic-benchmarks-qc/"
+
+- name: "Digital revolution of proteins"
+  kind: talk
+  when: "2024"
+  where: "Researchers' Night, Brno"
+  blurb: >-
+    Protein structure prediction, explained to a general audience including a
+    large number of children, in a tent.
+
+- name: "miRBench: benchmark datasets for microRNA binding site prediction"
+  kind: talk
+  when: "2024"
+  where: "Poster, ECCB 2024, Turku"
+  links:
+    - label: "The paper it became"
+      url: "https://academic.oup.com/bioinformatics/article/41/Supplement_1/i542/8199406"
+
+- name: "miRBench: benchmark datasets for microRNA binding site prediction"
+  kind: talk
+  when: "2024"
+  where: "Poster, Microsymposium on RNA Biology, Vienna"
+  links:
+    - label: "The paper it became"
+      url: "https://academic.oup.com/bioinformatics/article/41/Supplement_1/i542/8199406"
+
+- name: "Understanding miRNA binding site prediction through deep learning models"
+  kind: talk
+  when: "2023"
+  where: "Data Science Platform Seminars, University of Malta"
+
+- name: "Attribution-based interpretation of deep learning models"
+  kind: talk
+  when: "2023"
+  where: "Molecular Medicine Seminars, CEITEC, Masaryk University"
+  links:
+    - label: "The paper"
+      url: "https://doi.org/10.3390/biology12030369"
+
+- name: "Computational modelling of miRNA targets"
+  kind: talk
+  when: "2022"
+  where: "XXI. Meeting of Biochemists and Molecular Biologists, Brno"
+
+- name: "Genomic Benchmarks: a collection of datasets for genomic sequence classification"
+  kind: talk
+  when: "2022"
+  where: "Poster, ENBIK 2022 — selected in the top five"
+  links:
+    - label: "The paper it became"
+      url: "https://doi.org/10.1186/s12863-023-01123-8"

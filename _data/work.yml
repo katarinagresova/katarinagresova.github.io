@@ -1,0 +1,248 @@
+# Everything built, one entry per thing. The paper is an attribute of the
+# artifact, not the other way round — so something that is simultaneously a
+# package, a dataset and a paper is still a single entry with three links.
+#
+#   kind:     which group it appears under on /building/. The groups, their
+#             order and their titles are defined in building.html.
+#   featured: promotes it to the "Things I build" cards on the landing page.
+#             Keep this to six, or the grid leaves an orphan row.
+#   when:     shows in a narrow left rail — about fourteen characters.
+#   where:    small muted line under the name. Used for the employer on work
+#             that has no public link.
+#   links:    label/url pairs, rendered as a row. Order them by what a reader
+#             most likely wants first.
+
+# --- Benchmarks & datasets -------------------------------------------------
+
+- name: "Genomic Benchmarks QC"
+  kind: benchmark
+  when: "2025 – present"
+  featured: true
+  blurb: >-
+    Automated quality control for genomic machine-learning datasets. It scores
+    the biases, duplicate sequences and train/test leakage a classifier could
+    exploit <em>before</em> you train on it — length differences, GC content,
+    per-position give-aways, near-duplicate overlap between splits — and gives
+    each check a pass / warning / fail flag, a report you can read and a CSV you
+    can drop into CI. It is the general form of the problem behind everything
+    else in this section: rather than curate one more clean dataset, check the
+    one you already have. I designed it, wrote it and maintain it.
+  links:
+    - label: "Docs"
+      url: "https://genomic-benchmarks.github.io/genomic-benchmarks-qc/"
+    - label: "Code"
+      url: "https://github.com/genomic-benchmarks/genomic-benchmarks-qc"
+    - label: "pip install genomic-benchmarks-qc"
+      url: "https://pypi.org/project/genomic-benchmarks-qc/"
+    - label: "The wider project"
+      url: "https://genomic-benchmarks.github.io/"
+  tags: [python, benchmarks, tooling]
+
+- name: "miRBench"
+  kind: benchmark
+  when: "2024 – 2025"
+  featured: true
+  blurb: >-
+    Benchmark datasets and a Python package for miRNA target-site prediction,
+    built to remove the frequency-class bias that quietly inflates published
+    scores. It ships the data, the splits and wrappers around the existing
+    predictors, so a new method can be measured against all of them in one
+    call instead of six afternoons. I led the project and supervised the
+    students who built much of it.
+  links:
+    - label: "Code"
+      url: "https://github.com/katarinagresova/miRBench"
+    - label: "pip install mirbench"
+      url: "https://pypi.org/project/miRBench/"
+    - label: "Paper"
+      url: "https://academic.oup.com/bioinformatics/article/41/Supplement_1/i542/8199406"
+  tags: [python, benchmarks, miRNA]
+
+- name: "Genomic Benchmarks"
+  kind: benchmark
+  when: "2021 – 2023"
+  featured: true
+  blurb: >-
+    Eight curated datasets for genomic sequence classification across human,
+    mouse and roundworm, each with a sensible split and a baseline model, so a
+    new architecture has something honest to beat. Installable as a package and
+    mirrored on Hugging Face — the field's most common excuse for not
+    comparing fairly is that it was too much work. I led it and first-authored
+    the paper.
+  links:
+    - label: "Code"
+      url: "https://github.com/ML-Bioinfo-CEITEC/genomic_benchmarks"
+    - label: "pip install genomic-benchmarks"
+      url: "https://pypi.org/project/genomic-benchmarks/"
+    - label: "Hugging Face"
+      url: "https://huggingface.co/katarinagresova"
+    - label: "Paper"
+      url: "https://doi.org/10.1186/s12863-023-01123-8"
+  tags: [python, pytorch, datasets]
+
+# --- Models & methods ------------------------------------------------------
+
+- name: "miRBind and miRBind2"
+  kind: model
+  when: "2022 – 2026"
+  blurb: >-
+    Deep learning models that decide whether a microRNA binds a given site,
+    trained on chimeric read data rather than on the seed-match rules everyone
+    assumed. The second version goes a step further and predicts how much the
+    transcript is actually repressed, from sequence alone.
+  links:
+    - label: "Code"
+      url: "https://github.com/ML-Bioinfo-CEITEC/miRBind"
+    - label: "miRBind paper"
+      url: "https://doi.org/10.3390/genes13122323"
+    - label: "miRBind2 paper"
+      url: "https://academic.oup.com/bioinformatics/article/42/Supplement_2/btag410/8767265"
+  tags: [deep learning, miRNA]
+
+- name: "Attribution sequence alignment"
+  kind: model
+  when: "2022 – 2023"
+  featured: true
+  blurb: >-
+    A way to make a model say what it noticed. Attribution gives you one
+    importance score per nucleotide, which is not yet a motif; aligning those
+    profiles across many sequences makes the patterns a network has learned
+    visible as patterns — something a biologist can argue with, and
+    occasionally something nobody had written down.
+  links:
+    - label: "Paper"
+      url: "https://doi.org/10.3390/biology12030369"
+  tags: [interpretability, deep learning]
+
+# --- Databases & web services ---------------------------------------------
+
+- name: "AlphaFind and AlphaFind2"
+  kind: service
+  when: "2023 – 2026"
+  featured: true
+  blurb: >-
+    Structure-similarity search across the whole of AlphaFold DB. Pretrained
+    networks compress each structure into an embedding, which turns an
+    all-against-all comparison over more than 200 million structures into a
+    query you can wait for. The second version searches TED domains as well,
+    so a hit can be a shared domain rather than a whole fold. Both versions
+    are up and public.
+  links:
+    - label: "Try AlphaFind2"
+      url: "https://alphafind.ics.muni.cz/"
+    - label: "AlphaFind v1"
+      url: "https://alphafind.fi.muni.cz/"
+    - label: "Paper"
+      url: "https://doi.org/10.1093/nar/gkae397"
+    - label: "v2 paper"
+      url: "https://doi.org/10.1093/nar/gkag372"
+  tags: [protein structure, embeddings, hpc]
+
+- name: "RBP-Tar"
+  kind: service
+  when: "2023 – 2024"
+  featured: true
+  blurb: >-
+    A searchable database of experimentally determined RNA-binding protein
+    sites, pulled out of published CLIP experiments and put behind a query
+    interface — so you can ask what binds a transcript without reprocessing
+    somebody else's raw data first. I built it and first-authored the paper.
+  links:
+    - label: "Web server"
+      url: "https://rbp-tar.biodata.ceitec.cz"
+    - label: "Code"
+      url: "https://github.com/sb-ncbr/RBP-Tar"
+    - label: "Paper"
+      url: "https://doi.org/10.12688/f1000research.131014.3"
+  tags: [database, RBP]
+
+# --- Pipelines behind the papers -------------------------------------------
+
+- name: "Senescence marker discovery and scoring"
+  kind: pipeline
+  when: "2024 – 2026"
+  blurb: >-
+    The machine learning behind the SenCat paper, written as a Snakemake
+    workflow: transcriptomic and proteomic profiles of several senescent
+    primary cell types go in, and out come marker sets that stay informative
+    <em>across</em> cell types instead of describing one fibroblast very well.
+    It ships the markers and a scoring script, so somebody else can score their
+    own data for senescence without rerunning the discovery. I wrote it.
+  links:
+    - label: "Code"
+      url: "https://github.com/maragkakislab/wf-ml-markers-senescence"
+    - label: "Paper"
+      url: "https://doi.org/10.1016/j.molcel.2026.05.017"
+  tags: [snakemake, machine learning, senescence]
+
+- name: "Isoform remodeling in the ageing mouse brain"
+  kind: pipeline
+  when: "2024 – 2025"
+  blurb: >-
+    The single-cell long-read pipeline behind the ageing mouse brain paper —
+    nanopore reads through to which RNA isoform each cell type switches to as
+    the animal ages, which is a question short reads cannot answer at all.
+    Written as a workflow so the figures can be regenerated from the raw data
+    by someone who was not in the room.
+  links:
+    - label: "Code"
+      url: "https://github.com/maragkakislab/wf-sc-ont-mouse-brain"
+    - label: "Preprint"
+      url: "https://doi.org/10.1101/2025.06.05.658133"
+  tags: [snakemake, long reads, single cell]
+
+# --- Shipped in industry ---------------------------------------------------
+
+- name: "Reading street signs at city scale"
+  kind: production
+  when: "2023"
+  where: "Melown Technologies"
+  blurb: >-
+    A computer-vision model that recovers the text on a street sign from many
+    low-quality views of it, inside a pipeline building 3D models of entire
+    cities. Research prototype through to something that ran unattended.
+  tags: [computer vision, production]
+
+- name: "Product matching across catalogues"
+  kind: production
+  when: "2021 – 2022"
+  where: "Proficio / Databy"
+  blurb: >-
+    NLP that decides when two listings from different sellers are the same
+    physical product, plus the unglamorous text cleaning that made the listings
+    comparable in the first place.
+  links:
+    - label: "Code"
+      url: "https://github.com/katarinagresova/product-matching"
+  tags: [nlp, python]
+
+- name: "SuiteAnalytics Connect"
+  kind: production
+  when: "2020 – 2021"
+  where: "Oracle NetSuite"
+  blurb: >-
+    Third-party analytics access to NetSuite data — the layer that lets a
+    customer point their own reporting tool at the system and get an answer.
+    Java, SQL and ODBC, at a scale where a careless query is everyone's
+    problem.
+  tags: [java, sql]
+
+- name: "Test infrastructure and CI"
+  kind: production
+  when: "2018 – 2020"
+  where: "Tieto"
+  blurb: >-
+    Continuous integration and the test infrastructure around a large Java
+    system. This is where the habit of not believing a result until something
+    else re-runs it comes from.
+  tags: [java, ci]
+
+- name: "Corpora Processing Software"
+  kind: production
+  when: "2016 – 2018"
+  where: "Knowledge Technology group, Brno University of Technology"
+  blurb: >-
+    Tooling for building and querying very large annotated text corpora. My
+    first research job, and the first time something I wrote was used by people
+    I had never met.
+  tags: [nlp, tooling]

@@ -1,35 +1,145 @@
-# Newest first. `selected: true` puts it on the landing page.
-# Author names are written plainly; the one matching `highlight_author`
-# in _config.yml is automatically bolded.
+# Newest first. `selected: true` puts it on the landing page; everything here
+# shows on /publications/ regardless.
+#
+# Author names are written plainly; the one matching `highlight_author` in
+# _config.yml is automatically bolded, so spell it exactly the same way here.
+#
+# Optional `note:` prints a small label next to the venue — use it for
+# "Preprint", "Review", "Conference" and the like.
+#
+# Two keys describe authorship position, because author order alone hides it:
+#
+#   first_author: true   -> counted in the "N as first or co-first" figures on
+#                           the landing page and the publications header. Set it
+#                           only where she led the paper.
+#   author_note: "..."   -> the text of the marker chip. Defaults to "First
+#                           author" when first_author is set; use it for
+#                           "Co-first author", "Shared second author" and the
+#                           like. On its own, without first_author, it prints a
+#                           quieter chip and is not counted.
 
 - title: "miRBind2 enables sequence-only prediction of miRNA binding and transcript repression"
   authors: "David Čechák, Dimosthenis Tzimotoudis, Stephanie Sammut, Katarína Grešová, Eva Maršálková, David Farrugia, Panagiotis Alexiou"
   venue: "Bioinformatics"
   volume: "42(Supplement_2)"
   year: 2026
-  url: "https://doi.org/10.1093/bioinformatics/btag410"
+  url: "https://academic.oup.com/bioinformatics/article/42/Supplement_2/btag410/8767265"
+
+- title: "AlphaFind v2: similarity search in AlphaFold DB and TED domains across structural contexts"
+  authors: "Terézia Slanináková, Adrián Rošinec, Jakub Čillík, Aleš Křenek, Katarína Grešová, Jana Porubská, Eva Maršálková, Jaroslav Olha, David Procházka, Lukáš Hejtmánek, Vlastislav Dohnal, Karel Berka, Radka Svobodová, Matej Antol"
+  venue: "Nucleic Acids Research"
+  volume: "54(W1), W206–W210"
+  year: 2026
+  url: "https://doi.org/10.1093/nar/gkag372"
+
+- title: "SenCat: cataloging human cell senescence through multi-omic profiling of multiple senescent primary cell types"
+  authors: "Carlos Anerillas, Gisela Altés, Katarína Grešová, Dimitrios Tsitsipatis, Krystyna Mazan-Mamczarz, et al., Manolis Maragkakis, Nathan Basisty, Myriam Gorospe"
+  author_note: "Shared second author"
+  venue: "Molecular Cell"
+  volume: "86(13), 2605–2616.e8"
+  year: 2026
+  url: "https://doi.org/10.1016/j.molcel.2026.05.017"
   selected: true
+
+- title: "Senescence: an overlooked VSMC phenotype and therapeutic opportunity?"
+  authors: "Allison B. Herman, Katarína Grešová, Manolis Maragkakis, Michael V. Autieri"
+  venue: "Arteriosclerosis, Thrombosis, and Vascular Biology"
+  volume: "46(1), 119–131"
+  year: 2026
+  note: "Review"
+  url: "https://doi.org/10.1161/ATVBAHA.125.323131"
 
 - title: "miRBench: novel benchmark datasets for microRNA binding site prediction that mitigate against prevalent microRNA frequency class bias"
   authors: "Stephanie Sammut, Katarína Grešová, Dimosthenis Tzimotoudis, Eva Maršálková, David Čechák, Panagiotis Alexiou"
+  first_author: true
+  author_note: "Co-first author"
   venue: "Bioinformatics"
   volume: "41(Supplement_1), i542–i551"
   year: 2025
   url: "https://academic.oup.com/bioinformatics/article/41/Supplement_1/i542/8199406"
   selected: true
 
+- title: "Cell-specific RNA isoform remodeling in the aging mouse brain"
+  authors: "Abid Rehman, Megan Duffy, Katarína Grešová, Cedric Belair, Na Yang, Lin Wang, Christopher T. Lee, Matthew Payea, Sulochan Malla, Showkat Ahmad Dar, Payel Sen, Mark R. Cookson, Manolis Maragkakis"
+  venue: "bioRxiv"
+  year: 2025
+  note: "Preprint"
+  url: "https://doi.org/10.1101/2025.06.05.658133"
+
+- title: "Viral infection induces Alzheimer's disease-related pathways and senescence in iPSC-derived neuronal models"
+  authors: "Hana Hříbková, Veronika Pospíšilová, Kateřina Amruz Černá, Tereza Váňová, Jan Haviernik, et al., Katarína Grešová, Manolis Maragkakis, et al., Daniel Růžek, Dáša Bohačiaková"
+  venue: "bioRxiv"
+  year: 2025
+  note: "Preprint"
+  url: "https://doi.org/10.1101/2025.06.11.659008"
+
+- title: "RBP-Tar: a searchable database for experimental RBP binding sites"
+  authors: "Katarína Grešová, Tomáš Racek, Vlastimil Martinek, David Čechák, Radka Svobodová, Panagiotis Alexiou"
+  first_author: true
+  venue: "F1000Research"
+  volume: "12, 755"
+  year: 2024
+  url: "https://doi.org/10.12688/f1000research.131014.3"
+  selected: true
+
+- title: "AlphaFind: discover structure similarity across the proteome in AlphaFold DB"
+  authors: "David Procházka, Terézia Slanináková, Jaroslav Olha, Adrián Rošinec, Katarína Grešová, Miriama Jánošová, Jakub Čillík, Jana Porubská, Radka Svobodová, Vlastislav Dohnal, Matej Antol"
+  venue: "Nucleic Acids Research"
+  volume: "52(W1), W182–W186"
+  year: 2024
+  url: "https://doi.org/10.1093/nar/gkae397"
+
+- title: "Analysis of chimeric reads characterises the diverse targetome of AGO2-mediated regulation"
+  authors: "Václav Hejret, Nandan Mysore Varadarajan, Eva Klimentová, Katarína Grešová, Ilektra-Chara Giassa, Štěpánka Vaňáčová, Panagiotis Alexiou"
+  venue: "Scientific Reports"
+  volume: "13, 22895"
+  year: 2023
+  url: "https://doi.org/10.1038/s41598-023-49757-z"
+
+- title: "Transfer learning allows accurate RBP target site prediction with limited sample sizes"
+  authors: "Ondřej Vaculík, Eliška Chalupová, Katarína Grešová, Tomáš Majtner, Panagiotis Alexiou"
+  venue: "Biology"
+  volume: "12(10), 1276"
+  year: 2023
+  url: "https://doi.org/10.3390/biology12101276"
+
 - title: "Genomic benchmarks: a collection of datasets for genomic sequence classification"
   authors: "Katarína Grešová, Vlastimil Martinek, David Čechák, Petr Šimeček, Panagiotis Alexiou"
+  first_author: true
   venue: "BMC Genomic Data"
   volume: "24, 25"
   year: 2023
   url: "https://doi.org/10.1186/s12863-023-01123-8"
   selected: true
 
-- title: "miRBind: A Deep Learning Method for miRNA Binding Classification"
+- title: "Using attribution sequence alignment to interpret deep learning models for miRNA binding site prediction"
+  authors: "Katarína Grešová, Ondřej Vaculík, Panagiotis Alexiou"
+  first_author: true
+  venue: "Biology"
+  volume: "12(3), 369"
+  year: 2023
+  url: "https://doi.org/10.3390/biology12030369"
+  selected: true
+
+- title: "Small RNA targets: advances in prediction tools and high-throughput profiling"
+  authors: "Katarína Grešová, Panagiotis Alexiou, Ilektra-Chara Giassa"
+  first_author: true
+  venue: "Biology"
+  volume: "11(12), 1798"
+  year: 2022
+  note: "Review"
+  url: "https://doi.org/10.3390/biology11121798"
+
+- title: "miRBind: a deep learning method for miRNA binding classification"
   authors: "Eva Klimentová, Václav Hejret, Ján Krčmář, Katarína Grešová, Ilektra-Chara Giassa, Panagiotis Alexiou"
   venue: "Genes"
   volume: "13(12), 2323"
   year: 2022
   url: "https://doi.org/10.3390/genes13122323"
-  selected: true
+
+- title: "Fine-tuning transformers for genomic tasks"
+  authors: "Vlastimil Martinek, David Čechák, Katarína Grešová, Panagiotis Alexiou, Petr Šimeček"
+  venue: "bioRxiv"
+  year: 2022
+  note: "Preprint"
+  url: "https://doi.org/10.1101/2022.02.07.479412"

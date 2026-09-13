@@ -1,0 +1,52 @@
+---
+title: Publications
+subtitle: >-
+  Everything, newest first. Journal articles, preprints and reviews together —
+  the label next to the venue says which is which.
+permalink: /publications/
+layout: default
+---
+
+{%- assign bold_name = '<strong>' | append: site.highlight_author | append: '</strong>' -%}
+{%- assign first_author = site.data.publications | where: "first_author", true -%}
+
+<article class="wrap page">
+  <header class="page__head">
+    <p class="eyebrow">
+      {{ site.data.publications | size }} entries
+      <span class="eyebrow__sep" aria-hidden="true">/</span>
+      {{ first_author | size }} as first or co-first author
+    </p>
+    <h1 class="page__title">{{ page.title }}</h1>
+    <p class="page__subtitle">{{ page.subtitle }}</p>
+    <p class="page__subtitle">
+      Also on <a href="{{ site.scholar_url | escape }}" target="_blank" rel="noopener">Google Scholar</a>.
+    </p>
+  </header>
+
+  <ol class="pubs" role="list">
+    {%- for pub in site.data.publications -%}
+    <li class="pub">
+      <span class="pub__year">{{ pub.year }}</span>
+      <div class="pub__body">
+        <h2 class="pub__title">
+          <a href="{{ pub.url }}" target="_blank" rel="noopener">{{ pub.title }}</a>
+        </h2>
+        <p class="pub__authors">
+          {{- pub.authors | replace: site.highlight_author, bold_name -}}
+        </p>
+        <p class="pub__venue">
+          <span class="pub__journal">{{ pub.venue }}</span>
+          {%- if pub.volume %}<span>{{ pub.volume }}</span>{% endif -%}
+          {%- if pub.first_author -%}
+          <span class="pub__first">{{ pub.author_note | default: "First author" }}</span>
+          {%- elsif pub.author_note -%}
+          <span class="pub__note">{{ pub.author_note }}</span>
+          {%- endif -%}
+          {%- if pub.note %}<span class="pub__note">{{ pub.note }}</span>{% endif -%}
+        </p>
+      </div>
+    </li>
+    {%- endfor -%}
+  </ol>
+</article>

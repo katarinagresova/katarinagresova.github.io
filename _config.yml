@@ -4,10 +4,11 @@
 # =============================================================================
 
 title: Katarína Grešová
-tagline: Machine learning for the genome
+tagline: Machine learning for biology, built to be reused
 description: >-
-  Katarína Grešová — machine learning for genomics. Deep learning models for
-  RNA binding, and the benchmark datasets that keep them honest.
+  Katarína Grešová — machine learning for RNA regulation. Sequence models of
+  RNA binding and translation, and the benchmark datasets that keep them
+  honest.
 url: https://katarinagresova.github.io
 baseurl: ""
 lang: en

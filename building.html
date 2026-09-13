@@ -1,0 +1,93 @@
+---
+title: Things I build
+eyebrow: Building
+subtitle: >-
+  Benchmarks, models, databases, the pipelines behind the papers, and the
+  years in industry that taught me to ship them. Everything here was used by somebody who isn't me — that is the
+  only rule for getting on this page.
+permalink: /building/
+layout: default
+
+# Groups, in the order they appear. `kind` matches the `kind:` on entries in
+# _data/work.yml; anything with a kind not listed here simply won't show.
+groups:
+  - kind: benchmark
+    title: Benchmarks and datasets
+    intro: >-
+      Nearly everything I build starts as a complaint about an evaluation. A
+      model that exploits an artefact posts a beautiful number and teaches you
+      nothing, so somebody has to make the comparison fair first.
+  - kind: model
+    title: Models and methods
+    intro: >-
+      Sequence in, prediction out — and, wherever I can manage it, some account
+      of what the model actually noticed.
+  - kind: service
+    title: Databases and web services
+    intro: >-
+      Things with a URL, so that using them costs nobody an afternoon.
+  - kind: pipeline
+    title: Pipelines behind the papers
+    intro: >-
+      The analysis for a paper, written as a workflow rather than a folder of
+      scripts — raw data in, figures out, on a machine that isn't mine. It is
+      the difference between a result and a result somebody else can check.
+  - kind: production
+    title: Shipped in industry
+    intro: >-
+      Seven years of software engineering before and alongside research. Mostly
+      closed source, so there is nothing to click — but it is where the habits
+      come from.
+---
+
+<article class="wrap page">
+  <header class="page__head">
+    <p class="eyebrow">{{ site.data.work | size }} projects</p>
+    <h1 class="page__title">{{ page.title }}</h1>
+    <p class="page__subtitle">{{ page.subtitle }}</p>
+    <p class="page__subtitle">
+      Teaching material has a <a href="{{ '/teaching/' | relative_url }}">page of its
+      own</a>. Everything else is on
+      <a href="https://github.com/katarinagresova" target="_blank" rel="noopener">GitHub</a>.
+    </p>
+  </header>
+
+  {%- for group in page.groups %}
+  {%- assign items = site.data.work | where: "kind", group.kind %}
+  {%- if items.size > 0 %}
+  <section class="work__group">
+    <h2 class="cv__heading">{{ group.title }}</h2>
+    {%- if group.intro %}<p class="work__intro">{{ group.intro }}</p>{% endif %}
+
+    <ol class="work" role="list">
+      {%- for item in items %}
+      <li class="work__item">
+        <span class="work__when">{{ item.when }}</span>
+        <div class="work__body">
+          <h3 class="work__name">{{ item.name }}</h3>
+          {%- if item.where %}<p class="work__where">{{ item.where }}</p>{% endif %}
+          {%- if item.blurb %}<p class="work__blurb">{{ item.blurb }}</p>{% endif %}
+
+          {%- if item.links %}
+          <p class="work__links">
+            {%- for link in item.links %}
+            <a href="{{ link.url }}" target="_blank" rel="noopener">
+              {{- link.label }} {% include icon.html name="arrow" -%}
+            </a>
+            {%- endfor %}
+          </p>
+          {%- endif %}
+
+          {%- if item.tags %}
+          <p class="work__tags">
+            {%- for tag in item.tags %}<span>{{ tag }}</span>{% endfor -%}
+          </p>
+          {%- endif %}
+        </div>
+      </li>
+      {%- endfor %}
+    </ol>
+  </section>
+  {%- endif -%}
+  {%- endfor %}
+</article>
