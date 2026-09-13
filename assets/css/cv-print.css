@@ -1,0 +1,195 @@
+/* ==========================================================================
+   CV-PRINT — styles for /cv/print/ only, the page rendered to
+   assets/katarina-gresova-cv.pdf.
+
+   Deliberately not part of main.css: none of it is ever downloaded by a
+   visitor to the site, and the sizes here are set in points against an A4
+   sheet rather than in rems against a viewport.
+
+   The whole file is a density exercise. Every value is chosen to get the full
+   record onto two sheets while staying comfortably readable in print — where
+   8.5pt is normal body copy, not small. If something has to give, cut content
+   in cv-print.html rather than shrinking type below 8pt.
+   ========================================================================== */
+
+@page {
+  size: A4;
+  margin: 12mm 13mm;
+}
+
+:root {
+  --display: "Space Grotesk", Georgia, serif;
+  --sans: "Inter", -apple-system, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+  --ink: #14141a;
+  --ink-soft: #4a4a58;
+  --ink-mute: #74748a;
+  --rule: #d8d8e0;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #fff;
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 8.6pt;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* On screen the page is previewed at roughly the width of the sheet, so what
+   you see in the browser is what lands in the PDF. */
+.cv {
+  max-width: 184mm;
+  margin: 0 auto;
+  padding: 8mm 0;
+}
+@media print {
+  .cv { max-width: none; padding: 0; }
+}
+
+/* --- Masthead ----------------------------------------------------------- */
+
+.cv__name {
+  margin: 0;
+  font-family: var(--display);
+  font-size: 19pt;
+  font-weight: 600;
+  letter-spacing: -.02em;
+  line-height: 1.1;
+}
+
+.cv__contact {
+  margin: 3pt 0 0;
+  font-family: var(--mono);
+  font-size: 7.3pt;
+  color: var(--ink-soft);
+}
+.cv__contact span { color: var(--rule); margin: 0 2pt; }
+
+.cv__summary {
+  margin: 8pt 0 0;
+  font-size: 8.5pt;
+  line-height: 1.45;
+  color: var(--ink-soft);
+}
+
+/* --- Sections ----------------------------------------------------------- */
+
+.sec { margin-top: 13pt; }
+
+.sec h2 {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8pt;
+  margin: 0 0 6pt;
+  padding-bottom: 2.5pt;
+  border-bottom: .6pt solid var(--rule);
+  font-family: var(--mono);
+  font-size: 7pt;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .11em;
+  color: var(--ink-mute);
+  /* A heading stranded at the foot of a sheet is the worst break available. */
+  break-after: avoid;
+}
+
+/* The qualifier that sits opposite a heading — "16 in total, 5 as first
+   author". Set in the body face, not the mono, so it does not read as a second
+   heading. */
+.sec h2 .count {
+  font-family: var(--sans);
+  font-size: 7pt;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--ink-mute);
+  text-align: right;
+}
+
+/* --- Rows --------------------------------------------------------------- */
+
+.row {
+  display: grid;
+  grid-template-columns: 62pt minmax(0, 1fr);
+  gap: 0 9pt;
+  margin-bottom: 5.5pt;
+  break-inside: avoid;
+}
+
+.when {
+  font-family: var(--mono);
+  font-size: 6.9pt;
+  line-height: 1.75;
+  color: var(--ink-mute);
+  white-space: nowrap;
+}
+
+.role {
+  margin: 0;
+  font-size: 8.7pt;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+/* Runs on from the role rather than sitting under it: at this density a second
+   line per entry costs about a third of a sheet across the whole document. */
+.role .org {
+  font-weight: 400;
+  color: var(--ink-soft);
+}
+
+.detail {
+  margin: 1.5pt 0 0;
+  font-size: 8.1pt;
+  line-height: 1.45;
+  color: var(--ink-soft);
+}
+
+/* --- Lists -------------------------------------------------------------- */
+
+/* Recognition reads as a run-on sentence rather than five bullets, which is
+   both shorter and less self-congratulatory. */
+.inline {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 8.3pt;
+  color: var(--ink-soft);
+}
+.inline li { display: inline; }
+.inline li:not(:last-child)::after {
+  content: " · ";
+  color: var(--ink-mute);
+}
+
+.skills {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 8.3pt;
+  color: var(--ink-soft);
+}
+.skills li { margin-bottom: 3pt; }
+
+.cv__foot {
+  margin: 10pt 0 0;
+  padding-top: 4pt;
+  border-top: .6pt solid var(--rule);
+  font-family: var(--mono);
+  font-size: 6.9pt;
+  color: var(--ink-mute);
+}
+.cv__foot strong { color: var(--ink); font-weight: 500; }
+
+/* The address of each public artifact. A PDF is read on paper as often as on a
+   screen, so the URL is printed rather than hidden behind a link. */
+.url {
+  font-family: var(--mono);
+  font-size: 7pt;
+  color: var(--ink-mute);
+}

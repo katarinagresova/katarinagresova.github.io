@@ -16,6 +16,8 @@
 
 - name: "Genomic Benchmarks QC"
   kind: benchmark
+  short: >-
+    Scores a genomic dataset for the shortcuts a classifier could exploit — bias, duplicates, train/test leakage — before you train on it.
   when: "2025 – present"
   featured: true
   blurb: >-
@@ -45,6 +47,8 @@
 
 - name: "miRBench"
   kind: benchmark
+  short: >-
+    Benchmark datasets and a Python package for miRNA target-site prediction, built to remove the frequency bias that inflates published scores.
   when: "2024 – 2025"
   featured: true
   blurb: >-
@@ -69,6 +73,8 @@
 
 - name: "Genomic Benchmarks"
   kind: benchmark
+  short: >-
+    Eight curated datasets for genomic sequence classification, each with an honest split and a baseline worth beating.
   when: "2021 – 2023"
   featured: true
   blurb: >-
@@ -112,6 +118,8 @@
 
 - name: "Attribution sequence alignment"
   kind: model
+  short: >-
+    Aligns attribution profiles across many sequences, making the patterns a network has learned visible as motifs a biologist can argue with.
   when: "2022 – 2023"
   featured: true
   blurb: >-
@@ -136,6 +144,8 @@
 
 - name: "AlphaFind and AlphaFind2"
   kind: service
+  short: >-
+    Structure-similarity search across all 200 million-plus predicted structures in AlphaFold DB. Public web service.
   when: "2023 – 2026"
   featured: true
   blurb: >-
@@ -160,6 +170,8 @@
 
 - name: "RBP-Tar"
   kind: service
+  short: >-
+    Searchable database of experimentally determined RNA-binding protein sites, pulled out of published CLIP experiments.
   when: "2023 – 2024"
   featured: true
   blurb: >-

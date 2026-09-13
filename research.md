@@ -130,4 +130,7 @@ nobody ever showed anyone how to run the thing.
 
 The things that came out of all this are listed on the
 [building page]({{ '/building/' | relative_url }}), and the courses on the
-[teaching page]({{ '/teaching/' | relative_url }}).
+[teaching page]({{ '/teaching/' | relative_url }}). If you would like some of
+it pointed at a problem of yours — a course for your team, a dataset audited
+before you train on it, a model built so somebody else can rerun it — that is
+[what I am available for]({{ '/#offer' | relative_url }}).

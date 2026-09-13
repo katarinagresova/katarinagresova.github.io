@@ -1,0 +1,52 @@
+# What she is available for — the block directly under the hero.
+#
+# This is the part of the site with a job to do: a visitor who likes the work
+# still has to be told what they can actually ask for. Three doors, in the
+# order someone is most likely to want them.
+#
+#   name:      the door, as a verb phrase. Short — it is set large.
+#   lede:      one line, the promise. This is the only part some people read.
+#   detail:    what the engagement actually looks like in practice.
+#   proof:     a concrete thing already done, so the offer is a record rather
+#              than an advertisement. Optional `proof_url` makes it clickable.
+
+- name: "Teach your team"
+  lede: >-
+    Deep learning for people who need to use it, not publish about it.
+  detail: >-
+    Three days that take biologists from never having written a training loop
+    to having one that works — or a half-day on interpretability for a team
+    that already has models and cannot say what they learned. The notebooks go
+    home with you, and they still run a year later.
+  proof: >-
+    Run as a three-day course at the University of Malta: seven notebooks, from
+    k-mers through to interpreting a trained network, finishing with a
+    hackathon on real miRNA data scored on a held-out set nobody had seen.
+  proof_url: "https://github.com/BioGeMT/DLforGenomics"
+
+- name: "Audit what you have built"
+  lede: >-
+    Find out whether the number is real before you spend on it.
+  detail: >-
+    Class imbalance a model can exploit without learning anything, composition
+    bias, per-position give-aways, duplicate sequences, near-duplicate leakage
+    between train and test. I score the dataset for the shortcuts available to
+    a classifier and hand back a report you can read, a CSV you can put in CI,
+    and a straight answer about which of your results survive.
+  proof: >-
+    Packaged as Genomic Benchmarks QC, the general form of a complaint I kept
+    making. The benchmark suite behind it has been cited 175 times.
+  proof_url: "https://genomic-benchmarks.github.io/genomic-benchmarks-qc/"
+
+- name: "Build it with you"
+  lede: >-
+    Sequence models, and the pipeline that lets somebody else rerun them.
+  detail: >-
+    RNA and genomic sequence models end to end — data preparation, training,
+    interpretation — delivered as a package or a workflow rather than a folder
+    of scripts. Seven years of production software engineering came before the
+    research, which is the reason the handover actually works.
+  proof: >-
+    AlphaFind searches 200 million protein structures and is public. RBP-Tar
+    and miRBench are too. Everything I build is used by somebody who isn't me.
+  proof_url: "/building/"

@@ -5,42 +5,12 @@
 # Anything with public material should carry a link. A course nobody can look
 # at is a line on a CV; a course with its notebooks online is a thing.
 
-# --- Written for anyone ----------------------------------------------------
-
-- name: "The Missing Skills"
-  kind: material
-  when: "ongoing"
-  featured: true
-  blurb: >-
-    Project-based tutorials on the computational skills a science degree leaves
-    out — version control, the shell, and making your work runnable by someone
-    who isn't you. Written because the bottleneck in computational biology is
-    rarely the idea; more often nobody ever showed anyone how to run the thing.
-  links:
-    - label: "Read it"
-      url: "https://katarinagresova.github.io/missing-skills/"
-    - label: "Code"
-      url: "https://github.com/katarinagresova/missing-skills"
-
-- name: "Biology Crash Course"
-  kind: material
-  when: "2021 – 2022"
-  featured: true
-  blurb: >-
-    Molecular biology from the ground up, written for computer scientists who
-    need enough of it to be dangerous. The mirror image of The Missing Skills,
-    and between them the two directions I spend most of my teaching in.
-  links:
-    - label: "Read it"
-      url: "https://katarinagresova.github.io/biology-crash-course/"
-    - label: "Code"
-      url: "https://github.com/katarinagresova/biology-crash-course"
-
 # --- Courses and workshops -------------------------------------------------
 
 - name: "Deep Learning for Genomics"
   kind: course
   when: "2024"
+  featured: true
   where: "Three-day course, University of Malta"
   blurb: >-
     Convolutional and recurrent models for biological sequence data, taught
@@ -57,7 +27,6 @@
 - name: "Explainability for Deep Neural Networks"
   kind: course
   when: "2023"
-  featured: true
   where: "MALTAomics Summer School, University of Malta"
   blurb: >-
     A hands-on session on getting a model to account for itself — saliency,
@@ -88,9 +57,40 @@
     ever done. I wrote and published the practical materials.
   links:
     - label: "Course materials"
-      url: "https://katarinagresova.github.io/DSIB01_2021/"
+      url: "https://katarinagresova.com/DSIB01_2021/"
     - label: "Code"
       url: "https://github.com/katarinagresova/DSIB01_2021"
+
+# --- Written for anyone ----------------------------------------------------
+
+- name: "The Missing Skills"
+  kind: material
+  when: "ongoing"
+  featured: true
+  blurb: >-
+    Project-based tutorials on the computational skills a science degree leaves
+    out — version control, the shell, and making your work runnable by someone
+    who isn't you. Written because the bottleneck in computational biology is
+    rarely the idea; more often nobody ever showed anyone how to run the thing.
+  links:
+    - label: "Read it"
+      url: "https://katarinagresova.com/missing-skills/"
+    - label: "Code"
+      url: "https://github.com/katarinagresova/missing-skills"
+
+- name: "Biology Crash Course"
+  kind: material
+  when: "2021 – 2022"
+  featured: true
+  blurb: >-
+    Molecular biology from the ground up, written for computer scientists who
+    need enough of it to be dangerous. The mirror image of The Missing Skills,
+    and between them the two directions I spend most of my teaching in.
+  links:
+    - label: "Read it"
+      url: "https://katarinagresova.com/biology-crash-course/"
+    - label: "Code"
+      url: "https://github.com/katarinagresova/biology-crash-course"
 
 # --- Supervision -----------------------------------------------------------
 

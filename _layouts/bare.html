@@ -1,0 +1,20 @@
+{%- comment -%}
+  No bar, no footer, no theme toggle, no scripts — a document rather than a
+  page. Used only by /cv/print/, which exists to be rendered to PDF.
+{%- endcomment -%}
+<!doctype html>
+<html lang="{{ site.lang | default: 'en' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ site.author.name }} — CV</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/cv-print.css' | relative_url }}">
+</head>
+<body>
+{{ content }}
+</body>
+</html>

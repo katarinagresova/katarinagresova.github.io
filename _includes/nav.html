@@ -11,7 +11,12 @@
     </a>
 
     <nav class="nav__links" aria-label="Primary">
-      {%- assign nav_items = "/research/,Research|/building/,Building|/teaching/,Teaching|/publications/,Publications|/cv/,CV" | split: "|" -%}
+      {%- comment -%}
+        "Work with me" is an anchor on the landing page rather than a page of its
+        own, so it is marked current by the scroll-spy like the other # links.
+        It leads because it is the only item a visitor can act on.
+      {%- endcomment -%}
+      {%- assign nav_items = "/#offer,Work with me|/research/,Research|/building/,Building|/teaching/,Teaching|/publications/,Publications|/cv/,CV" | split: "|" -%}
       {%- for item in nav_items -%}
         {%- assign parts = item | split: "," -%}
         {%- assign href = parts[0] -%}

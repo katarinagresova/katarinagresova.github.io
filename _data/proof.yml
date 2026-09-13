@@ -1,0 +1,22 @@
+# The two figures on the landing page that cannot be counted from this repo.
+#
+# Everything else in the "by the numbers" strip is derived from the data files
+# and so can never go quietly stale. These two can, so they carry the date they
+# were last checked and the page prints it. If the date starts looking old, the
+# numbers are: Scholar for citations, the GitHub repo header for stars.
+#
+# Only figures that are actually strong belong here. The benchmark suite is the
+# one piece of work with adoption worth quoting; the smaller packages are not,
+# and quoting them would only invite the comparison.
+
+as_of: "September 2026"
+
+citations:
+  total: 316
+  h_index: 8
+
+benchmarks:
+  stars: 182
+  forks: 24
+  citations: 175
+  url: "https://github.com/ML-Bioinfo-CEITEC/genomic_benchmarks"

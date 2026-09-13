@@ -6,6 +6,8 @@ Gemfile.lock
 vendor/
 .bundle/
 
-# Source decks / PDFs kept in the folder to pull figures from — not the site.
-*.pptx
-*.pdf
+# Source decks, PDFs and anything else dropped in to pull figures from. Jekyll
+# ignores any top-level directory beginning with an underscore, so nothing in
+# here is ever published — and unlike the old `*.pdf` rule it cannot swallow a
+# file we actually want on the site, such as the CV.
+_source/

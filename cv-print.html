@@ -1,0 +1,185 @@
+---
+layout: bare
+permalink: /cv/print/
+sitemap: false
+---
+{%- comment -%}
+  The two-page CV, rendered to assets/katarina-gresova-cv.pdf. It is a separate
+  page from /cv/ rather than a print stylesheet over it, because the two
+  documents have genuinely different jobs: the web CV is the complete record and
+  can afford to run long, while a PDF someone opens in a hiring thread has about
+  two pages of their attention and everything after that is noise.
+
+  It still reads from the same data files, so the two cannot drift. What makes
+  it fit is selection, applied here as rules rather than as a hand-kept copy:
+
+    * research positions keep a one-line detail, industry roles do not;
+    * software is the `featured: true` set from _data/work.yml, using each
+      entry's `short:` — a clause written for print, not a truncated `blurb:`;
+    * teaching is courses and written material; supervision collapses to a
+      single counted line and the talks list is dropped entirely;
+    * publications are the `selected: true` set.
+
+  Anything cut is one click away — the footer says where.
+{%- endcomment -%}
+
+{%- assign research = site.data.cv | where: "section", "Research positions" | first -%}
+{%- assign education = site.data.cv | where: "section", "Education" | first -%}
+{%- assign recognition = site.data.cv | where: "section", "Recognition" | first -%}
+{%- assign industry = site.data.cv | where: "section", "Software engineering" | first -%}
+{%- assign skills = site.data.cv | where: "section", "Skills" | first -%}
+{%- assign software = site.data.work | where: "featured", true -%}
+{%- assign selected_pubs = site.data.publications | where: "selected", true -%}
+{%- assign courses = site.data.teaching | where: "kind", "course" -%}
+{%- assign materials = site.data.teaching | where: "kind", "material" -%}
+{%- assign supervision = site.data.teaching | where: "kind", "supervision" -%}
+
+<article class="cv">
+
+  <header class="cv__head">
+    <h1 class="cv__name">{{ site.author.name }}</h1>
+    <p class="cv__contact">
+      {{ site.author.email }}
+      <span>·</span> {{ site.url | remove: "https://" }}
+      <span>·</span> {{ site.hero.location }}
+      <span>·</span> github.com/katarinagresova
+    </p>
+    <p class="cv__summary">
+      Machine learning for RNA regulation — sequence models, the interpretability
+      that makes them arguable, and the benchmarks that decide whether any of it
+      is real. Seven years of production software engineering before the
+      doctorate. Available for teaching, consulting and advisory work.
+    </p>
+  </header>
+
+  <!-- Research ---------------------------------------------------------- -->
+  <section class="sec">
+    <h2>Research experience</h2>
+    {%- for e in research.entries %}
+    <div class="row">
+      <span class="when">{{ e.when }}</span>
+      <div class="what">
+        <p class="role">{{ e.what }} <span class="org">{{ e.where }}</span></p>
+        {%- if e.detail %}<p class="detail">{{ e.detail | strip_html }}</p>{% endif %}
+      </div>
+    </div>
+    {%- endfor %}
+  </section>
+
+  <!-- Education --------------------------------------------------------- -->
+  <section class="sec">
+    <h2>Education</h2>
+    {%- for e in education.entries %}
+    {%- unless e.what contains "Summer School" %}
+    <div class="row">
+      <span class="when">{{ e.when }}</span>
+      <div class="what">
+        <p class="role">{{ e.what }} <span class="org">{{ e.where }}</span></p>
+        {%- if e.detail %}<p class="detail">{{ e.detail | strip_html | truncatewords: 20 }}</p>{% endif %}
+      </div>
+    </div>
+    {%- endunless %}
+    {%- endfor %}
+  </section>
+
+  <!-- Recognition ------------------------------------------------------- -->
+  <section class="sec">
+    <h2>Recognition</h2>
+    <ul class="inline">
+      {%- for i in recognition.items %}<li>{{ i | strip_html }}</li>{% endfor %}
+    </ul>
+  </section>
+
+  <!-- Selected publications --------------------------------------------- -->
+  <section class="sec">
+    <h2>Selected publications <span class="count">{{ site.data.publications | size }} in total, {{ site.data.publications | where: "first_author", true | size }} as first or co-first author</span></h2>
+    {%- for p in selected_pubs %}
+    <div class="row">
+      <span class="when">{{ p.year }}</span>
+      <div class="what">
+        <p class="role">{{ p.title }}</p>
+        <p class="detail"><em>{{ p.venue }}</em>{% if p.author_note %} — {{ p.author_note }}{% elsif p.first_author %} — first author{% endif %}</p>
+      </div>
+    </div>
+    {%- endfor %}
+  </section>
+
+  <!-- Software ---------------------------------------------------------- -->
+  <section class="sec">
+    <h2>Selected software and data <span class="count">everything is public and installable</span></h2>
+    {%- for w in software %}
+    <div class="row">
+      <span class="when">{{ w.when }}</span>
+      <div class="what">
+        <p class="role">{{ w.name }}
+          <span class="org">{{ w.short | default: w.blurb | strip_html }}</span></p>
+        {%- assign primary = w.links | first -%}
+        {%- if primary %}<p class="detail"><span class="url">{{ primary.url | remove: "https://" | remove: "http://" }}</span></p>{% endif %}
+      </div>
+    </div>
+    {%- endfor %}
+  </section>
+
+  <!-- Industry ---------------------------------------------------------- -->
+  <section class="sec">
+    <h2>Software engineering</h2>
+    {%- for e in industry.entries %}
+    <div class="row">
+      <span class="when">{{ e.when }}</span>
+      <div class="what">
+        <p class="role">{{ e.what }} <span class="org">{{ e.where }}</span></p>
+      </div>
+    </div>
+    {%- endfor %}
+  </section>
+
+  <!-- Teaching ---------------------------------------------------------- -->
+  <section class="sec">
+    <h2>Teaching</h2>
+    {%- for t in courses %}
+    <div class="row">
+      <span class="when">{{ t.when }}</span>
+      <div class="what">
+        <p class="role">{{ t.name }} <span class="org">{{ t.where }}</span></p>
+      </div>
+    </div>
+    {%- endfor %}
+    {%- for t in materials %}
+    <div class="row">
+      <span class="when">{{ t.when }}</span>
+      <div class="what">
+        <p class="role">{{ t.name }} <span class="org">open course notes</span></p>
+      </div>
+    </div>
+    {%- endfor %}
+    <div class="row">
+      <span class="when">2023 – present</span>
+      <div class="what">
+        <p class="role">Supervision
+          <span class="org">{{ supervision | size }} master's students and bachelor interns; hackathons and workshops organised</span></p>
+      </div>
+    </div>
+    {%- assign talks = site.data.teaching | where: "kind", "talk" -%}
+    <div class="row">
+      <span class="when">2021 – 2026</span>
+      <div class="what">
+        <p class="role">Talks and posters
+          <span class="org">ECCB, the Microsymposium on RNA Biology, ENBIK (top-five poster) and departmental seminars — {{ talks | size }} in total</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills ------------------------------------------------------------ -->
+  <section class="sec">
+    <h2>Skills</h2>
+    <ul class="skills">
+      {%- for i in skills.items %}<li>{{ i | strip_html }}</li>{% endfor %}
+    </ul>
+  </section>
+
+  <p class="cv__foot">
+    Full publication list, code and course material at
+    <strong>{{ site.url | remove: "https://" }}</strong>
+  </p>
+
+</article>

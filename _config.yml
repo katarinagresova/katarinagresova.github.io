@@ -6,16 +6,17 @@
 title: Katarína Grešová
 tagline: Machine learning for biology, built to be reused
 description: >-
-  Katarína Grešová — machine learning for RNA regulation. Sequence models of
-  RNA binding and translation, and the benchmark datasets that keep them
-  honest.
-url: https://katarinagresova.github.io
+  Katarína Grešová — machine learning for RNA regulation, and the benchmarks
+  that keep it honest. Available for teaching, consulting and advisory work:
+  deep learning courses, dataset and benchmark audits, and sequence models
+  built to be rerun. Berlin, or remote across Europe.
+url: https://katarinagresova.com
 baseurl: ""
 lang: en
 
 author:
   name: Katarína Grešová
-  email: katarina.gresova@mdc-berlin.de
+  email: contact@katarinagresova.com
 
 # Shown in the hero. Keep the tagline short — it is set in large type.
 hero:
@@ -43,9 +44,10 @@ sass:
   style: compressed
 
 exclude:
-  # Source material dropped in the folder to work from — never part of the site.
-  - "*.pptx"
-  - "*.pdf"
+  # Source material to work from lives in _source/, which Jekyll already skips
+  # because the name starts with an underscore. It used to be matched here with
+  # "*.pdf", which quietly excluded assets/katarina-gresova-cv.pdf too: Jekyll
+  # globs with fnmatch and no FNM_PATHNAME, so a "*" happily crosses a slash.
   - Gemfile
   - Gemfile.lock
   - README.md

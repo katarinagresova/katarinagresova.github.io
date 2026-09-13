@@ -477,6 +477,26 @@ a {
 .hero__note a:hover { color: var(--accent); border-bottom-color: var(--accent); }
 .hero__note a:hover .icon--arrow { translate: 3px 0; }
 
+/* The availability variant. The comment above still holds — a mono label here
+   would read as a "FOR HIRE" badge — so this stays body type and gets its
+   weight from a soft wash panel instead. Cornered with --radius rather than a
+   pill, because the line wraps to two rows on a phone and a wrapped pill looks
+   broken. It is the one fact a visitor needs in order to act, so it is no
+   longer allowed to be the quietest thing in the hero. */
+.hero__note--loud {
+  display: inline-block;
+  margin-top: 1.35rem;
+  padding: .75rem 1.15rem;
+  border: 1px solid var(--ring);
+  border-radius: var(--radius);
+  background: var(--wash);
+  font-size: .95rem;
+  color: var(--ink);
+}
+.hero__note--loud strong { font-weight: 600; }
+.hero__note-where { color: var(--ink-soft); }
+.hero__note--loud a { margin-left: .35rem; }
+
 /* Icon link row, as chips. */
 .links {
   display: flex;
@@ -869,6 +889,25 @@ a {
 }
 .button:hover .icon--arrow { translate: 3px 0; }
 
+/* Outlined variant, for a button that is useful but is not the thing the page
+   is asking you to do — the CV download sitting under a page header, where the
+   filled gradient version would outrank the header itself. */
+.button--quiet {
+  margin-top: 0;
+  padding: .6rem 1.15rem;
+  border: 1px solid var(--rule);
+  background: none;
+  color: var(--ink);
+  font-size: .86rem;
+  box-shadow: none;
+}
+.button--quiet:hover {
+  border-color: var(--ring);
+  background: var(--wash);
+  color: var(--accent);
+  box-shadow: none;
+}
+
 .foot {
   border-top: 1px solid var(--rule);
   padding-block: 2.5rem;
@@ -1225,7 +1264,117 @@ a {
 .upcoming__what a:hover { color: var(--accent); border-bottom-color: var(--accent); }
 
 
-/* 15. MOTION ============================================================== */
+/* 15. OFFER CARDS ========================================================= */
+
+/* The three doors under the hero, and the only things on the page a visitor is
+   actually asked to act on. They are deliberately louder than the project
+   cards further down: the gradient rule along the top edge is always lit
+   rather than waiting for a hover, and they carry more padding than anything
+   else on the page.
+
+   Laid out as a flex column so the proof line can be pushed to the foot with
+   `margin-top:auto`. The three cards hold different amounts of detail, and
+   without that the three proof lines sit at three different heights. */
+
+.offers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 1.25rem;
+  margin-top: 2.25rem;
+}
+
+.offer__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 1.9rem 1.7rem 1.5rem;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  transition: transform .35s var(--ease), border-color .35s var(--ease),
+              box-shadow .35s var(--ease);
+}
+.offer__card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 3px;
+  background: var(--gradient);
+}
+.offer__card:hover {
+  transform: translateY(-4px);
+  border-color: var(--ring);
+  box-shadow: var(--shadow-lift);
+}
+
+.offer__name {
+  margin: 0;
+  font-family: var(--display);
+  font-size: 1.22rem;
+  font-weight: 600;
+  letter-spacing: -.02em;
+}
+
+/* The promise, and the only line in the card some people will read. Set in the
+   accent so it separates from the detail underneath at a glance. */
+.offer__lede {
+  margin: .55rem 0 0;
+  font-size: .98rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--accent);
+}
+
+.offer__detail {
+  margin: .85rem 0 1.35rem;
+  font-size: .9rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+}
+
+/* A prior instance rather than a promise, pinned to the foot above a hairline
+   so the card ends on evidence. */
+.offer__proof {
+  margin: auto 0 0;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+  font-size: .8rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+.offer__proof a {
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  margin-left: .15rem;
+  color: var(--accent);
+  font-weight: 500;
+  white-space: nowrap;
+}
+.offer__proof a:hover { color: var(--accent-lit); }
+.offer__proof a:hover .icon--arrow { translate: 3px 0; }
+
+/* The date stamp under the numbers strip. Two of the four figures are read off
+   Scholar and GitHub by hand, so the page says when — an uncited count of
+   citations is exactly the sort of number this site exists to complain about. */
+.stats__asof {
+  margin: 0;
+  padding-bottom: clamp(1.25rem, 3vw, 1.75rem);
+  font-family: var(--mono);
+  font-size: .68rem;
+  letter-spacing: .04em;
+  color: var(--ink-soft);
+  opacity: .75;
+}
+
+.contact__where {
+  margin: 1.1rem 0 0;
+  font-size: .88rem;
+  color: var(--ink-soft);
+}
+
+/* 16. MOTION ============================================================== */
 
 /* Hero: pure CSS, runs at first paint whether or not JS is alive. */
 .hero .reveal {
@@ -1271,7 +1420,7 @@ a {
 }
 
 
-/* 16. RESPONSIVE ========================================================== */
+/* 17. RESPONSIVE ========================================================== */
 
 @media (max-width: 52rem) {
   .nav__mark-name { display: none; }
@@ -1340,4 +1489,76 @@ a {
   .nav__links { font-size: .62rem; letter-spacing: .04em; }
   .links { gap: .45rem; }
   .links__item { padding: .4rem .75rem; font-size: .8rem; }
+}
+
+
+/* 18. PRINT =============================================================== */
+
+/* Name and contact details for the printed CV only. */
+.print-id { display: none; }
+
+/* Exists so /cv/ can be printed to the PDF that lives at
+   /assets/katarina-gresova-cv.pdf — the HTML CV stays the single source of
+   truth and the PDF is re-rendered from it rather than maintained by hand.
+   (See the note in README.md for the one command that regenerates it.)
+
+   Everything that only makes sense on screen comes out: the bar, the theme
+   toggle, the scroll progress hairline, the footer, and the reveal animation,
+   which would otherwise print the whole page at opacity 0. */
+
+@media print {
+  .nav,
+  .progress,
+  .theme-toggle,
+  .button,
+  .foot { display: none !important; }
+
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  :root { color-scheme: light; }
+
+  body {
+    background: #fff;
+    color: #000;
+    font-size: 10.5pt;
+  }
+
+  .wrap { max-width: none; padding-inline: 0; }
+  .page { padding-block: 0; }
+
+  a { color: #000; text-decoration: none; }
+
+  .print-id {
+    display: block;
+    margin-bottom: 1.6rem;
+    padding-bottom: .9rem;
+    border-bottom: 1px solid #ccc;
+  }
+  .print-id__name {
+    margin: 0;
+    font-family: var(--display);
+    font-size: 15pt;
+    font-weight: 600;
+    letter-spacing: -.02em;
+  }
+  .print-id__meta {
+    margin: .3rem 0 0;
+    font-family: var(--mono);
+    font-size: 8pt;
+    color: #444;
+  }
+
+  /* A role and its detail splitting across two sheets is the one break that
+     actually costs the reader something. */
+  .cv__item,
+  .work__item,
+  .pub { break-inside: avoid; }
+
+  .cv__section,
+  .work__group { break-before: auto; }
+
+  .cv__heading { break-after: avoid; }
 }
