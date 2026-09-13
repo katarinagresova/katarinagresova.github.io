@@ -1,9 +1,19 @@
 # Icon names must match the ones handled in _includes/icon.html
-# (email, github, scholar, linkedin, orcid).
+# (email, github, scholar, linkedin, orcid, doc).
+#
+# Order matters: this row sits in the hero, and someone deciding whether to
+# pass her on to a colleague wants the CV before they want ORCID. The PDF is
+# here rather than only on /cv/ because the single most common thing a hiring
+# manager does with a page like this is forward a file to somebody else, and
+# that should not cost them two clicks and a hunt.
 
 - label: Email
   icon: email
   url: "mailto:contact@katarinagresova.com"
+
+- label: CV (PDF)
+  icon: doc
+  url: "/assets/katarina-gresova-cv.pdf"
 
 - label: GitHub
   icon: github

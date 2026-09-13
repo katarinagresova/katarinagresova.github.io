@@ -1,52 +1,89 @@
-# What she is available for — the block directly under the hero.
+# What she is available for on a contract — the small block near the foot of
+# the landing page.
 #
-# This is the part of the site with a job to do: a visitor who likes the work
-# still has to be told what they can actually ask for. Three doors, in the
-# order someone is most likely to want them.
+# This used to be the headline section directly under the hero, back when the
+# site was selling services to research groups. The goal now is a role at a
+# bio, health or techbio company, so _data/bring.yml took that slot and this
+# moved down here. It is not deleted, because the consulting is real and a lab
+# that lands on the page should still be able to find it — it just no longer
+# gets to be the first thing a hiring manager reads, where it made her look
+# like someone with a practice to protect rather than a job to take.
+#
+# The three doors are teach / set it up / take on the problem. The third used
+# to be "review the work" — a second reader for the code, the data and the
+# claim — and it was the weakest of the three: it offered to check somebody
+# else's work rather than to do any. It now sells the thing a group actually
+# has budget for, which is somebody taking a question off their hands and
+# coming back with a working first version. The old door has not been lost;
+# checking whether the answer is real is now how the work gets done rather
+# than a service of its own, and it is still card 02 of `_data/bring.yml`.
+#
+# Because the block is compact, the landing page renders `name`, `lede`,
+# `proof` and `proof_url` — not `detail`, which is the long-form description
+# kept here so the offer stays written down in one place. Keep `proof` to two
+# sentences; it is rendered in full and three uneven entries look untidy.
+#
+# Each door's `proof_url` points at a different one of the three evidence
+# pages, so a reader who wants to check a claim lands somewhere that answers
+# it: teach -> /teaching/, set it up -> /building/, take on the problem ->
+# /publications/.
 #
 #   name:      the door, as a verb phrase. Short — it is set large.
 #   lede:      one line, the promise. This is the only part some people read.
-#   detail:    what the engagement actually looks like in practice.
+#   detail:    what the engagement looks like in practice. Not rendered.
 #   proof:     a concrete thing already done, so the offer is a record rather
 #              than an advertisement. Optional `proof_url` makes it clickable.
 
-- name: "Teach your team"
+- name: "Teach your group"
   lede: >-
-    Deep learning for people who need to use it, not publish about it.
+    The computational skills a science degree leaves out, taught to the people
+    who need them on Monday.
   detail: >-
-    Three days that take biologists from never having written a training loop
-    to having one that works — or a half-day on interpretability for a team
-    that already has models and cannot say what they learned. The notebooks go
-    home with you, and they still run a year later.
+    Version control that survives a second author, environments somebody else
+    can actually install, a project laid out so the analysis can be found a
+    year later, tests for code whose output nobody can eyeball. Half a day to
+    three days, for a lab group or a data team, taught on your own project
+    rather than a toy example — and when the subject is deep learning, I teach
+    that too.
   proof: >-
-    Run as a three-day course at the University of Malta: seven notebooks, from
-    k-mers through to interpreting a trained network, finishing with a
-    hackathon on real miRNA data scored on a held-out set nobody had seen.
-  proof_url: "https://github.com/BioGeMT/DLforGenomics"
+    The Missing Skills is the written version, open and free. The three-day
+    deep learning course at the University of Malta took a room of biologists
+    from never having written a training loop to having one that worked.
+  proof_url: "/teaching/"
 
-- name: "Audit what you have built"
+- name: "Set it up with you"
   lede: >-
-    Find out whether the number is real before you spend on it.
+    The part where good practice survives contact with your actual project.
   detail: >-
-    Class imbalance a model can exploit without learning anything, composition
-    bias, per-position give-aways, duplicate sequences, near-duplicate leakage
-    between train and test. I score the dataset for the shortcuts available to
-    a classifier and hand back a report you can read, a CSV you can put in CI,
-    and a straight answer about which of your results survive.
+    A course teaches the idea; this is the idea installed. Analyses turned
+    into a workflow that reruns end to end, environments pinned, data and
+    results separated from code, continuous integration so that a broken
+    pipeline announces itself instead of waiting for a reviewer, a method
+    packaged so somebody outside the group can use it. I work in your
+    repository, alongside the person who will own it after I leave.
   proof: >-
-    Packaged as Genomic Benchmarks QC, the general form of a complaint I kept
-    making. The benchmark suite behind it has been cited 175 times.
-  proof_url: "https://genomic-benchmarks.github.io/genomic-benchmarks-qc/"
-
-- name: "Build it with you"
-  lede: >-
-    Sequence models, and the pipeline that lets somebody else rerun them.
-  detail: >-
-    RNA and genomic sequence models end to end — data preparation, training,
-    interpretation — delivered as a package or a workflow rather than a folder
-    of scripts. Seven years of production software engineering came before the
-    research, which is the reason the handover actually works.
-  proof: >-
-    AlphaFind searches 200 million protein structures and is public. RBP-Tar
-    and miRBench are too. Everything I build is used by somebody who isn't me.
+    Two published papers rest on workflows I wrote, so their figures can be
+    regenerated from raw data by someone who was not in the room. Before the
+    doctorate I spent two years on nothing but continuous integration and test
+    infrastructure.
   proof_url: "/building/"
+
+- name: "Take on the problem"
+  lede: >-
+    Bring me the question nobody has had time to get to. I work out whether
+    your data can answer it, and build the first version that shows whether it
+    is worth pursuing.
+  detail: >-
+    We start from what you are trying to learn, not from a model. What can
+    this data honestly support; what is the simple baseline anything fancier
+    has to beat; does the question need deep learning at all, because plenty
+    do not. Then I build the smallest thing that works — a prototype you can
+    run, with an evaluation attached that I would be willing to defend — so
+    the decision to spend a year of somebody's time is made on evidence rather
+    than on a demo. When it is not going to work, you find that out in weeks.
+  proof: >-
+    Most of my career has been exactly this: arriving in somebody else's
+    group, taking on a question that was already theirs, and leaving a
+    published answer behind. Five groups, four countries — the results are in
+    Molecular Cell, Nucleic Acids Research and Bioinformatics.
+  proof_url: "/publications/"

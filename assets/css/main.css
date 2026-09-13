@@ -259,6 +259,9 @@ a {
 .nav__links a {
   position: relative;
   padding-block: .35rem;
+  /* A multi-word item must never break across lines — the underline is drawn
+     per-link, so a wrapped one reads as two separate nav items. */
+  white-space: nowrap;
 }
 .nav__links a::after {
   content: "";
@@ -467,25 +470,22 @@ a {
   background: var(--accent);
   vertical-align: middle;
 }
-.hero__note a {
-  display: inline-flex;
-  align-items: center;
-  gap: .3rem;
-  color: var(--ink);
-  border-bottom: 1px solid var(--ring);
-}
-.hero__note a:hover { color: var(--accent); border-bottom-color: var(--accent); }
-.hero__note a:hover .icon--arrow { translate: 3px 0; }
-
 /* The availability variant. The comment above still holds — a mono label here
    would read as a "FOR HIRE" badge — so this stays body type and gets its
    weight from a soft wash panel instead. Cornered with --radius rather than a
    pill, because the line wraps to two rows on a phone and a wrapped pill looks
    broken. It is the one fact a visitor needs in order to act, so it is no
-   longer allowed to be the quietest thing in the hero. */
+   longer allowed to be the quietest thing in the hero.
+
+   It closes the hero, below the badge row. On a phone that would put it on the
+   third screen, so §17 lifts it back up under the tagline below 46rem. */
 .hero__note--loud {
   display: inline-block;
-  margin-top: 1.35rem;
+  /* Capped at the text column so that when the line does wrap — it will, on a
+     narrow window — the panel stops growing with the viewport instead of
+     stretching into a wide box with one short second line in it. */
+  max-width: var(--measure);
+  margin-top: 1.5rem;
   padding: .75rem 1.15rem;
   border: 1px solid var(--ring);
   border-radius: var(--radius);
@@ -495,7 +495,6 @@ a {
 }
 .hero__note--loud strong { font-weight: 600; }
 .hero__note-where { color: var(--ink-soft); }
-.hero__note--loud a { margin-left: .35rem; }
 
 /* Icon link row, as chips. */
 .links {
@@ -854,7 +853,27 @@ a {
 }
 .contact__body,
 .contact__title,
+.contact__actions,
 .contact .button { position: relative; }
+
+/* Two ways out of the page rather than one. The mailto is still the primary
+   ask, but on a phone it opens whatever mail client the reader has never
+   configured, and that was the only exit the section offered. Wraps rather
+   than shrinks, because the email address is long. */
+.contact__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .75rem 1rem;
+}
+.contact__actions .button--quiet { margin-top: 2rem; }
+@media (max-width: 34rem) {
+  /* Stacked, both full width: side by side at this size the quiet button ends
+     up a two-line block beside a one-line pill. */
+  .contact__actions { flex-direction: column; align-items: stretch; gap: .75rem; }
+  .contact__actions .button { justify-content: center; margin-top: 0; }
+  .contact__actions .button:first-child { margin-top: 2rem; }
+}
 
 .contact__title {
   font-family: var(--display);
@@ -1355,23 +1374,86 @@ a {
 .offer__proof a:hover { color: var(--accent-lit); }
 .offer__proof a:hover .icon--arrow { translate: 3px 0; }
 
+
+/* The "also available for" block near the foot of the page — the consulting,
+   which used to be these same cards at full size directly under the hero.
+   Now that the page is asking for a job rather than selling services, the
+   three doors still have to be findable but must not compete with section 01.
+
+   So: same three entries from _data/offer.yml, but name, one-line promise and
+   a link only, in a low-contrast row with no card, no border and no hover
+   lift. It reads as a footnote to the page rather than as an offer, which is
+   exactly the weight it should now carry. */
+
+.alsos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1.75rem 2rem;
+  margin-top: 2rem;
+}
+
+.also {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 1rem;
+  border-top: 2px solid var(--ring);
+}
+
+.also__name {
+  margin: 0;
+  font-family: var(--display);
+  font-size: 1.02rem;
+  font-weight: 600;
+  letter-spacing: -.015em;
+}
+
+.also__lede {
+  margin: .4rem 0 0;
+  font-size: .88rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+/* The prior instance behind the promise above it. Smaller and quieter than the
+   lede, because at this size the card has to stay a footnote — but it is here
+   rather than dropped, since an offer with no evidence under it is the one
+   thing this page is not allowed to be. */
+.also__proof {
+  margin: .7rem 0 .9rem;
+  font-size: .79rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  opacity: .85;
+}
+
+.also__link {
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  margin-top: auto;
+  font-size: .8rem;
+  font-weight: 500;
+  color: var(--accent);
+}
+.also__link:hover { color: var(--accent-lit); }
+.also__link:hover .icon--arrow { translate: 3px 0; }
+
+
 /* The date stamp under the numbers strip. Two of the four figures are read off
    Scholar and GitHub by hand, so the page says when — an uncited count of
    citations is exactly the sort of number this site exists to complain about. */
 .stats__asof {
-  margin: 0;
+  /* .wrap centres itself with margin-inline: auto, and a bare `margin: 0`
+     here quietly cancelled it — the line sat hard against the left edge of
+     the window instead of under the first figure. Set the block margins only. */
+  margin-block: 0;
   padding-bottom: clamp(1.25rem, 3vw, 1.75rem);
   font-family: var(--mono);
   font-size: .68rem;
   letter-spacing: .04em;
   color: var(--ink-soft);
   opacity: .75;
-}
-
-.contact__where {
-  margin: 1.1rem 0 0;
-  font-size: .88rem;
-  color: var(--ink-soft);
 }
 
 /* 16. MOTION ============================================================== */
@@ -1430,6 +1512,22 @@ a {
   /* Four figures in a row stop reading as a row long before the text does. */
   .stats__inner { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
+  /* The availability line closes the hero on a wide screen, which is where it
+     reads best. On a phone that is about the third screen down — a two-row
+     nav, the portrait and three paragraphs all come first — and it is the one
+     fact a visitor needs in order to act on the page at all.
+
+     So here the hero becomes a flex column purely to reorder it: everything
+     keeps its source position except the note, which moves up to sit directly
+     under the tagline and inside the first screen. Only the branch that needs
+     it pays for it; the wide layout stays plain block flow. */
+  .hero__inner { display: flex; flex-direction: column; }
+  .hero__head     { order: 1; }
+  .hero__tagline  { order: 2; }
+  .hero__note--loud { order: 3; margin-bottom: .25rem; }
+  .hero__bio      { order: 4; }
+  .hero__links    { order: 5; }
+
   .hero__head { grid-template-columns: minmax(0, 1fr); }
   .hero__portrait {
     order: -1;
@@ -1464,9 +1562,15 @@ a {
   .nav__links { gap: 1rem; font-size: .7rem; letter-spacing: .08em; }
 }
 
-/* Five nav items stop fitting on one line somewhere around a phone's width,
+/* Six nav items stop fitting on one line somewhere around a phone's width,
    so below this the bar becomes two rows: mark and theme toggle on top, the
-   links spread across the row beneath. */
+   links spread across the row beneath.
+
+   `space-between` on a single non-wrapping row was fine until an item had two
+   words in it: the row wrapped *inside* "WORK WITH ME", which read as two
+   separate links stacked on top of each other. The links row is allowed to
+   wrap onto a second line now, but each individual link is not — so the break
+   always lands between items and never inside one. */
 @media (max-width: 34rem) {
   .nav__inner {
     flex-wrap: wrap;
@@ -1477,8 +1581,9 @@ a {
   .nav__links {
     order: 3;
     width: 100%;
-    justify-content: space-between;
-    gap: .5rem;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: .4rem .9rem;
     padding-top: .6rem;
     font-size: .66rem;
     letter-spacing: .06em;

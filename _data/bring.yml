@@ -1,0 +1,66 @@
+# What she brings to a team — the block directly under the hero.
+#
+# This is the part of the site with a job to do, and the job changed. It used
+# to be _data/offer.yml: three bookable services aimed at a research group.
+# The goal now is a role at a bio, health or techbio company, so this block
+# speaks to the person doing the hiring there and the services moved down the
+# page into their own smaller section.
+#
+# The three cards are the three halves of the pitch, in the order a hiring
+# manager cares about them:
+#
+#   1. can she own a question       — the research scientist part
+#   2. can she tell if it is real   — the part almost nobody else claims
+#   3. can she talk to people       — the part she wants more of
+#
+# Card three exists because the ask is explicitly not a heads-down modelling
+# job. If that changes, that card is the one to rewrite.
+#
+#   name:      what she does, as a verb phrase. Short — it is set large.
+#   lede:      one line, the promise. The only part some people read.
+#   detail:    what it looks like in practice, in a company rather than a lab.
+#   proof:     a concrete thing already done, so the card reads as a record
+#              rather than an advertisement. `proof_url` makes it clickable.
+
+- name: "Own the question"
+  lede: >-
+    A biological question taken from raw data to a model to an answer somebody
+    can act on.
+  detail: >-
+    Five fields so far — miRNA targeting, RNA-binding proteins, protein
+    structure, senescence, translation — four of them entered knowing nothing.
+    Work out what the data can honestly answer, build the smallest thing that
+    answers it, and hand over the code that regenerates the result.
+  proof: >-
+    Recent work in Molecular Cell and Nucleic Acids Research. Doctorate awarded
+    summa cum laude.
+  proof_url: "/publications/"
+
+- name: "Find out whether it is real"
+  lede: >-
+    The person who notices the model is right for the wrong reason — before a
+    partner or a regulator does.
+  detail: >-
+    The dataset a classifier can pass without learning anything, leakage
+    between train and test, the number that is real but does not mean what the
+    sentence around it says. That is the difference between a result you can
+    put in front of a partner and one that falls apart on their data — and I
+    would rather build the check into CI than do it by hand twice.
+  proof: >-
+    Packaged as Genomic Benchmarks QC — talks at EMBO and RECOMB-Seq this
+    year. The benchmark suite behind it is cited 175 times.
+  proof_url: "https://genomic-benchmarks.github.io/genomic-benchmarks-qc/"
+
+- name: "Sit between the science and everyone else"
+  lede: >-
+    I explain the biology to the engineers and the modelling to the
+    biologists, and keep the work moving while I do it.
+  detail: >-
+    Deep learning taught to biologists who had never written a training loop;
+    molecular biology to computer scientists. Students and interns supervised,
+    hackathons run, a project led across two institutions where students built
+    most of it. This is the part I want more of, not less.
+  proof: >-
+    Two of the courses are public and still runnable, so you can watch me
+    explain something before we ever talk.
+  proof_url: "/teaching/"

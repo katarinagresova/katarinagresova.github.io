@@ -82,12 +82,36 @@ Only figures that are actually strong belong in `proof.yml`. The smaller
 packages have modest numbers, and quoting those would only invite the
 comparison.
 
-## What you can ask me for
+## What I bring, and what's also available
 
-The three cards under the hero come from `_data/offer.yml` — the block that
-tells a visitor what they are allowed to ask for, which is the one job the
-landing page has. Each card ends in a prior instance rather than a promise, so
-keep `proof:` pointing at something already done.
+The landing page has one job: tell a visitor what to do about you. Who that
+visitor is changed, and the page changed with it.
+
+The three cards under the hero come from `_data/bring.yml` and are written for
+someone hiring at a bio, health or techbio company — *own the question*, *find
+out whether it is real*, *sit between the science and everyone else*. The third
+card is there because the role being looked for is deliberately not a
+heads-down modelling job; if that ever changes, that is the card to rewrite.
+
+`_data/offer.yml` holds the three bookable services that used to occupy that
+slot — teach your group, set it up with you, take on the problem. They are
+still real, so they are still on the page, but as a compact block down at
+section 05: in the hero they made her read as someone with a practice to
+protect rather than a job to take. That block renders `name`, `lede`, `proof`
+and `proof_url`. `detail` is the long-form description and is deliberately not
+rendered anywhere — it lives in the data file so the offer stays written down
+in one place, and it is what to start from if the consulting ever needs a page
+of its own.
+
+The three `proof_url`s deliberately point at three different evidence pages —
+`/teaching/`, `/building/`, `/publications/` — so a reader who doubts one of
+the claims lands somewhere that answers that one.
+
+In both files each card ends in a prior instance rather than a promise, so keep
+`proof:` pointing at something already done. Avoid typing counts into `proof:`
+— the numbers strip counts the same things from the data files, and a
+hand-written total in a sentence about honest evaluation is the one that
+eventually goes wrong.
 
 ## Line length
 

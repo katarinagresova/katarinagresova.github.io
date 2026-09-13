@@ -49,58 +49,65 @@ layout: default
       {{ content }}
     </div>
 
-    <div class="reveal" style="--i:4">
+    <div class="hero__links reveal" style="--i:4">
       {% include links.html %}
-
-      {%- comment -%}
-        The availability line. It used to be the quietest thing in the hero,
-        which meant the one fact a visitor needs in order to act was also the
-        one they were least likely to read. It now states what can be booked
-        and from where, and sends them to the three doors rather than straight
-        at an email they have no reason to write yet.
-      {%- endcomment -%}
-      {%- if page.open_to %}
-      <p class="hero__note hero__note--loud">
-        <span class="hero__note-dot" aria-hidden="true"></span>
-        <strong>{{ page.open_to }}</strong>
-        {%- if page.open_to_where %} <span class="hero__note-where">{{ page.open_to_where }}</span>{% endif %}
-        <a href="#offer">What that looks like {% include icon.html name="arrow" %}</a>
-      </p>
-      {%- endif %}
     </div>
+
+    {%- comment -%}
+      The availability line: the last thing in the hero, under the badge row,
+      which is where it reads best — the eye finishes the bio, crosses the
+      chips and lands on it.
+
+      It is the one fact a visitor needs in order to act, so it is not allowed
+      to be quiet. It is a wash panel rather than a grey aside for that reason.
+
+      On a phone, though, "last in the hero" means roughly the third screen: a
+      two-row nav, a portrait and three paragraphs all come first. So below
+      46rem the hero becomes a flex column and this is ordered back up to
+      directly under the tagline, where it lands inside the first screen. The
+      order differs between desktop and phone on purpose — see §17.
+    {%- endcomment -%}
+    {%- if page.open_to %}
+    <p class="hero__note hero__note--loud reveal" style="--i:5">
+      <span class="hero__note-dot" aria-hidden="true"></span>
+      <strong>{{ page.open_to }}</strong>
+      {%- if page.open_to_where %} <span class="hero__note-where">{{ page.open_to_where }}</span>{% endif %}
+    </p>
+    {%- endif %}
 
   </div>
 </section>
 
 <!-- ===================================================================== -->
-<!--  What you can ask me for                                              -->
+<!--  What I bring to a team                                               -->
 <!-- ===================================================================== -->
 {%- comment -%}
-  The section the rest of the page exists to support. It sits directly under
-  the hero, before any evidence, because a reader who is sold on the work still
-  has to be told what they are allowed to ask for — and most visitors leave
-  before the first publication.
+  The section the rest of the page exists to support, and the one that changed
+  when the goal did. It used to be _data/offer.yml — three services a research
+  group could book. The reader being written for now is someone hiring at a
+  bio, health or techbio company, so it is three things she does rather than
+  three things you can buy, and the services moved to section 05.
 
-  Each card ends in a prior instance rather than a promise, so the block reads
-  as a record of things already done.
+  Each card still ends in a prior instance rather than a promise, so the block
+  reads as a record instead of an advertisement.
 {%- endcomment -%}
-<section class="section section--soft offer" id="offer">
+<section class="section section--soft offer" id="bring">
   <div class="wrap">
     <h2 class="section__title">
       <span class="section__label">
         <span class="section__num" aria-hidden="true">01</span>
-        {{ page.offer_title }}
+        {{ page.bring_title }}
       </span>
       <a class="section__aside" href="#contact">
         Start a conversation {% include icon.html name="arrow" %}</a>
     </h2>
 
-    {%- if page.offer_intro %}
-    <p class="section__intro reveal">{{ page.offer_intro }}</p>
+    {%- if page.bring_intro %}
+    <p class="section__intro reveal">{{ page.bring_intro }}</p>
     {%- endif %}
 
     <ul class="offers" role="list">
-      {%- for item in site.data.offer %}
+      {%- for item in site.data.bring %}
       <li class="offer__card reveal" style="--i:{{ forloop.index }}">
         <h3 class="offer__name">{{ item.name }}</h3>
         <p class="offer__lede">{{ item.lede }}</p>
@@ -135,9 +142,13 @@ layout: default
   external ones (citations, stars) live in _data/proof.yml and carry the date
   they were last checked, which the strip prints.
 
-  These are deliberately not the same four figures as before. "14 tools built"
-  asserts adoption; a citation count and a star count evidence it, and the
-  claim this whole site rests on is that the work gets used.
+  The fourth figure used to read "7 — years shipping production software in
+  industry". The arithmetic worked only by summing spans that overlap: two of
+  those years were a university research group rather than industry, and three
+  more ran concurrently with the doctorate. Anyone who read the CV could see
+  it, and the cost of a headline number that does not survive the CV is that a
+  careful reader discounts the whole page. Counting the companies says the
+  same thing and is unarguable.
 
   `taught` is the same set of kinds the CV's teaching section pulls.
 {%- endcomment -%}
@@ -162,7 +173,7 @@ layout: default
       <dt class="stat__num mark">{{ site.data.proof.citations.total }}</dt>
       <dd class="stat__label">
         citations across {{ site.data.publications | size }} papers,
-        {{ first_author | size }} as first or co-first author
+        {{ first_author | size }} of them mine to lead
       </dd>
     </div>
     <div class="stat reveal" style="--i:3">
@@ -173,10 +184,10 @@ layout: default
       </dd>
     </div>
     <div class="stat reveal" style="--i:4">
-      <dt class="stat__num mark">7</dt>
+      <dt class="stat__num mark">4</dt>
       <dd class="stat__label">
-        years shipping production software
-        in industry
+        companies whose production software
+        I helped ship
       </dd>
     </div>
   </dl>
@@ -188,56 +199,18 @@ layout: default
 {%- include upcoming.html -%}
 
 <!-- ===================================================================== -->
-<!--  Teaching                                                             -->
+<!--  Projects                                                             -->
 <!-- ===================================================================== -->
 {%- comment -%}
-  Teaching now comes before the papers, because teaching is the first thing on
-  offer and the section order should follow the offer rather than the CV.
+  Promoted above teaching. When the page was selling courses, teaching led;
+  now that it is asking for a job, the artifacts other people actually use are
+  the strongest evidence on the site and go first.
 {%- endcomment -%}
-<section class="section" id="teaching">
+<section class="section" id="projects">
   <div class="wrap">
     <h2 class="section__title">
       <span class="section__label">
         <span class="section__num" aria-hidden="true">02</span>
-        Teaching
-      </span>
-      <a class="section__aside" href="{{ '/teaching/' | relative_url }}">
-        Everything I've taught {% include icon.html name="arrow" %}</a>
-    </h2>
-
-    <p class="section__intro reveal">
-      I teach in both directions — computation to biologists, biology to
-      computer scientists — in university practicals, conference tutorials, a
-      three-day deep learning course, and material anyone can work through on
-      their own. Most of it is public, so you can see exactly what you would be
-      booking.
-    </p>
-
-    {%- assign featured_teaching = site.data.teaching | where: "featured", true -%}
-    <ul class="cards" role="list">
-      {%- for item in featured_teaching -%}
-      <li class="card reveal" style="--i:{{ forloop.index }}">
-        {%- assign primary = item.links | first -%}
-        <a class="card__link"
-           {%- if primary %} href="{{ primary.url }}" target="_blank" rel="noopener"
-           {%- else %} href="{{ '/teaching/' | relative_url }}"{% endif %}>
-          <h3 class="card__title">{{ item.name }}{% include icon.html name="arrow" %}</h3>
-          <p class="card__blurb">{{ item.blurb | strip_html | truncatewords: 34 }}</p>
-        </a>
-      </li>
-      {%- endfor -%}
-    </ul>
-  </div>
-</section>
-
-<!-- ===================================================================== -->
-<!--  Projects                                                             -->
-<!-- ===================================================================== -->
-<section class="section section--soft" id="projects">
-  <div class="wrap">
-    <h2 class="section__title">
-      <span class="section__label">
-        <span class="section__num" aria-hidden="true">03</span>
         Things I build
       </span>
       <a class="section__aside" href="{{ '/building/' | relative_url }}">
@@ -289,12 +262,56 @@ layout: default
 </section>
 
 <!-- ===================================================================== -->
+<!--  Teaching                                                             -->
+<!-- ===================================================================== -->
+{%- comment -%}
+  Teaching is no longer the first thing on offer, but it is the evidence for
+  the third card in section 01 — the one claiming she can explain things to
+  people who are not in her field. So it stays high, and the intro now says
+  what it is doing here.
+{%- endcomment -%}
+<section class="section section--soft" id="teaching">
+  <div class="wrap">
+    <h2 class="section__title">
+      <span class="section__label">
+        <span class="section__num" aria-hidden="true">03</span>
+        Teaching
+      </span>
+      <a class="section__aside" href="{{ '/teaching/' | relative_url }}">
+        Everything I've taught {% include icon.html name="arrow" %}</a>
+    </h2>
+
+    <p class="section__intro reveal">
+      I teach in both directions — computation to biologists, biology to
+      computer scientists — in university practicals, conference tutorials, a
+      three-day deep learning course, and material anyone can work through on
+      their own. Most of it is public, which makes it the easiest way to check
+      whether I can explain something before you hire me to.
+    </p>
+
+    {%- assign featured_teaching = site.data.teaching | where: "featured", true -%}
+    <ul class="cards" role="list">
+      {%- for item in featured_teaching -%}
+      <li class="card reveal" style="--i:{{ forloop.index }}">
+        {%- assign primary = item.links | first -%}
+        <a class="card__link"
+           {%- if primary %} href="{{ primary.url }}" target="_blank" rel="noopener"
+           {%- else %} href="{{ '/teaching/' | relative_url }}"{% endif %}>
+          <h3 class="card__title">{{ item.name }}{% include icon.html name="arrow" %}</h3>
+          <p class="card__blurb">{{ item.blurb | strip_html | truncatewords: 34 }}</p>
+        </a>
+      </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>
+
+<!-- ===================================================================== -->
 <!--  Publications                                                         -->
 <!-- ===================================================================== -->
 {%- comment -%}
-  Demoted below the work. The papers are the reason to believe the rest of the
-  page, not the thing being offered — so they now read as evidence rather than
-  as the headline.
+  The papers are the reason to believe the rest of the page, not the thing
+  being offered — so they read as evidence rather than as the headline.
 {%- endcomment -%}
 <section class="section" id="publications">
   <div class="wrap">
@@ -337,19 +354,82 @@ layout: default
 </section>
 
 <!-- ===================================================================== -->
+<!--  Also available for — the consulting, kept but compact                -->
+<!-- ===================================================================== -->
+{%- comment -%}
+  What used to be section 01. The services are real and a research group that
+  lands here should still find them, but they no longer open the page: in the
+  hero they made her read as someone with a practice to protect rather than a
+  job to take, which is the opposite of what the site is now for.
+
+  Rendered from the same _data/offer.yml, but only the name, the one-line
+  promise and the evidence for it — the long-form `detail` stays in the data
+  file. Each door's link lands on a different evidence page (teaching,
+  building, publications), so a reader who doubts one of the three claims can
+  go and check that one.
+{%- endcomment -%}
+<section class="section section--soft" id="offer">
+  <div class="wrap">
+    <h2 class="section__title">
+      <span class="section__label">
+        <span class="section__num" aria-hidden="true">05</span>
+        {{ page.offer_title }}
+      </span>
+    </h2>
+
+    {%- if page.offer_intro %}
+    <p class="section__intro reveal">{{ page.offer_intro }}</p>
+    {%- endif %}
+
+    <ul class="alsos" role="list">
+      {%- for item in site.data.offer %}
+      <li class="also reveal" style="--i:{{ forloop.index }}">
+        <h3 class="also__name">{{ item.name }}</h3>
+        <p class="also__lede">{{ item.lede }}</p>
+        {%- if item.proof %}
+        <p class="also__proof">{{ item.proof }}</p>
+        {%- endif %}
+        {%- if item.proof_url %}
+        {%- if item.proof_url contains '://' %}
+        <a class="also__link" href="{{ item.proof_url }}" target="_blank" rel="noopener">
+          See it {% include icon.html name="arrow" %}</a>
+        {%- else %}
+        <a class="also__link" href="{{ item.proof_url | relative_url }}">
+          See it {% include icon.html name="arrow" %}</a>
+        {%- endif -%}
+        {%- endif %}
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<!-- ===================================================================== -->
 <!--  Contact                                                              -->
 <!-- ===================================================================== -->
+{%- comment -%}
+  A mailto was the only way off this page, which on a phone means opening a
+  mail client the reader may not use. The LinkedIn link is in the hero chips
+  too, but it needs to be here as well — beside the ask, at the moment someone
+  has decided to act.
+{%- endcomment -%}
+{%- assign linkedin = site.data.links | where: "icon", "linkedin" | first -%}
 <section class="section contact" id="contact">
   <div class="wrap">
     <div class="contact__inner">
       <h2 class="contact__title">{{ page.contact_title }}</h2>
       <p class="contact__body">{{ page.contact_body }}</p>
-      <a class="button" href="mailto:{{ site.author.email }}">
-        {{ site.author.email }} {% include icon.html name="arrow" %}
-      </a>
-      {%- if page.open_to_where %}
-      <p class="contact__where">{{ page.open_to_where }}</p>
-      {%- endif %}
+      <div class="contact__actions">
+        <a class="button" href="mailto:{{ site.author.email }}">
+          {{ site.author.email }} {% include icon.html name="arrow" %}
+        </a>
+        {%- if linkedin %}
+        <a class="button button--quiet" href="{{ linkedin.url }}"
+           target="_blank" rel="noopener">
+          {% include icon.html name="linkedin" %} Message me on LinkedIn
+        </a>
+        {%- endif %}
+      </div>
     </div>
   </div>
 </section>

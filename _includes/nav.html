@@ -12,11 +12,16 @@
 
     <nav class="nav__links" aria-label="Primary">
       {%- comment -%}
-        "Work with me" is an anchor on the landing page rather than a page of its
-        own, so it is marked current by the scroll-spy like the other # links.
-        It leads because it is the only item a visitor can act on.
+        "What I bring" is an anchor on the landing page rather than a page of
+        its own, so it is marked current by the scroll-spy like the other #
+        links. It leads because it is the only item a visitor can act on.
+
+        It used to read "Work with me" and point at /#offer, back when the
+        page was selling services. The anchor moved with the section: /#offer
+        still exists and still holds the consulting, but it is now section 05
+        rather than the first thing anyone reads.
       {%- endcomment -%}
-      {%- assign nav_items = "/#offer,Work with me|/research/,Research|/building/,Building|/teaching/,Teaching|/publications/,Publications|/cv/,CV" | split: "|" -%}
+      {%- assign nav_items = "/#bring,What I bring|/research/,Research|/building/,Building|/teaching/,Teaching|/publications/,Publications|/cv/,CV" | split: "|" -%}
       {%- for item in nav_items -%}
         {%- assign parts = item | split: "," -%}
         {%- assign href = parts[0] -%}

@@ -1,10 +1,19 @@
 {%- comment -%}
   Row of icon links, driven by _data/links.yml.
+
+  Most entries are absolute URLs to somewhere else, but the CV is a file on
+  this site, so a site-relative path has to survive `baseurl` — hence the
+  `relative_url` on anything that is neither a mailto nor already absolute.
 {%- endcomment -%}
 <ul class="links" role="list">
   {%- for link in site.data.links -%}
+  {%- if link.url contains '://' or link.url contains 'mailto:' -%}
+    {%- assign href = link.url -%}
+  {%- else -%}
+    {%- assign href = link.url | relative_url -%}
+  {%- endif -%}
   <li>
-    <a class="links__item" href="{{ link.url | escape }}"
+    <a class="links__item" href="{{ href | escape }}"
        {% unless link.url contains 'mailto:' %}target="_blank" rel="noopener"{% endunless %}>
       {% include icon.html name=link.icon %}
       <span>{{ link.label }}</span>
