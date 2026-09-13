@@ -18,8 +18,9 @@ My work is the loop from experiment to model to biological insight: benchmarks
 and data preparation at one end, model interpretation at the other, models of
 RNA regulation in between.
 
-Training a model is the easy part. On bad data, or with no way to see what it
-learned, a model isn't usable — and if it isn't usable, why did we build it?
+Training a good model is hard, and it is the part that gets all the attention.
+But on flawed data, or with no way to see what it learned, it still isn't
+usable — and if it isn't usable, why did we build it?
 
 Seven years of software engineering taught me to build things other people can
 run, and I've learned a new field every few years since. I teach, run

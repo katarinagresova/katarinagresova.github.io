@@ -365,13 +365,15 @@ a {
   z-index: 1;
 }
 
-/* Top row: name on the left, portrait on the right, nothing else. Because the
-   portrait is exactly as tall as the two lines of the name, `align-items: end`
-   lines the two up at both edges with no magic offset to maintain. */
+/* Top row: name on the left, portrait on the right, nothing else in it. The
+   portrait is sized to the height of that whole block — two lines of the name
+   plus the eyebrow above it — so its top edge lines up with the eyebrow and
+   its bottom with the baseline of the name. Both terms come from --name-size,
+   so the alignment survives the name scaling with the viewport. */
 .hero__head {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
-  align-items: end;
+  align-items: start;
   gap: clamp(1.5rem, 5vw, 3.5rem);
 }
 
@@ -419,7 +421,7 @@ a {
    clearing the eyebrow above. */
 .hero__portrait {
   position: relative;
-  width: calc(var(--name-size) * 1.92);
+  width: calc(var(--name-size) * 1.92 + 2.1rem);
 }
 .hero__portrait img {
   width: 100%;

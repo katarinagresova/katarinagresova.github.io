@@ -15,12 +15,13 @@ layout: default
   <div class="wrap hero__inner">
 
     {%- comment -%}
-      The portrait sits in the top row beside the name only, so everything
-      below it — tagline, bio, links — runs the full width of the page.
+      The portrait shares the top row with the name and nothing else, so the
+      whole left edge of the page — eyebrow, name, tagline, bio, links — stays
+      straight, and everything below the row runs the full width.
     {%- endcomment -%}
     <div class="hero__head">
       <div class="hero__id">
-        <p class="eyebrow reveal" style="--i:0">
+      <p class="eyebrow reveal" style="--i:0">
           <span class="eyebrow__dot" aria-hidden="true"></span>
           {{ site.hero.location }}
           <span class="eyebrow__sep" aria-hidden="true">/</span>
