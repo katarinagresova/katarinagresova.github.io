@@ -1,7 +1,8 @@
 <header class="nav">
   <div class="nav__inner wrap">
     <a class="nav__mark" href="{{ '/' | relative_url }}" aria-label="{{ site.author.name }} — home">
-      <span aria-hidden="true">KG</span>
+      <span class="nav__badge" aria-hidden="true">KG</span>
+      <span class="nav__mark-name" aria-hidden="true">{{ site.author.name }}</span>
     </a>
 
     <nav class="nav__links" aria-label="Primary">
@@ -16,4 +17,7 @@
       <span class="theme-toggle__moon">{% include icon.html name="moon" %}</span>
     </button>
   </div>
+
+  {%- comment -%} Fills as the page scrolls; width is set by main.js. {%- endcomment -%}
+  <div class="progress" aria-hidden="true"><span></span></div>
 </header>

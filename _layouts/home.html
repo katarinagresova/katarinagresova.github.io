@@ -16,8 +16,9 @@ layout: default
 
     <div class="hero__text">
       <p class="eyebrow reveal" style="--i:0">
-        {{ site.hero.location }}
         <span class="eyebrow__dot" aria-hidden="true"></span>
+        {{ site.hero.location }}
+        <span class="eyebrow__sep" aria-hidden="true">/</span>
         <a href="{{ site.hero.affiliation_url }}">{{ site.hero.affiliation }}</a>
       </p>
 
@@ -54,8 +55,11 @@ layout: default
 <section class="section" id="research">
   <div class="wrap">
     <h2 class="section__title">
-      <span>Selected publications</span>
-      <a class="section__aside" href="https://scholar.google.com/citations?user=qc6CJjYAAAAJ"
+      <span class="section__label">
+        <span class="section__num" aria-hidden="true">01</span>
+        Selected publications
+      </span>
+      <a class="section__aside" href="{{ site.scholar_url | escape }}"
          target="_blank" rel="noopener">All on Scholar {% include icon.html name="arrow" %}</a>
     </h2>
 
@@ -72,7 +76,8 @@ layout: default
             {{- pub.authors | replace: site.highlight_author, bold_name -}}
           </p>
           <p class="pub__venue">
-            <em>{{ pub.venue }}</em>{% if pub.volume %}, {{ pub.volume }}{% endif %}
+            <span class="pub__journal">{{ pub.venue }}</span>
+            {%- if pub.volume %}<span>{{ pub.volume }}</span>{% endif -%}
           </p>
         </div>
       </li>
@@ -88,7 +93,10 @@ layout: default
 <section class="section section--soft" id="projects">
   <div class="wrap">
     <h2 class="section__title">
-      <span>Things I build</span>
+      <span class="section__label">
+        <span class="section__num" aria-hidden="true">02</span>
+        Things I build
+      </span>
       <a class="section__aside" href="https://github.com/katarinagresova"
          target="_blank" rel="noopener">All on GitHub {% include icon.html name="arrow" %}</a>
     </h2>
@@ -115,11 +123,13 @@ layout: default
 <!--  Contact                                                              -->
 <!-- ===================================================================== -->
 <section class="section contact" id="contact">
-  <div class="wrap contact__inner">
-    <h2 class="contact__title">{{ page.contact_title }}</h2>
-    <p class="contact__body">{{ page.contact_body }}</p>
-    <a class="button" href="mailto:{{ site.author.email }}">
-      {{ site.author.email }} {% include icon.html name="arrow" %}
-    </a>
+  <div class="wrap">
+    <div class="contact__inner">
+      <h2 class="contact__title">{{ page.contact_title }}</h2>
+      <p class="contact__body">{{ page.contact_body }}</p>
+      <a class="button" href="mailto:{{ site.author.email }}">
+        {{ site.author.email }} {% include icon.html name="arrow" %}
+      </a>
+    </div>
   </div>
 </section>

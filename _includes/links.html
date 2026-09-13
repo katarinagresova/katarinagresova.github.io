@@ -4,7 +4,7 @@
 <ul class="links" role="list">
   {%- for link in site.data.links -%}
   <li>
-    <a class="links__item" href="{{ link.url }}"
+    <a class="links__item" href="{{ link.url | escape }}"
        {% unless link.url contains 'mailto:' %}target="_blank" rel="noopener"{% endunless %}>
       {% include icon.html name=link.icon %}
       <span>{{ link.label }}</span>

@@ -13,12 +13,21 @@ beyond Jekyll itself, one stylesheet.
 | Rewrite the intro paragraphs    | `index.md`                  |
 | Change name, tagline, photo     | `_config.yml`               |
 | Change colours or type          | `assets/css/main.css` (§1)  |
+| Change the Scholar link         | `_config.yml`, `_data/links.yml` |
 
 Publications show on the landing page only when `selected: true`, so the list
 can grow without the front page getting crowded.
 
 The name matching `highlight_author` in `_config.yml` is bolded automatically
 in every author list — no manual `<strong>` tags.
+
+## Colours
+
+Both themes live in one block at the top of `assets/css/main.css`. Each colour
+is written once as `light-dark(<light>, <dark>)`, so changing the accent means
+editing two hex values, not two stylesheets. The toggle in the nav pins
+`data-theme` on `<html>`; with no preference saved, the visitor's OS setting
+decides.
 
 ## Adding a new page
 

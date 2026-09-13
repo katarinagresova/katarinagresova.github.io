@@ -1,5 +1,7 @@
-/* Two small behaviours: the theme toggle, and fading sections in as you
-   reach them. Nothing else on the page depends on JavaScript. */
+/* Four small behaviours: the theme toggle, fading sections in as you reach
+   them, the reading-progress hairline, and highlighting the nav link for
+   whichever section you're looking at. Nothing on the page depends on any
+   of them. */
 
 (function () {
   'use strict';
@@ -22,10 +24,11 @@
     });
   }
 
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   /* --- Reveal on scroll -------------------------------------------------- */
 
   var revealables = document.querySelectorAll('.section .reveal');
-  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   if (reduced || !('IntersectionObserver' in window)) {
     revealables.forEach(function (el) { el.classList.add('is-visible'); });
@@ -44,12 +47,74 @@
   /* --- Hairline under the nav once the page scrolls ---------------------- */
 
   var nav = document.querySelector('.nav');
-  if (nav) {
+  if (nav && 'IntersectionObserver' in window) {
     var sentinel = document.createElement('div');
     sentinel.setAttribute('aria-hidden', 'true');
     document.body.prepend(sentinel);
     new IntersectionObserver(function (entries) {
       nav.classList.toggle('nav--stuck', !entries[0].isIntersecting);
     }).observe(sentinel);
+  }
+
+  /* --- Reading progress -------------------------------------------------- */
+
+  var progress = document.querySelector('.progress span');
+  if (progress) {
+    var ticking = false;
+
+    var paint = function () {
+      var scrollable = document.documentElement.scrollHeight - window.innerHeight;
+      var ratio = scrollable > 0 ? window.scrollY / scrollable : 0;
+      progress.style.setProperty('--progress', Math.min(1, Math.max(0, ratio)));
+      ticking = false;
+    };
+
+    window.addEventListener('scroll', function () {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(paint);
+    }, { passive: true });
+
+    window.addEventListener('resize', paint, { passive: true });
+    paint();
+  }
+
+  /* --- Highlight the nav link for the section in view -------------------- */
+
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll('.nav__links a'));
+
+  if (navLinks.length && 'IntersectionObserver' in window) {
+    var linkFor = {};
+    var sections = [];
+
+    navLinks.forEach(function (link) {
+      var id = (link.getAttribute('href') || '').split('#')[1];
+      var section = id && document.getElementById(id);
+      if (!section) return;
+      linkFor[id] = link;
+      sections.push(section);
+    });
+
+    // More than one section can cross the middle band at once, so track them
+    // all and light up whichever sits highest on the page.
+    var visible = [];
+
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        var id = entry.target.id;
+        var at = visible.indexOf(id);
+        if (entry.isIntersecting && at === -1) visible.push(id);
+        if (!entry.isIntersecting && at !== -1) visible.splice(at, 1);
+      });
+
+      var top = visible
+        .map(function (id) { return document.getElementById(id); })
+        .sort(function (a, b) { return a.offsetTop - b.offsetTop; })[0];
+
+      navLinks.forEach(function (link) { link.removeAttribute('aria-current'); });
+      if (top && linkFor[top.id]) linkFor[top.id].setAttribute('aria-current', 'true');
+    }, { rootMargin: '-45% 0px -45% 0px' });
+
+    sections.forEach(function (section) { spy.observe(section); });
   }
 })();

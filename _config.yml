@@ -24,6 +24,9 @@ hero:
   photo: /assets/img/profile.jpg
   photo_alt: Portrait of Katarína Grešová
 
+# Profile used by the "All on Scholar" link in the publications section.
+scholar_url: "https://scholar.google.com/citations?user=cFwEwxoAAAAJ&hl=en"
+
 # Which name to render in bold in author lists (see _data/publications.yml).
 highlight_author: Katarína Grešová
 
