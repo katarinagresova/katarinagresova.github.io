@@ -108,14 +108,21 @@ model that well enough to be believed?
 
 ## How I work
 
-Reproducibly and in the open, more from instinct than principle: I was a
-software engineer before I was a scientist, and it is hard to unlearn the
-habit of assuming a result isn't real until someone else can reproduce it.
-Most of what I build ends up as a package or a dataset someone else can
-install, which is usually the difference between a method that gets used and a
-method that gets cited once.
+Reproducibly and in the open — as a principle, not a habit I happened to pick
+up. I was a software engineer before I was a scientist, and what I took from
+those years is the conviction that computational biology should be borrowing
+far more from software engineering than it does. Version control, tests,
+packaged code, pinned environments, an analysis that runs on a machine that
+isn't mine: none of it is exotic, and all of it is the difference between a
+result and a result somebody else can check.
 
-The same instinct produces most of my teaching — a three-day deep learning
+So most of what I build ends up as a package, a dataset or a workflow someone
+else can install and run — usually the difference between a method that gets
+used and a method that gets cited once. I hold the students I supervise to the
+same standard, because it is much easier to work this way from the start than
+to reconstruct it the week before a submission.
+
+The same conviction produces most of my teaching — a three-day deep learning
 course, a crash course in molecular biology written for computer scientists, a
 set of tutorials on the computational skills a science degree leaves out. The
 bottleneck in computational biology is rarely the idea. More often it's that

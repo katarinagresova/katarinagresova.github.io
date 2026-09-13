@@ -5,3 +5,7 @@ _site/
 Gemfile.lock
 vendor/
 .bundle/
+
+# Source decks / PDFs kept in the folder to pull figures from — not the site.
+*.pptx
+*.pdf

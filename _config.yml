@@ -43,6 +43,9 @@ sass:
   style: compressed
 
 exclude:
+  # Source material dropped in the folder to work from — never part of the site.
+  - "*.pptx"
+  - "*.pdf"
   - Gemfile
   - Gemfile.lock
   - README.md

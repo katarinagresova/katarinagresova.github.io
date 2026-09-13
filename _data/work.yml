@@ -36,6 +36,11 @@
       url: "https://pypi.org/project/genomic-benchmarks-qc/"
     - label: "The wider project"
       url: "https://genomic-benchmarks.github.io/"
+  image: "genomic-benchmarks-qc.png"
+  image_alt: >-
+    A genomic-benchmarks-qc report: per-position nucleotide frequency for the
+    two classes of a dataset, with a sharp spike at one position where the
+    classes give themselves away.
   tags: [python, benchmarks, tooling]
 
 - name: "miRBench"
@@ -56,6 +61,10 @@
       url: "https://pypi.org/project/miRBench/"
     - label: "Paper"
       url: "https://academic.oup.com/bioinformatics/article/41/Supplement_1/i542/8199406"
+  image: "mirbench.png"
+  image_alt: >-
+    Precision-recall curves for seven miRNA binding predictors, evaluated on
+    two of the miRBench test sets.
   tags: [python, benchmarks, miRNA]
 
 - name: "Genomic Benchmarks"
@@ -78,6 +87,8 @@
       url: "https://huggingface.co/katarinagresova"
     - label: "Paper"
       url: "https://doi.org/10.1186/s12863-023-01123-8"
+  image: "genomic-benchmarks.png"
+  image_alt: "The Genomic Benchmarks logo: a DNA helix, a weightlifter, a tick."
   tags: [python, pytorch, datasets]
 
 # --- Models & methods ------------------------------------------------------
@@ -112,6 +123,13 @@
   links:
     - label: "Paper"
       url: "https://doi.org/10.3390/biology12030369"
+    - label: "Code"
+      url: "https://github.com/katarinagresova/DeepExperiment"
+  image: "attribution-alignment.png"
+  image_alt: >-
+    Two nucleotide sequences aligned one above the other, with the
+    complementary stretches CATCCAAC and GTAGGTTG picked out in red and the
+    base pairs between them drawn as dots.
   tags: [interpretability, deep learning]
 
 # --- Databases & web services ---------------------------------------------
@@ -136,6 +154,8 @@
       url: "https://doi.org/10.1093/nar/gkae397"
     - label: "v2 paper"
       url: "https://doi.org/10.1093/nar/gkag372"
+  image: "alphafind.png"
+  image_alt: "The AlphaFind v2 search page."
   tags: [protein structure, embeddings, hpc]
 
 - name: "RBP-Tar"
@@ -154,6 +174,8 @@
       url: "https://github.com/sb-ncbr/RBP-Tar"
     - label: "Paper"
       url: "https://doi.org/10.12688/f1000research.131014.3"
+  image: "rbp-tar.png"
+  image_alt: "The RBP-Tar search page, with its example queries."
   tags: [database, RBP]
 
 # --- Pipelines behind the papers -------------------------------------------

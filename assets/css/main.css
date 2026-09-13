@@ -736,6 +736,30 @@ a {
   padding: 1.6rem;
 }
 
+/* Optional headline image, set with `image:` on an entry in _data/work.yml.
+   It sits inside the padded link so the whole card stays one click target, and
+   bleeds back out to the card's edges with a negative margin. Every file is
+   pre-rendered to the same 900x360, so a row of cards never goes ragged, and
+   the white backing keeps a figure drawn on white legible in dark mode. */
+.card__media {
+  display: block;
+  margin: -1.6rem -1.6rem 1.3rem;
+  padding: .9rem 1.1rem;
+  border-bottom: 1px solid var(--rule);
+  background: #fff;
+}
+/* The frame is a fixed 5:2 so a row of cards stays even, but the picture is
+   letterboxed inside it rather than cropped: these are figures and logos, and
+   cropping one cuts off the part that carried the meaning. Whatever shape the
+   file is, it lands whole, with white to the sides or above and below. */
+.card__media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 5 / 2;
+  object-fit: contain;
+}
+
 .card__title {
   display: flex;
   align-items: center;
